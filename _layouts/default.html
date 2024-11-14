@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>{% if page.title %}{{page.title}}{% else %}{{Leonardo}}{% endif %}   </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
+        <script src="https://kit.fontawesome.com/a2dde92c4b.js" crossorigin="anonymous"></script>
+	</head>
+
+    <body class="is-preload">
+
+
+    {{ content }}
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; leonardespi. Based on: <a href="https://html5up.net">Dimension of HTML5 UP</a>.</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+
+
+<!-- Scripts -->
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/browser.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/breakpoints.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+<script>
+    function sendEmail() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        const subject = encodeURIComponent(`Message from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        
+        const mailtoLink = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+        
+        window.location.href = mailtoLink;
+    }
+    </script>
+
+	</body>
+</html>

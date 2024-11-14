@@ -1,0 +1,91 @@
+---
+layout: default
+title: Leonardo's 
+
+---
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<i style="font-size: 2em;" class="fa-solid fa-bug"></i>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Im Leonardo</h1>
+								<p>A senior QA engineer who enjoys coding, designing and exercising <br />
+								I'm always seeking to learn new stuff, being an olympic medallist or becoming a pop star</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>
+								<li><a href="#blog">Blog</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="resume.pdf" target="_blank">Resume</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- about -->
+							<article id="about" style="text-align: justify;">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="images/banner.jpg" alt="" /></span>
+								<p>Hi, I'm Leo, a 21-year-old Senior QA Engineer. I've been working as a dev since I was 15 I chose QA because I love getting paid to break stuff! <br><br>
+
+									When I'm not glued to a screen, I'm either playing sports, jamming on my guitar, or exploring new places. I also love learning new things, which is why I studied Computational Systems Engineering and philosophy at UNAM. <br><br>
+									
+									I've had the opportunity to work in various industries, including video games, automotive, and finance. Each experience has been unique and helped me learn a lot. <br><br>
+									
+									I'm always looking for new challenges and opportunities to grow. I'm also a big believer in work-life balance and enjoy spending time with my friends and family. <br><br>
+							</article>
+
+						<!-- blog -->
+							<article id="blog">
+								<h2 class="major">Blog</h2>
+								<ul class="blog-list">
+									{% for post in site.posts %}
+										<li>
+											<a class="blog-heading" href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="date"> - {{ post.date | date_to_string }}</span>
+										</li>
+									{% endfor %}
+							</article>
+
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form onsubmit="sendEmail(); return false;">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://x.com/leonardespii" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leonardespi/" class="icon brands fa-linkedin-in"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/leonardespi/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/leonardespi" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+					</div>
+
+				
