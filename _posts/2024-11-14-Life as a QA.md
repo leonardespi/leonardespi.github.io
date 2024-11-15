@@ -3,6 +3,10 @@ layout: post
 title: Life as a QA
 date: 2024-11-14
 author: Leonardo Espinosa
+excerpt: QA is more than just testing. It's process improvement, defect prevention, and collaboration
+seo_title: The Life of a QA More Than Just Testing | Leonardo Espinosa
+seo_description: Discover the multifaceted role of a Quality Assurance professional. It's not just about finding bugs, but also improving processes, preventing defects, and collaborating effectively. Learn more about life as a QA.
+description: Discover the multifaceted role of a Quality Assurance professional. It's not just about finding bugs, but also improving processes, preventing defects, and collaborating effectively. Learn more about life as a QA.
 ---
 
 ## **How it is the day to day of a Quality Assurance Engineer?**

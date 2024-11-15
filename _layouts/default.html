@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
 
 <html>
+    <!-- SEO tags -->
+    {% seo %}
 	<head>
-		<title>{% if page.title %}{{page.title}}{% else %}{{Leonardo}}{% endif %}   </title>
+		<title>{% if page.title %}{{page.title}}{% else %}{{site.tile}}{% endif %}   </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
         <script src="https://kit.fontawesome.com/a2dde92c4b.js" crossorigin="anonymous"></script>
+        <meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
 	</head>
 
     <body class="is-preload">
