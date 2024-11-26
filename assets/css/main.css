@@ -738,10 +738,6 @@ input, select, textarea {
 		padding-left: 1em;
 	}
 
-		ul li {
-			padding-left: 0.5em;
-		}
-
 		ul.alt {
 			list-style: none;
 			padding-left: 0;
@@ -1332,9 +1328,13 @@ input, select, textarea {
 				}
 
 			#header .content p {
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-				font-size: 0.8rem;
+				font-size: clamp(14px, 1.2rem, 18px);
+				line-height: 2;
+			}
+
+			ul li {
+				padding-left: 0.5em;
+				font-size: clamp(14px, 1.2rem, 18px);
 				line-height: 2;
 			}
 
@@ -1663,11 +1663,6 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		ul, li {
-			text-transform: uppercase;
-    		font-size: 0.8rem;
-    		line-height: 2;
-		}
 
 		article {
 			color: #F5F5F5;
