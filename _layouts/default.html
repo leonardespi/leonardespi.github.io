@@ -32,7 +32,20 @@
 </div>
 
 <!-- BG -->
-<div id="bg"></div>
+<div id="bg">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 
 
 
@@ -56,6 +69,30 @@
         
         window.location.href = mailtoLink;
     }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circles li");
+
+    // Ajustar cada círculo al borde inferior de la ventana
+    circles.forEach((circle) => {
+        const viewportHeight = window.innerHeight;
+        circle.style.bottom = `0px`; // Empieza en el borde inferior
+    });
+});
+
+// Opcional: recalcular en caso de redimensionar la ventana
+window.addEventListener("resize", () => {
+    const circles = document.querySelectorAll(".circles li");
+
+    circles.forEach((circle) => {
+        const viewportHeight = window.innerHeight;
+        circle.style.bottom = `0px`;
+    });
+});
+
+
     </script>
 
 	</body>
