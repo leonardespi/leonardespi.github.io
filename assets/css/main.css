@@ -1201,8 +1201,8 @@ input, select, textarea {
     }
 
     100%{
-        transform: translateY(calc(-120vh)) rotate(720deg);
-        opacity: 0;
+        transform: translateY(calc(-160vh)) rotate(720deg);
+        opacity: 1;
         border-radius: 50%;
     }
 
