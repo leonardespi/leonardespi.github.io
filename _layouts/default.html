@@ -1,99 +1,34 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <!-- SEO tags -->
-    {% seo %}
-	<head>
-		<title>{% if page.title %}{{page.title}}{% else %}{{site.tile}}{% endif %}   </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
-        <script src="https://kit.fontawesome.com/a2dde92c4b.js" crossorigin="anonymous"></script>
-        <meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
-	
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="/favicon_io/site.webmanifest">
-    </head>
+{% include head.html %}
 
-    <body class="is-preload">
+<body>
 
+  {% if site.data.settings.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
 
-    {{ content }}
+  <!-- begin global wrap -->
+  <div class="global-wrap">
+    {% include header.html %}
 
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      {{ content }}
+    </main>
+    <!-- end content -->
 
-    <!-- Footer -->
-    <footer id="footer">
-        <p class="copyright">&copy; leonardespi</p>
-    </footer>
+    {% include footer.html %}
+  </div>
+  <!-- end global wrap -->
 
-</div>
+  <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i></div>
 
-<!-- BG -->
-<div id="bg">
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+  <div class="images-overlay"></div>
 
+  <script src="{{ '/js/scripts.js' | relative_url }}"></script>
+  <script src="{{ '/js/common.js' | relative_url }}"></script>
+</body>
 
-
-<!-- Scripts -->
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/browser.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/breakpoints.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/util.js"></script>
-<script src="{{ site.baseurl }}/assets/js/main.js"></script>
-
-<script>
-    function sendEmail() {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        const subject = encodeURIComponent(`Message from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        
-        const mailtoLink = `mailto:leointhecode@gmail.com?subject=${subject}&body=${body}`;
-        
-        window.location.href = mailtoLink;
-    }
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const circles = document.querySelectorAll(".circles li");
-
-    // Ajustar cada círculo al borde inferior de la ventana
-    circles.forEach((circle) => {
-        const viewportHeight = window.innerHeight;
-        circle.style.bottom = `0px`; // Empieza en el borde inferior
-    });
-});
-
-// Opcional: recalcular en caso de redimensionar la ventana
-window.addEventListener("resize", () => {
-    const circles = document.querySelectorAll(".circles li");
-
-    circles.forEach((circle) => {
-        const viewportHeight = window.innerHeight;
-        circle.style.bottom = `0px`;
-    });
-});
-
-
-    </script>
-
-	</body>
 </html>

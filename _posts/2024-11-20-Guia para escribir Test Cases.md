@@ -3,18 +3,12 @@ layout: post
 title: La guía definitiva para escribir casos de prueba
 date: 2024-11-20
 author: Leonardo Espinosa
-
-excerpt: Dominar el arte de escribir casos de prueba efectivos es crucial para cualquier profesional de control de calidad. Esta guía proporciona una descripción general completa de las técnicas de diseño de casos de prueba, consejos para escribir casos de prueba claros y concisos y errores comunes que se deben evitar. Aprenda a escribir casos de prueba que garanticen la calidad y la confiabilidad de su software.
-
-seo_title: La Guía definitiva para escribir TestCases | Leonardo Espinosa
-
-seo_description: Esta guía proporciona una descripción general completa de cómo escribir casos de prueba efectivos, una habilidad crucial para cualquier profesional de control de calidad. Aprenda sobre diferentes técnicas de diseño de casos de prueba, consejos para escribir casos de prueba claros y concisos, y errores comunes que se deben evitar.
-
-description: Esta guía proporciona una descripción general completa de cómo escribir casos de prueba efectivos, una habilidad crucial para cualquier profesional de control de calidad. Aprenda sobre diferentes técnicas de diseño de casos de prueba, consejos para escribir casos de prueba claros y concisos, y errores comunes que se deben evitar.
+description: Esta guía proporciona una descripción general completa de cómo escribir casos de prueba efectivos, una habilidad crucial para cualquier profesional de control de calidad.
+image: '/images/04-1.jpg'
+tags: [Quality-Assurance]
+tags_color: '#4A90E2'
+featured: true
 ---
-
-
-<br>
 
 ¡Hola a todos!
 

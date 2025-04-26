@@ -3,18 +3,13 @@ layout: post
 title:  Encontrando mi camino en IT
 date: 2024-11-26
 author: Leonardo Espinosa
-
-excerpt: Elegir una carrera en tecnología puede ser abrumador.  Leo, QA lead, comparte su trayectoria y ofrece consejos a quienes se adentran en el mundo de las TI. Esto no es una guía, sino una historia de exploración y descubrimiento para inspirarte a encontrar tu propio camino.
-
-seo_title: Abriéndome camino en tech| Leonardo Espinosa
-
-seo_description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
-description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
+description: Mi trayectoria desde desarrollador de Python a los 12, hasta control de calidad. Así fue como encontré mi vocación.
+image: '/images/03-1.jpg'
+tags: [Quality-Assurance]
+tags_color: '#4A90E2'
+featured: false
 ---
 
-<br>
  ¡Hola a todos!
 
 Mi nombre es Leo, actualmente ingeniero de control de calidad senior. En las siguientes líneas quiero hablar sobre la elección de una carrera, sé que es una decisión crucial, y en el mundo tecnológico, con tantas opciones, ¡puede ser abrumador! Si estás leyendo esto, probablemente te encuentres en ese punto, evaluando qué camino tomar dentro del universo IT. ¡Y créeme, lo entiendo!

@@ -2,12 +2,12 @@
 layout: post
 title: Ten una vida balanceada
 date: 2024-11-18
-author: Leonardo Espinosa
-excerpt: A menudo tratamos el tiempo como si fuera un recurso ilimitado, pero la verdad es que es lo único que nunca podremos recuperar. Cada segundo que pasa se va para siempre. Es hora de reclamar nuestro tiempo y empezar a vivir una vida verdaderamente equilibrada y plena.
 description: ¿Luchando por encontrar el equilibrio en tu ajetreada vida? Esta entrada del blog explora la importancia de priorizar el tiempo para lo que realmente importa. Aprende a reclamar tu horario y a vivir una vida más plena.
+image: '/images/03-1.jpg'
+tags: [Productividad]
+tags_color: '#4CAF50'
+featured: false
 ---
-
-<br>
  ¡Hola a todos!
 
 Mi nombre es Leo, soy ingeniero de software senior, atleta y músico. Decidí escribir esta publicación para abordar un problema crucial en nuestra sociedad actual. Se ha vuelto común que no tengamos tiempo para *vivir*. La mayor parte del tiempo puede irse en reuniones tensas, una pila horrenda de tareas pendientes o desplazándose sin pensar por TikTok. Es importante que reclamemos tiempo para dar cabida a las cosas importantes de la vida.

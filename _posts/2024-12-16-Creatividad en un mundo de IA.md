@@ -1,20 +1,14 @@
 ---
 layout: post
-title:  Creatividad en un mundo de IA
+title:  Creatividad en un mundo de IA - articulo
 date: 2024-12-16
 author: Leonardo Espinosa
-
-excerpt: Elegir una carrera en tecnología puede ser abrumador.  Leo, QA lead, comparte su trayectoria y ofrece consejos a quienes se adentran en el mundo de las TI. Esto no es una guía, sino una historia de exploración y descubrimiento para inspirarte a encontrar tu propio camino.
-
-seo_title: La evolución del papel de los especialistas en creatividad en un mundo impulsado por IA | Leonardo Espinosa
-
-seo_description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
-description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
+description: En un mundo donde la IA esta en todas partes ¿Donde es que queda la creatividad y el arte?
+image: '/images/05-1.jpg'
+tags: [Arte]
+tags_color: '#E57373'
+featured: true
 ---
-
-<br>
 
 La inteligencia artificial (IA) está transformando las industrias creativas a un ritmo acelerado. Desde herramientas como DALL-E en diseño hasta algoritmos que componen música, la tecnología redefine cómo creamos y plantea preguntas sobre el futuro de la creatividad humana. Según Adobe, el 74% de los profesionales ya usan IA en su trabajo. Estas herramientas automatizan tareas repetitivas y abren nuevas posibilidades creativas, permitiendo explorar formas innovadoras de diseño, música y escritura.
 

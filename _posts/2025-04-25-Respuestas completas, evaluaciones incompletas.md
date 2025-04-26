@@ -3,18 +3,12 @@ layout: post
 title:  Respuestas completas y evaluaciones incompletas
 date: 2025-04-25
 author: Leonardo Espinosa
-
-excerpt: Elegir una carrera en tecnología puede ser abrumador.  Leo, QA lead, comparte su trayectoria y ofrece consejos a quienes se adentran en el mundo de las TI. Esto no es una guía, sino una historia de exploración y descubrimiento para inspirarte a encontrar tu propio camino.
-
-seo_title: La evolución del papel de los especialistas en creatividad en un mundo impulsado por IA | Leonardo Espinosa
-
-seo_description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
-description: Leo, ingeniero sénior de QA, comparte su trayectoria desde desarrollador de Python hasta control de calidad, y ofrece ideas y consejos para quienes se adentran en el laberinto de las carreras tecnológicas. Descubre cómo encontrar tu pasión en el mundo de las TI.
-
+description: Este post nace de una vivencia en un proceso de entrevista. Al parecer, no sé nada de QA.
+image: '/images/07-1.jpg'
+tags: [Entrevistas]
+tags_color: '#FFB74D'
+featured: false
 ---
-
-<br>
 
 Hoy quiero hablar de algo que, aunque parezca un detalle menor, puede tener un impacto profundo tanto en la experiencia de los candidatos como en la calidad de las contrataciones: **la estandarización excesiva en los procesos de reclutamiento**, muchas veces como respuesta incorrecta a la alta afluencia de candidatos. En un esfuerzo por gestionar grandes volúmenes de aplicaciones, cada vez es más común que las primeras etapas del proceso estén en manos de screeners poco especializados, apoyados en **manuales de respuestas tipo**.
 

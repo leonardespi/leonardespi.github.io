@@ -2,13 +2,12 @@
 layout: post
 title: Mi vida como QA
 date: 2024-11-14
-author: Leonardo Espinosa
-excerpt: El control de calidad (QA) es más que solo pruebas. Se trata de la mejora de procesos, la prevención de defectos y la colaboración.
-seo_title: La Vida de un QA es más que pruebas| Leonardo Espinosa
-seo_description: Descubre el rol multifacético de un profesional de Aseguramiento de la Calidad. No se trata solo de encontrar errores, sino también de mejorar procesos, prevenir defectos y colaborar eficazmente. Aprende más sobre la vida como QA.
-description: Descubre el rol multifacético de un profesional de Aseguramiento de la Calidad. No se trata solo de encontrar errores, sino también de mejorar procesos, prevenir defectos y colaborar eficazmente. Aprende más sobre la vida como QA.
+description: Romper software es un arte preventivo, equilibra calidad, usabilidad y tiempos, es mas que encontrar bugs.
+image: '/images/02-1.jpg'
+tags: [Quality-Assurance]
+tags_color: '#4A90E2'
+featured: false
 ---
-<br>
 ¡Hola!
 
 Mi nombre es Leo, y soy ingeniero QA (casi lead QA).

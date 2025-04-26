@@ -1,107 +1,16 @@
 ---
 layout: default
+image: '/images/01.jpg'
 ---
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<i style="font-size: 2em;" class="fa-solid fa-bug"></i>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Leonardo Espinosa</h1>
-								<p>Hago la <strong>sabiduría accesible</strong> y <strong>práctica</strong> para <strong>ayudar</strong> a las personas a <strong>desbloquear su potencial.</strong></p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">Sobre mí</a></li>
-								<li><a href="#blog">Blog</a></li>
-								<li><a href="https://soundcloud.com/leonardespi" target="_blank">Música</a></li>
-								<li><a href="#contact">Contacto</a></li>
-							</ul>
-						</nav>
-					</header>
 
-				<!-- Main -->
-					<div id="main">
+{% include hero.html %}
 
-						<!-- about -->
-							<article id="about" style="text-align: justify;">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/banner.jpg" alt="" /></span>
-								<h3 style="color: #f5f5f5;">El día que entendí lo que era el valor</h3>
-								<p>
-									De niño siempre pensé que el talento era algo que otros tenían. Para mí, los días pasaban en una rutina de mediocridad: reprobar matemáticas, acostarme todo el dia y tener ansiedad del futuro. No fue hasta que me rompí, a los 16 años, que entendí que algo tenía que cambiar.
-									<br><br>
-									La ansiedad llegó a su punto más alto. La idea de no saber qué hacer con mi vida me paralizaba. Entonces, por primera vez, me atreví a saltar. Decidí apostarlo todo por una beca que implicaba mudarme al otro lado del mundo. Durante meses me preparé con disciplina, confiado en que lo lograría. Pero, cuando llegó el momento de dar el último paso, me acobardé.
-									<br><br>
-									Me dije que no podía conseguir un documento necesario, pero en el fondo sabía que no había hecho todo lo posible. Ese fracaso me rompió. Durante meses, cargué con el peso del odio hacia mí mismo. Me diagnosticaron depresión clínica y me sentía atrapado en mi propio cuerpo.
-									<br><br>
-									Sin embargo, en medio de esa oscuridad, algo cambió. Había trabajado tanto para la beca que, sin darme cuenta, había mejorado un poco. Sonará tonto, pero para alguien que cuya nota mas alta de matemáticas era 6, competir en la Olimpiada Matemática de la mejor universidad del país fue un logro increíble.
-									<br><br>
-									Esa pequeña victoria me enseñó algo crucial: no se trata de ser naturalmente bueno en algo, sino de comprometerte, buscar la guía correcta y tener paciencia.
-									<br><br>
-									Hoy, a mis 21 años, soy Ingeniero Líder de QA, trabajo en una gran empresa, me convertí en atleta de fondo y aprendí a tocar varios instrumentos. Pero más importante que los logros es lo que aprendí en el proceso: no hay límites cuando decides trabajar por lo que quieres. Mi historia no es única, pero espero que inspire a otros a empezar la suya.
-																		
-								</p>
-								<p>(Si buscas mi resumen de IT es <a href="resume.pdf" target="_blank">este</a>)</p>
-								<ul class="icons">
-									<li><a href="https://x.com/leonardespii" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leonardespi/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/leonardespi/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/leonardespi" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://soundcloud.com/leonardespi" target="_blank" class="icon"><i class="fa-solid fa-headphones"></i></a></li>
-								</ul>
+{% include logos.html %}
 
+{% include section-blog.html %}
 
-							
-								</article>
+{% include section-tags.html %}
 
-						<!-- blog -->
-							<article id="blog">
-								<h2 class="major">Blog</h2>
-								<ul class="blog-list">
-									{% for post in site.posts %}
-										<li>
-											<span class="date">{{ post.date | date_to_string }} - </span> <a class="blog-heading" href="{{ post.url | relative_url }}">{{ post.title }}</a> 
-										</li>
-									{% endfor %}
-							</article>
+{% include section-videos.html %}
 
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contacto</h2>
-								<form onsubmit="sendEmail(); return false;">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Nombre</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Mensaje</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Mandar" class="primary" /></li>
-										<li><input type="reset" value="Limpiar" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="https://x.com/leonardespii" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leonardespi/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/leonardespi/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/leonardespi" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://soundcloud.com/leonardespi" target="_blank" class="icon"><i class="fa-solid fa-headphones"></i></a></li>
-								</ul>
-							</article>
-					</div>
-
-				
+{% include section-gallery.html %}
