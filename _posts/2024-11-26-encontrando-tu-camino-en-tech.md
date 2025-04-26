@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Encontrando mi camino en IT
-date: 2024-11-26
+date: 2024-11-26 15:01:35 +0300
 author: Leonardo Espinosa
 description: Mi trayectoria desde desarrollador de Python a los 12, hasta control de calidad. Así fue como encontré mi vocación.
 image: '/images/03-1.jpg'

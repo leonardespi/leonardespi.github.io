@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  El arte de amar – Reflexiones personales
-date: 2024-12-20
+date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: El arte de amar es un libro que me cambio la vida, definitivamente siempre hay mucho que aprender.
 image: '/images/10-1.jpg'

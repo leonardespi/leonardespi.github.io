@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  Paleta Payaso
-date: 2025-02-23
+date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
 description: Paleta Payaso surgió de la boba mensa tonta confusión que te deja el enamoramiento.
 image: '/images/08-2.jpg'
 video_embed: https://www.youtube.com/embed/OEobOhG9Y5o
-tags: [Música]
+tags: [Musica]
 tags_color: '#9575CD'
 featured: false
 ---

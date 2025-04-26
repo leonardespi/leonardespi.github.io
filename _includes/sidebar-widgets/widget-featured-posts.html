@@ -29,7 +29,7 @@
       {% endif %}
       <div class="post-featured-meta">
         <h3 class="post-featured-title"><a href="{{ fp.url | relative_url }}">{{ fp.title }}</a></h3>
-        <time class="post-featured-date" datetime="{{ fp.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-b, %Y" %}{{ fp.date | date: date_format }}</time>
+        <time class="post-featured-date" datetime="{{ fp.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %m - %Y" %}{{ fp.date | date: date_format }}</time>
       </div>
     </div>
     {% if count == 8 %}{% break %}

@@ -43,7 +43,7 @@
               {% endif %}
               <div class="footer__recent-meta">
                 <h3 class="footer__recent-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <time class="footer__recent-date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-b, %Y" %}{{ post.date | date: date_format }}</time>
+                <time class="footer__recent-date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %m - %Y" %}{{ post.date | date: date_format }}</time>
               </div>
             </div>
             {% endfor %}

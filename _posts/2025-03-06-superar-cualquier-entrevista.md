@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Como superar cualquier entrevista
-date: 2025-03-06
+date: 2025-03-06 15:01:35 +0300
 author: Leonardo Espinosa
 description: He dedicado una cantidad considerable de tiempo a descifrar cuáles son los elementos clave que necesitas para tener éxito; las entrevistas son otra habilidad más.
 image: '/images/06-1.jpg'

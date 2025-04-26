@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Respuestas completas y evaluaciones incompletas
-date: 2025-04-25
+date: 2025-04-25 15:01:35 +0300
 author: Leonardo Espinosa
 description: Este post nace de una vivencia en un proceso de entrevista. Al parecer, no sé nada de QA.
 image: '/images/07-1.jpg'

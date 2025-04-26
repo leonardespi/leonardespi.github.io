@@ -1,7 +1,7 @@
 ---
 layout: post
 title: La guía definitiva para escribir casos de prueba
-date: 2024-11-20
+date: 2024-11-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: Esta guía proporciona una descripción general completa de cómo escribir casos de prueba efectivos, una habilidad crucial para cualquier profesional de control de calidad.
 image: '/images/04-1.jpg'

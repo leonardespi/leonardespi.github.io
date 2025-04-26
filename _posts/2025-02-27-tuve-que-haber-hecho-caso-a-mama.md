@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  Tuve que haber hecho caso a mamá
-date: 2025-02-23
+date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
 description: Tuve que haber hecho caso a mamá nació de la frustración que sientes cuando te das cuenta, tarde, de que en efecto... tu mamá tenia razon.
 image: '/images/08-2.jpg'
 video_embed: https://www.youtube.com/embed/eRyjr8Jst6c
-tags: [Música]
+tags: [Musica]
 tags_color: '#9575CD'
 featured: false
 ---

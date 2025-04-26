@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mi vida como QA
-date: 2024-11-14
+date: 2024-11-14 15:01:35 +0300
 description: Romper software es un arte preventivo, equilibra calidad, usabilidad y tiempos, es mas que encontrar bugs.
 image: '/images/02-1.jpg'
 tags: [Quality-Assurance]

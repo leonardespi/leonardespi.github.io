@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ten una vida balanceada
-date: 2024-11-18
+date: 2024-11-18 15:01:35 +0300
 description: ¿Luchando por encontrar el equilibrio en tu ajetreada vida? Esta entrada del blog explora la importancia de priorizar el tiempo para lo que realmente importa. Aprende a reclamar tu horario y a vivir una vida más plena.
 image: '/images/03-1.jpg'
 tags: [Productividad]

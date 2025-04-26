@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Se trata de construir claridad mental
-date: 2025-03-16
+date: 2025-03-16 15:01:35 +0300
 description: Productividad personal. más allá de GTD y PARA, la clave es un sistema simple y vivo que libere tu mente. ¡Menos hacer, mejor hacer!
 image: '/images/13-1.jpg'
 tags: [Productividad]

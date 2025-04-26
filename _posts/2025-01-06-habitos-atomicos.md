@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hábitos Atómicos – Mi primer libro de desarrollo
-date: 2024-12-20
+date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: Hábitos Atómicos, transformó mi vida con pequeñas acciones consistentes, identidad primero y diseño del entorno. ¡Consistencia imperfecta gana!
 image: '/images/11-1.jpg'

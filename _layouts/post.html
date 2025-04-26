@@ -47,7 +47,7 @@ layout: default
               <a class="post-meta__author" href="{{ '/about/' |relative_url }}">{{ site.data.settings.author.author_name
                 }}</a>
               <div class="post-meta__bottom">
-                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-b, %Y" %}{{ page.date | date: date_format }}</time> –
+                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %m - %Y" %}{{ page.date | date: date_format }}</time> –
                 <span class="post-minutes">
                   {% assign words = page.content | number_of_words %}
                   {% if words < 360 %} 1 min read {% else %} {{ words | divided_by:180 }} min read {% endif %} </span>
