@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Leonardo Espinosa
-description: Coderon is a super modern and unique Jekyll blog theme
+description: Leonardo es un QAE, artista y deportista.
 logo: # You can add own logo. For example '/images/logo.png'.
 logo_dark:
 
@@ -96,7 +96,7 @@ tags_section:
       image: "/images/02-1.jpg"
     - tag: "Productividad"
       image: "/images/03-1.jpg"
-    - tag: "Música"
+    - tag: "Musica"
       image: "/images/08-1.jpg"
     - tag: "Pensamientos"
       image: "/images/06-1.jpg"
