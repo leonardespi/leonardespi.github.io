@@ -7,7 +7,7 @@ description: He dedicado una cantidad considerable de tiempo a descifrar cuáles
 image: '/images/06-1.jpg'
 tags: [Entrevistas]
 tags_color: '#FFB74D'
-featured: true
+featured: false
 ---
 ¡Hola! Despues de un largo y merecido descanso he vuelto a retomar este proyecto. Hoy les quiero hablar de un tema que fue central en estos meses de mi ausencia: las entrevistas de trabajo. Algunos las odian, otros las aman. Pero si eres de los primeros, piénsalo así: una entrevista es tu escenario para brillar. *(Si eres de los segundos puedes omitir este post)*
 
