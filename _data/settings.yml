@@ -48,7 +48,7 @@ author:
 # Hero Settings
 hero:
   enable: true
-  hero_avatar: /images/01-1.jpg
+  hero_avatar: /images/pp-forest.jpg
   hero_title: Hey! Soy Leo 👋
   hero_subtitle: QAE, artista y obsesionado con el crecimiento
   hero_description: |
@@ -56,7 +56,7 @@ hero:
     
     Es una bitácora en constante construcción, como yo.
 
-  hero_image: /images/01.jpg
+  hero_image: /images/desktop-forest.jpg
   hero_image_caption: Mi estudio es el lugar mas importante de toda la casa
   hero_button_text: Colabora en algo conmigo
   hero_button_link: '/contacto/'
