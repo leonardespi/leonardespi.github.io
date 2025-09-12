@@ -112,7 +112,7 @@ videos_section:
 #-------------------------------
 # Gallery Section Settings
 gallery_section:
-  enable: true
+  enable: false
   gallery_section_title: Fotos cool que tome
   gallery:
     gallery_images:
