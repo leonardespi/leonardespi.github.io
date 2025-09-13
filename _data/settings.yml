@@ -82,7 +82,7 @@ logos:
 #-------------------------------
 # Section Blog Settings
 blog:
-  enable: true
+  enable: false
   blog_title: Bitácora de Ideas
 
 
