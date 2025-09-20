@@ -1,35 +1,33 @@
 ---
 layout: page
-title: Sobre mí
-permalink: /sobre-mi/
+title: About me
+permalink: /me/
 image: '/images/01-2.jpg'
 ---
+Hi, I’m Leo. I work as a Sr SDET, I enjoy writing music and I'm coconuts about enchiladas.
+**If there’s one thing I’m passionate about, it’s learning:** I love spending my time discovering new things—whether reading books, taking courses, playing a new instrument, or starting to write a book I’ll publish someday. **Among the things I’ve most enjoyed learning—and where I keep growing—is programming.**
 
-Hola, soy Leo. Trabajo como Senior QAE y me gusta escribir música, en particular folk latino, bedroom pop y sad indie.
-**Si hay algo que me apasiona, es aprender:** adoro pasar mi tiempo descubriendo cosas nuevas, ya sea leyendo libros, tomando cursos, tocando un nuevo instrumento o empezando a escribir un libro que algún día publicaré. **Entre las cosas que más he disfrutado aprender —y en las que sigo creciendo— está la programación.**
+I come from a home where I learned from an early age that communication goes far beyond words; I grew up alongside a deaf mother, which taught me to **read life in gestures, glances, and actions.** This shaped a very important part of who I am: someone expressive, empathetic, and attentive to details many overlook.
 
-Vengo de un hogar donde aprendí desde pequeño que la comunicación va mucho más allá de las palabras; crecí al lado de una madre sorda, lo que me enseñó a **leer la vida en gestos, miradas y actos.** Esto formó una parte muy importante de quien soy: alguien expresivo, empático y atento a los detalles que muchos pasan por alto.
+I’m driven by the idea that **technology, music, and ideas should be accessible to everyone.** My professional focus has always been guided by that belief: **build, test, improve, so no one is left out.** On a personal level, I value authenticity. **I like to share what I learn, listen to other people’s stories, and truly connect.**
 
-Me mueve la idea de que **la tecnología, la música y las ideas deberían ser accesibles para todos.** Mi enfoque profesional siempre ha estado guiado por esa creencia: **construir, probar, mejorar, para que nadie se quede fuera.**
-En lo personal, valoro mucho la autenticidad. **Me gusta compartir lo que aprendo, escuchar las historias de otros y conectar de verdad.**
+In addition to technology and music, I have a creative streak that sometimes leads me to write—whether songs, personal projects, or simply reflections. **I dream of continuing to create spaces where people can feel seen, heard, and part of something bigger.**
 
-Además de la tecnología y la música, tengo una vena creativa que a veces me lleva a escribir, ya sea canciones, proyectos personales o simplemente reflexiones. **Sueño con seguir creando espacios donde las personas puedan sentirse vistas, escuchadas y parte de algo más grande.**
-
-**Si algo me define** es que siempre busco crecer, no desde la prisa, sino desde la curiosidad genuina y el deseo de **construir algo que deje huella.**
+**If anything defines me,** it’s that I always seek to grow—not out of haste, but out of genuine curiosity and the desire to **build something that leaves a mark.**
 
 {: .note }
-La experiencia no significa saberlo todo, sino saber seguir aprendiendo.
+Experience doesn’t mean knowing everything, but knowing how to keep learning.
 
-## Lo que me motivo
+## What motivated me
 
-Desde niño me di cuenta de que la tecnología no siempre estaba hecha para todos. Crecer con una mamá que no escucha moldeó mi forma de ver el mundo. Fueron momentos simples, como compartir una canción o hacer una llamada, los que me revelaron esa realidad.
+Since I was a child, I realized that technology wasn’t always made for everyone. Growing up with a mother who cannot hear shaped my way of seeing the world. Simple moments, like sharing a song or making a call, revealed that reality to me.
 
-> He sentido el peso de una tecnología que no considera a todos, y eso me mueve a ser parte del cambio.
+> I have felt the weight of technology that doesn’t consider everyone, and that drives me to be part of the change.
 
-No me malinterpreten: mi mamá no es una víctima en esta historia, es una heroína. A pesar de tener una pérdida auditiva casi total, se graduó como traductora y habla cinco idiomas. Cool, no?
+Don’t get me wrong: my mom isn’t a victim in this story—she’s a hero. Despite having an almost total hearing loss, she graduated as a translator and speaks five languages. Cool, right?
 
-Al contrario que mi mamá, a mí los idiomas extranjeros nunca se me dieron tan bien, pero sabía programar y eso también es un idioma. 
+Unlike my mom, foreign languages never came easily to me, but I could program—and that’s a language too.
 
-Un día, después de la pandemia, vi que ciertos desarrolladores lograron poner subtítulos en las reuniones en línea. No eran perfectos, pero abrían una puerta: una forma de acercar más a mi mamá al mundo que compartimos.
+One day, after the pandemic, I saw that certain developers managed to add captions to online meetings. They weren’t perfect, but they opened a door: a way to bring my mom closer to the world we share.
 
-Ese día decidí que quería ser parte del cambio.
+That day I decided I wanted to be part of the change.

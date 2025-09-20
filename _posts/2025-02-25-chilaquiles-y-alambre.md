@@ -6,7 +6,7 @@ author: Leonardo Espinosa
 description: Chilaquiles y alambre es parte del EP Chilaquiles con recuerdos es el inicio de un viaje, habla de la sensación de un amor cercano que se ha desvanecido.
 image: '/images/08-2.jpg'
 video_embed: https://www.youtube.com/embed/_GUKcry_NWs
-tags: [Musica]
+tags: [Music]
 tags_color: '#9575CD'
 featured: false
 ---

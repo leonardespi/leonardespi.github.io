@@ -5,7 +5,7 @@ date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: El arte de amar es un libro que me cambio la vida, definitivamente siempre hay mucho que aprender.
 image: '/images/10-1.jpg'
-tags: [Pensamientos]
+tags: [Toilet-thoughts]
 tags_color: '#607D8B'
 featured: false
 ---

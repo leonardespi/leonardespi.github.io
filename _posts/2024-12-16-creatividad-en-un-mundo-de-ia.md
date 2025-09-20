@@ -5,7 +5,7 @@ date: 2024-12-16 15:01:35 +0300
 author: Leonardo Espinosa
 description: En un mundo donde la IA esta en todas partes ¿Donde es que queda la creatividad y el arte?
 image: '/images/05-1.jpg'
-tags: [Arte]
+tags: [Art]
 tags_color: '#E57373'
 featured: true
 ---

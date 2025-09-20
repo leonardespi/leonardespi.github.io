@@ -6,7 +6,7 @@ author: Leonardo Espinosa
 description: Paleta Payaso surgió de la boba mensa tonta confusión que te deja el enamoramiento.
 image: '/images/08-2.jpg'
 video_embed: https://www.youtube.com/embed/OEobOhG9Y5o
-tags: [Musica]
+tags: [Music]
 tags_color: '#9575CD'
 featured: false
 ---

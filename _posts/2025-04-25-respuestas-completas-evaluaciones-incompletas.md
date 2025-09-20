@@ -5,7 +5,7 @@ date: 2025-04-25 15:01:35 +0300
 author: Leonardo Espinosa
 description: Este post nace de una vivencia en un proceso de entrevista. Al parecer, no sé nada de QA.
 image: '/images/07-1.jpg'
-tags: [Entrevistas]
+tags: [Interview]
 tags_color: '#FFB74D'
 featured: false
 ---

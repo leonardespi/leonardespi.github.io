@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Leonardo Espinosa
-description: Leonardo es un QAE, artista y deportista.
+description: leonardespi is an SDET and musician.
 logo: # You can add own logo. For example '/images/logo.png'.
 logo_dark:
 
@@ -23,16 +23,16 @@ color_scheme:
 # Navigation Settings
 menu_settings:
   menu_items:
-    - title: 'Inicio'
+    - title: 'Home'
       url: '/'
-    - title: 'Música'
-      url: '/musica/'
-    - title: 'Archivo'
-      url: '/archivo/' 
-    - url: '/sobre-mi/'
-      title: 'Sobre mí'
-    - url: '/contacto/'
-      title: 'Contacto'
+    - title: 'Music'
+      url: '/music/'
+    - title: 'Posts'
+      url: '/posts/' 
+    - url: '/me/'
+      title: 'Me'
+    - url: '/contact/'
+      title: 'Contact'
       #- url: '/elements/'
       #  title: 'Elements'
 
@@ -49,16 +49,15 @@ author:
 hero:
   enable: true
   hero_avatar: /images/pp-forest.jpg
-  hero_title: Hey! Soy Leo 👋
-  hero_subtitle: QAE, artista y obsesionado con el crecimiento
+  hero_title: I'm Leo 👋
+  hero_subtitle: SDET, musician and productivity obsessed
   hero_description: |
-    Este blog es mi espacio para compartir y conectar. 
+    This blog is my spot to share and connect. 
     
-    Es una bitácora en constante construcción, como yo.
-
+    Is constantly under construction like me.
   hero_image: /images/desktop-forest.jpg
-  hero_image_caption: Mi estudio es el lugar mas importante de toda la casa
-  hero_button_text: Colabora en algo conmigo
+  hero_image_caption: My studio is the most important room in the house.
+  hero_button_text: Work with me
   hero_button_link: '/contacto/'
 
 
@@ -90,15 +89,15 @@ blog:
 # Tags Section Settings
 tags_section:
   enable: true
-  tags_section_title: Mis temas favoritos del momento
+  tags_section_title: My favorite stories
   tags:
     - tag: "Quality-Assurance"
       image: "/images/02-1.jpg"
-    - tag: "Productividad"
+    - tag: "Productivity"
       image: "/images/03-1.jpg"
-    - tag: "Musica"
+    - tag: "Music"
       image: "/images/08-1.jpg"
-    - tag: "Pensamientos"
+    - tag: "Toilet-thoughts"
       image: "/images/06-1.jpg"
 
 
@@ -106,7 +105,7 @@ tags_section:
 # Videos Section Settings
 videos_section:
   enable: true
-  videos_section_title: Recientemente lanzado
+  videos_section_title: My music
 
 
 #-------------------------------
@@ -146,9 +145,7 @@ mailchimp:
 
 #-------------------------------
 # Footer Settings
-footer_description: Este blog es mi espacio para compartir y conectar. Aquí encontrarás un repositorio de experiencias y aprendizajes en productividad, programación, música, crecimiento personal y esas ideas "raras" que a veces abren nuevas formas de ver el mundo.
-
-
+footer_description: Check my socials to get bonus points on life.
 #-------------------------------
 # Social Settings
 social:
@@ -167,7 +164,7 @@ social:
 # Contact Settings
 contact:
   form_id: leointhecode@email.com # Add your form_id
-  button_text: Mandar ya
+  button_text: Send now
 
 # NOTE
 # Coderon theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.

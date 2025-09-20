@@ -25,9 +25,9 @@
         </div>
 
         <div class="col col-4 col-d-12">
-          <h3 class="footer__title">Posts Recientes</h3>
+          <h3 class="footer__title">Recent posts</h3>
           <div class="footer__recent-posts">
-            {% for post in site.posts limit:3 %}
+            {% for post in site.posts limit:2 %}
             <div class="footer__recent-content">
               {% if post.image %}
               <a href="{{ post.url | relative_url }}" class="footer__recent-image">
@@ -43,7 +43,7 @@
               {% endif %}
               <div class="footer__recent-meta">
                 <h3 class="footer__recent-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <time class="footer__recent-date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %m - %Y" %}{{ post.date | date: date_format }}</time>
+                <time class="footer__recent-date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %B - %Y" %}{{ post.date | date: date_format }}</time>
               </div>
             </div>
             {% endfor %}

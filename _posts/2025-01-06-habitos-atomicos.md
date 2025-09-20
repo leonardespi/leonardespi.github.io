@@ -5,7 +5,7 @@ date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: Hábitos Atómicos, transformó mi vida con pequeñas acciones consistentes, identidad primero y diseño del entorno. ¡Consistencia imperfecta gana!
 image: '/images/11-1.jpg'
-tags: [Pensamientos]
+tags: [Toilet-thoughts]
 tags_color: '#607D8B'
 featured: false
 ---
