@@ -33,15 +33,15 @@ menu_settings:
       title: 'Bio'
     - url: '/contact/'
       title: 'Contact'
-      #- url: '/elements/'
-      #  title: 'Elements'
+#    - url: '/elements/'
+#      title: 'Elements'
 
 
 #-------------------------------
 # Author Settings
 author:
   author_name: Leonardo Espinosa
-  author_avatar: /images/01-1.jpg
+  author_avatar: /images/pp-forest.jpg
 
 
 #-------------------------------
