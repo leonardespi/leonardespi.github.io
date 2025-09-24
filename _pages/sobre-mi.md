@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-permalink: /me/
+permalink: /Bio/
 image: '/images/01-2.jpg'
 ---
 Hi, I’m Leo. I work as a Sr SDET, I enjoy writing music and I'm coconuts about enchiladas.
