@@ -3,7 +3,7 @@ layout: post
 title:  Chilaquiles y alambre
 date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
-description: Chilaquiles y alambre es parte del EP Chilaquiles con recuerdos es el inicio de un viaje, habla de la sensación de un amor cercano que se ha desvanecido.
+description: Chilaquiles y alambre is part of the EP Chilaquiles con recuerdos — the beginning of a journey. It speaks to the feeling of a love once close that has faded.
 image: '/images/08-2.jpg'
 video_embed: https://www.youtube.com/embed/_GUKcry_NWs
 tags: [Music]
@@ -11,10 +11,10 @@ tags_color: '#9575CD'
 featured: false
 ---
 
-Chilaquiles y alambre es parte del EP "Chilaquiles con recuerdos" es el inicio de un viaje, habla de la sensación de un amor cercano que se ha desvanecido. La cancion habla de un recuerdo, que aunque sea efimero, es tambien constante y agudo, cosas tan simples como el metro pasar o los chilaquiles verdes bastan para explotar la sinapsis en nuestro cerebro.
+“**Chilaquiles y alambre**” is part of the EP *Chilaquiles con recuerdos*—the beginning of a journey. It speaks to the feeling of a love once close that has faded. The song is about a memory that, though **ephemeral**, is also constant and sharp; simple things like the rumble of the metro or a plate of green chilaquiles are enough to set synapses firing in our brains.
 
-Quería plasmar la sensación agridulce de extrañar a alguien, hasta el punto de ver su fantasma en cada rincón cotidiano, como en el pasar del metro. Recordaba esos momentos sencillos pero tan fuertes, como conocer a su familia, contar chistes entre chilaquiles y pláticas largas, la manera en la que esos recuerdos se volvían puñaladas suaves al darme cuenta de la distancia actual es algo esencial en la cancion. 
+I wanted to capture the bittersweet sensation of missing someone—so intensely that you see their ghost in every ordinary corner, like in the passing trains. I kept recalling those simple yet powerful moments: meeting their family, trading jokes over chilaquiles and long conversations. The way those memories turned into soft stabs when I faced the current distance is essential to the song.
 
-Pero en medio de todo ese sentir, una parte de mí creo se aferraba a la idea de que ese cariño no podía desaparecer así como así, y por eso ese "te espero con el cora abierto" y ese último "plissss vuelve ya", es verdaderamente un susurro del corazón, un susurro de un corazón que aún late fuerte por esa persona.
+But amid all that feeling, a part of me clung to the idea that such affection couldn’t just vanish. That’s why the line “**te espero con el cora abierto**” (“I’m waiting with my heart wide open”) and that final “**plissss vuelve ya**” (“please come back now”) are truly a whisper from the heart—a whisper from a heart still beating hard for that person.
 
- Fue como intentar atrapar en palabras el pensamiento de "ya no está, pero quizás...".
+It was like trying to trap in words the thought: **“they’re gone… but maybe…”**

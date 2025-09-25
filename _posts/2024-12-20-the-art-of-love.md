@@ -5,11 +5,11 @@ date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: El arte de amar es un libro que me cambio la vida, definitivamente siempre hay mucho que aprender.
 image: '/images/10-1.jpg'
-tags: [Toilet-thoughts]
-tags_color: '#607D8B'
+tags: [Art]
+tags_color: '#E57373'
 featured: false
 ---
-¡Hola!
+
 Hoy quiero hablar de un tema que me ha acompañado en muchas etapas de mi vida, aunque no siempre de forma consciente: el arte de amar. Y digo arte porque, como descubrí leyendo a Erich Fromm, amar no es algo que simplemente sucede, sino algo que se aprende, se cultiva y se perfecciona.
 
 Cuando leí El arte de amar, entendí algo que, aunque suena obvio, solemos olvidar: el amor verdadero no es un accidente, ni un flechazo eterno. Es una decisión activa y una práctica constante.
