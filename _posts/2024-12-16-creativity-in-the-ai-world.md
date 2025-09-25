@@ -6,7 +6,7 @@ author: Leonardo Espinosa
 description: In a world where everything is being done by AI, where does creativity belong? 
 image: '/images/05-1.jpg'
 tags: [Art]
-tags_color: '#E57373'
+tags_color: '#cf66cfff'
 featured: true
 ---
 

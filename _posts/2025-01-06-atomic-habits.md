@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Hábitos Atómicos – Mi primer libro de desarrollo
+title:  Atomic habits
 date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
-description: Hábitos Atómicos, transformó mi vida con pequeñas acciones consistentes, identidad primero y diseño del entorno. ¡Consistencia imperfecta gana!
+description: Small changes can turn your life upside down, you might wanna start with this book.
 image: '/images/11-1.jpg'
 tags: [Art]
-tags_color: '#E57373'
+tags_color: '#cf66cfff'
 featured: false
 ---
 

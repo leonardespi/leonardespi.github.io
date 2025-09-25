@@ -6,7 +6,7 @@ author: Leonardo Espinosa
 description: I love taking interviews. Here there are my best pieces of advice.
 image: '/images/06-1.jpg'
 tags: [Projects]
-tags_color: '#46ebc7ff'
+tags_color: '#E57373'
 featured: True
 ---
 
