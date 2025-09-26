@@ -7,7 +7,7 @@ description: Bugs are not always in the code.
 image: '/images/14-1.jpg'
 tags: [Quality-Assurance]
 tags_color: '#4A90E2'
-featured: True
+featured: false
 ---
 
 **Errors are no longer always in the code…**

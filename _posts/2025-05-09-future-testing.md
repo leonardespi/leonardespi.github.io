@@ -7,7 +7,7 @@ description:  Blockchain, containers, accessibility. The new testing frontier is
 image: '/images/15-1.jpg'
 tags: [Quality-Assurance]
 tags_color: '#4A90E2'
-featured: True
+featured: false
 ---
 
 **Before, testing software meant making sure the buttons worked.**

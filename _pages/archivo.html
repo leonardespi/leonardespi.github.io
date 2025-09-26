@@ -38,7 +38,7 @@ permalink: /posts/
                       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                     </h3>
                     <div class="archive-article__meta">
-                      <time class="archive-article__date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %B - %Y" %}{{ post.date | date: date_format }}</time>
+                      <time class="archive-article__date" datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d - %b - %Y" %}{{ post.date | date: date_format }}</time>
                       <div class="archive-article__minutes">
                         {% assign words = post.content | number_of_words %}
                         {% if words < 360 %}

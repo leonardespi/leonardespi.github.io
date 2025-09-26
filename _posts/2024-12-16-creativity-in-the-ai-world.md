@@ -7,7 +7,7 @@ description: In a world where everything is being done by AI, where does creativ
 image: '/images/05-1.jpg'
 tags: [Art]
 tags_color: '#cf66cfff'
-featured: true
+featured: false
 ---
 
 
