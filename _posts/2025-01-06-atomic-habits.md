@@ -4,7 +4,7 @@ title:  Atomic habits
 date: 2024-12-20 15:01:35 +0300
 author: Leonardo Espinosa
 description: Small changes can turn your life upside down, you might wanna start with this book.
-image: '/images/11-1.jpg'
+image: 
 tags: [Art]
 tags_color: '#cf66cfff'
 featured: false

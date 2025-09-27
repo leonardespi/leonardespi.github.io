@@ -4,10 +4,10 @@ title:  Ace the interview
 date: 2025-03-06 15:01:35 +0300
 author: Leonardo Espinosa
 description: I love taking interviews. Here there are my best pieces of advice.
-image: '/images/06-1.jpg'
+image: 
 tags: [Projects]
-tags_color: '#E57373'
-featured: True
+tags_color: '#8cdd55ff'
+featured: false
 ---
 
 After a long and well-deserved break, I’m back to this project. Today I want to talk about a topic that was central during the months I was away: job interviews. Some people hate them, others love them. But if you’re in the first group, think of it this way: an interview is your stage to shine. *(If you’re in the second group, you can skip this post.)*

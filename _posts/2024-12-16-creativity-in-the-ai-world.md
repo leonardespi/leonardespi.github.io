@@ -4,7 +4,7 @@ title:  Creativity in the AI world
 date: 2024-12-16 15:01:35 +0300
 author: Leonardo Espinosa
 description: In a world where everything is being done by AI, where does creativity belong? 
-image: '/images/05-1.jpg'
+image: 
 tags: [Art]
 tags_color: '#cf66cfff'
 featured: false

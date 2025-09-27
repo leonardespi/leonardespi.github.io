@@ -4,7 +4,7 @@ title:  Complete answers and incomplete evaluations
 date: 2025-04-25 15:01:35 +0300
 author: Leonardo Espinosa
 description: I wrote this post after a QA interview. Apparently I know nothing about the subject.
-image: '/images/07-1.jpg'
+image:
 tags: [Experiences]
 tags_color: '#FFB74D'
 featured: false

@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  FInd your way in tech
+title:  Find your way in tech
 date: 2024-11-26 15:01:35 +0300
 author: Leonardo Espinosa
 description: I started coding at 12, nowadays im 22 and Im lead of automation in a big corporation.
-image: '/images/03-1.jpg'
-tags: [Quality-Assurance]
+image: 
+tags: [Testing]
 tags_color: '#4A90E2'
 featured: false
 ---

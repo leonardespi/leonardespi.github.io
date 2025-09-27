@@ -4,22 +4,20 @@ title:  Bias, hallucinations and dirty data
 date: 2025-04-29 15:01:35 +0300
 author: Leonardo Espinosa
 description: Bugs are not always in the code.
-image: '/images/14-1.jpg'
-tags: [Quality-Assurance]
+image:
+tags: [Testing]
 tags_color: '#4A90E2'
 featured: false
 ---
 
 **Errors are no longer always in the code…**
 
-For years, the logic was clear: if something fails, it’s because the code has a bug.
-
-A poorly written conditional, an out-of-range index, an unvalidated input…
+For years, the logic was clear: if something fails, it’s because the code has a bug. A poorly written conditional, an out-of-range index, an unvalidated input…
 But in the era of artificial intelligence, errors no longer hide (only) between lines of code: they now live in the data, in the models, and—most worryingly—in undetected biases.
 
 Today, the tester’s role is changing. We are moving away from being simple *functionality verifiers* to becoming *evaluators of judgment, context, and consequences*.
 
----
+<br>
 
 ### What does it mean to test an AI model?
 
@@ -38,9 +36,9 @@ For example:
 
 These aren’t classic bugs. They are *reasoning* errors by the model. And to find them, **QA must adopt the role of a critical evaluator** rather than a purely technical verifier.
 
----
+<br>
 
-**When AI hallucinates**
+### When AI hallucinates
 
 One of the best-documented problems with language models is their tendency to **hallucinate false information with complete confidence**.
 
@@ -55,9 +53,9 @@ These *hallucinations* are hard to test with automated scripts because they requ
 
 Here, **QA becomes a detective**. We aren’t hunting syntax errors; we’re uncovering well-told fictions. And that’s a completely new challenge.
 
----
+<br>
 
-**Fairness, bias, and accessibility: the invisible testing**
+### Fairness, bias, and accessibility: the invisible testing    
 
 This point is personal for me.
 I grew up watching my mother—a deaf woman—constantly adapt to technology that wasn’t designed for her. From faulty auto-captions to voice assistants that never understood her.
@@ -78,9 +76,9 @@ Review should include fairness, dataset diversity, and impact assessment.
 
 Because if the model was trained only on the voices of white men, **how can we expect it to understand other realities?**
 
----
+<br>
 
-## Are we ready?
+### Are we ready?
 
 The short answer: not entirely.
 But this is precisely where QA has the opportunity to **lead the change**.

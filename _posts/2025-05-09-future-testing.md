@@ -4,8 +4,8 @@ title:  The testing for the future
 date: 2025-05-09 15:01:35 +0300
 author: Leonardo Espinosa
 description:  Blockchain, containers, accessibility. The new testing frontier is here.
-image: '/images/15-1.jpg'
-tags: [Quality-Assurance]
+image:
+tags: [Testing]
 tags_color: '#4A90E2'
 featured: false
 ---

@@ -5,7 +5,7 @@ date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
 description: Paleta Payaso was born from the silly, dumb, foolish confusion that infatuation leaves you with.
 
-image: '/images/08-2.jpg'
+image: '/images/albumCR.jpg'
 video_embed: https://www.youtube.com/embed/OEobOhG9Y5o
 tags: [Music]
 tags_color: '#9575CD'

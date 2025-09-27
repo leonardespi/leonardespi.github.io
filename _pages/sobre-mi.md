@@ -2,7 +2,7 @@
 layout: page
 title: About me
 permalink: /bio/
-image: '/images/01-2.jpg'
+image: 
 ---
 Hi, I’m Leo. I work as a Sr SDET, I enjoy writing music and I'm coconuts about enchiladas.
 **If there’s one thing I’m passionate about, it’s learning:** I love spending my time discovering new things—whether reading books, taking courses, playing a new instrument, or starting to write a book I’ll publish someday. **Among the things I’ve most enjoyed learning—and where I keep growing—is programming.**

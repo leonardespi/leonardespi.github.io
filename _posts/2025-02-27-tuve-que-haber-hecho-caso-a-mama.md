@@ -4,7 +4,7 @@ title:  Tuve que haber hecho caso a mamá
 date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
 description: I should’ve listened to Mom was born from that frustration you feel when you realize—too late—that, in fact… your mom was right.
-image: '/images/08-2.jpg'
+image: '/images/albumCR.jpg'
 video_embed: https://www.youtube.com/embed/eRyjr8Jst6c
 tags: [Music]
 tags_color: '#9575CD'

@@ -27,8 +27,6 @@ menu_settings:
       url: '/'
     - title: 'Music'
       url: '/music/'
-    - title: 'Posts'
-      url: '/posts/' 
     - url: '/bio/'
       title: 'Bio'
     - url: '/contact/'
@@ -50,7 +48,7 @@ hero:
   enable: true
   hero_avatar: /images/pp-forest.jpg
   hero_title: I'm Leo 👋
-  hero_subtitle: SDET, musician and productivity obsessed
+  hero_subtitle: Test Engineer and musician
   hero_description: |
     This blog is my spot to share and connect. 
     
@@ -58,7 +56,7 @@ hero:
   hero_image: /images/desktop-forest.jpg
   hero_image_caption: My studio is the most important room in the house.
   hero_button_text: Work with me
-  hero_button_link: '/contacto/'
+  hero_button_link: '/contact/'
 
 
 # Logos
@@ -91,20 +89,20 @@ tags_section:
   enable: true
   tags_section_title: My favorite stories
   tags:
-    - tag: "Quality-Assurance"
-      image: "/images/02-1.jpg"
-    - tag: "Art"
-      image: "/images/09-5.jpg"
+    - tag: "Testing"
+      image: "/images/qa.jpg"
+    - tag: "Coding"
+      image: "/images/coding.jpg"
     - tag: "Music"
-      image: "/images/08-1.jpg"
+      image: "/images/art.jpg"
     - tag: "Projects"
-      image: "/images/03-1.jpg"
+      image: "/images/projects.jpg"
 
 
 #-------------------------------
 # Videos Section Settings
 videos_section:
-  enable: true
+  enable: false
   videos_section_title: My music
 
 

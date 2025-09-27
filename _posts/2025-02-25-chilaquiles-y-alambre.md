@@ -4,11 +4,11 @@ title:  Chilaquiles y alambre
 date: 2025-02-23 15:01:35 +0300
 author: Leonardo Espinosa
 description: Chilaquiles y alambre is part of the EP Chilaquiles con recuerdos — the beginning of a journey. It speaks to the feeling of a love once close that has faded.
-image: '/images/08-2.jpg'
+image: '/images/albumCR.jpg'
 video_embed: https://www.youtube.com/embed/_GUKcry_NWs
 tags: [Music]
 tags_color: '#9575CD'
-featured: false
+featured: true
 ---
 
 “**Chilaquiles y alambre**” is part of the EP *Chilaquiles con recuerdos*—the beginning of a journey. It speaks to the feeling of a love once close that has faded. The song is about a memory that, though **ephemeral**, is also constant and sharp; simple things like the rumble of the metro or a plate of green chilaquiles are enough to set synapses firing in our brains.
