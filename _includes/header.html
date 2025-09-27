@@ -16,7 +16,10 @@
       {% endif %}
 
       <li class="{{ classes }}">
-        <a href="{% if is_absolute %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">
+        <a
+          href="{% if is_absolute %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
+          {% if is_absolute %}target="_blank" rel="noopener noreferrer"{% endif %}
+        >
           {% if item.default %}
             {{ site.data.lang[site.language][item.default] }}
           {% else %}
@@ -27,3 +30,4 @@
     {% endfor %}
   </ul>
 </nav>
+
