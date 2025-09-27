@@ -2,12 +2,9 @@
 layout: post
 title:  Complete answers and incomplete evaluations
 date: 2025-04-25 15:01:35 +0300
-author: Leonardo Espinosa
-description: I wrote this post after a QA interview. Apparently I know nothing about the subject.
-image:
-tags: [Experiences]
-tags_color: '#FFB74D'
-featured: false
+last_modified_at: 2025-02-23
+categories: [Interview]
+tags: [tech]
 ---
 
 Today I want to talk about something that recently happened to myself that, while it may seem minor, can have a profound impact both on candidates’ experience and on hiring quality: **excessive standardization in recruitment processes**, often used as the wrong response to high candidate inflow. In an effort to handle large volumes of applications, it’s increasingly common for the early stages of the process to be in the hands of minimally specialized screeners, guided by **stock answer manuals**.

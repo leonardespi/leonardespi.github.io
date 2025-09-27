@@ -2,12 +2,9 @@
 layout: post
 title:  Bias, hallucinations and dirty data
 date: 2025-04-29 15:01:35 +0300
-author: Leonardo Espinosa
-description: Bugs are not always in the code.
-image:
-tags: [Testing]
-tags_color: '#4A90E2'
-featured: false
+last_modified_at: 2025-04-29
+categories: [IA]
+tags: [ia]
 ---
 
 **Errors are no longer always in the code…**

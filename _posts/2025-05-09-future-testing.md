@@ -2,12 +2,9 @@
 layout: post
 title:  The testing for the future
 date: 2025-05-09 15:01:35 +0300
-author: Leonardo Espinosa
-description:  Blockchain, containers, accessibility. The new testing frontier is here.
-image:
-tags: [Testing]
-tags_color: '#4A90E2'
-featured: false
+alast_modified_at: 2025-02-23
+categories: [Quality Assurance]
+tags: [testing]
 ---
 
 **Before, testing software meant making sure the buttons worked.**

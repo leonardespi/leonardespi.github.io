@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Bias, hallucinations and dirty data | Leonardo Espinosa</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Bias, hallucinations and dirty data" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Errors are no longer always in the code…" />
+<meta property="og:description" content="Errors are no longer always in the code…" />
+<link rel="canonical" href="http://localhost:4000/bias-hallucinations-dirty-data" />
+<meta property="og:url" content="http://localhost:4000/bias-hallucinations-dirty-data" />
+<meta property="og:site_name" content="Leonardo Espinosa" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-29T06:01:35-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bias, hallucinations and dirty data" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-29T00:00:00-06:00","datePublished":"2025-04-29T06:01:35-06:00","description":"Errors are no longer always in the code…","headline":"Bias, hallucinations and dirty data","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/bias-hallucinations-dirty-data"},"url":"http://localhost:4000/bias-hallucinations-dirty-data"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<meta name="keywords" content="ia" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="alternate" type="application/rss+xml" title="Leonardo Espinosa - lead test engineer, musician and linguist. I love enchiladas." href="/feed.xml" />
+<link rel="stylesheet" type="text/css" href="/assets/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/highlight.css" />
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async ></script>
+
+
+
+<script defer src="/assets/script/theme.js"></script>
+<script defer src="/assets/script/script.js"></script>
+
+</head>
+<body onload="onLoad()">
+  <select id='themeSelector' onchange="toggleTheme()" aria-label="Select theme">
+</select>
+
+  <div class="container-wrapper">
+    <header class="container-header">
+      <div class="header-info">
+  <span class="header-info-name"><a href="/">Leonardo Espinosa</a></span>
+  <br>
+  <span class="header-info-desc">lead test engineer, musician and linguist. I love enchiladas.</span>
+</div>
+<nav class="header-nav">
+  <ul class="header-main-nav">
+  
+    <li class="header-main-nav-item"><a href="//">Blog</a></li>
+  
+    <li class="header-main-nav-item"><a href="//about">About</a></li>
+  
+    <li class="header-main-nav-item"><a href="//categories">Categories</a></li>
+  
+    <li class="header-main-nav-item"><a href="//projects">Projects</a></li>
+  
+    <li class="header-main-nav-item"><a href="//music">Music</a></li>
+  
+    <li class="header-main-nav-item"><a href="https://www.linkedin.com/in/leonardespi/">LinkedIn</a></li>
+  
+    <li class="header-main-nav-item"><a href="https://github.com/leonardespi">Github</a></li>
+  
+  </ul>
+</nav>
+    </header>
+    <main class="container-main">
+      <article class="container-post">
+  <div class="post-title">
+    <h1>Bias, hallucinations and dirty data</h1>
+  </div>
+  <div class="post-author">
+    <span>Leonardo Espinosa</span>
+  </div>
+  <div class="post-content">
+    <p><strong>Errors are no longer always in the code…</strong></p>
+
+<p>For years, the logic was clear: if something fails, it’s because the code has a bug. A poorly written conditional, an out-of-range index, an unvalidated input…
+But in the era of artificial intelligence, errors no longer hide (only) between lines of code: they now live in the data, in the models, and—most worryingly—in undetected biases.</p>
+
+<p>Today, the tester’s role is changing. We are moving away from being simple <em>functionality verifiers</em> to becoming <em>evaluators of judgment, context, and consequences</em>.</p>
+
+<p><br /></p>
+
+<h3 id="what-does-it-mean-to-test-an-ai-model">What does it mean to test an AI model?</h3>
+
+<p>In traditional systems, a test fails if the system doesn’t behave as expected.
+But with AI models—especially generative or predictive ones—<strong>there isn’t a single “correct answer,”</strong> but a range of possible outputs… and that changes everything.</p>
+
+<p><strong>The new QA isn’t about checking whether something “works,” but whether it “makes sense.”</strong></p>
+
+<p>One of the most common challenges when testing generative models (like LLMs or conversational AI) is detecting <em>incoherences</em>, <em>contradictions</em>, or <em>responses that simply don’t hold up</em>.</p>
+
+<p>For example:</p>
+
+<ul>
+  <li>A chatbot that recommends aspirin to someone allergic to NSAIDs.</li>
+  <li>A generated summary that omits key points from the original text.</li>
+  <li>An assistant AI that invents features that don’t exist.</li>
+</ul>
+
+<p>These aren’t classic bugs. They are <em>reasoning</em> errors by the model. And to find them, <strong>QA must adopt the role of a critical evaluator</strong> rather than a purely technical verifier.</p>
+
+<p><br /></p>
+
+<h3 id="when-ai-hallucinates">When AI hallucinates</h3>
+
+<p>One of the best-documented problems with language models is their tendency to <strong>hallucinate false information with complete confidence</strong>.</p>
+
+<p>Real example:
+An AI generates a biography with achievements that never happened, books that don’t exist, or universities the user never attended.</p>
+
+<p>These <em>hallucinations</em> are hard to test with automated scripts because they require:</p>
+
+<ul>
+  <li><strong>Domain knowledge.</strong></li>
+  <li><strong>Factual verification.</strong></li>
+  <li><strong>Human judgment.</strong></li>
+</ul>
+
+<p>Here, <strong>QA becomes a detective</strong>. We aren’t hunting syntax errors; we’re uncovering well-told fictions. And that’s a completely new challenge.</p>
+
+<p><br /></p>
+
+<h3 id="fairness-bias-and-accessibility-the-invisible-testing">Fairness, bias, and accessibility: the invisible testing</h3>
+
+<p>This point is personal for me.
+I grew up watching my mother—a deaf woman—constantly adapt to technology that wasn’t designed for her. From faulty auto-captions to voice assistants that never understood her.</p>
+
+<p>That’s why, when testing AI systems, I find this question essential:
+<strong>Who was this model trained for? Who is it leaving out?</strong></p>
+
+<p>Algorithmic biases can cause:</p>
+
+<ul>
+  <li>Discrimination by gender, age, race, or language.</li>
+  <li>Exclusion of users with disabilities.</li>
+  <li>The reproduction of harmful stereotypes (even within the training data).</li>
+</ul>
+
+<p><br />
+<strong>QA must assume an ethical role</strong>, not just a technical one.</p>
+
+<p>Review should include fairness, dataset diversity, and impact assessment.</p>
+
+<p>Because if the model was trained only on the voices of white men, <strong>how can we expect it to understand other realities?</strong></p>
+
+<p><br /></p>
+
+<h3 id="are-we-ready">Are we ready?</h3>
+
+<p>The short answer: not entirely.
+But this is precisely where QA has the opportunity to <strong>lead the change</strong>.</p>
+
+<p>QA in the new era doesn’t just validate outputs. <strong>It interprets results, anticipates consequences, and defends the real user experience</strong>—the one so often ignored by models trained on impersonal data.</p>
+
+  </div>
+  <hr>
+  <div class="post-info">
+    <div class="post-date">
+      Written on 2025-04-29, updated at 2025-04-29.
+    </div>
+    <div class="post-categories">
+      <span>Categories: </span>
+      
+      <a href="/category/ia" class="post-category">IA</a>
+      
+    </div>
+    <div class="post-tags">
+      <span>Tags: </span>
+      
+      <a href="/tag/ia" class="post-tag">ia</a>
+      
+    </div>
+    <!-- <div class="post-tools">
+      
+      <div>
+        <span>Next: </span><a href="/future-testing">The testing for the future</a>
+      </div>
+      
+      
+      <div>
+        <span>Previous: </span><a href="/complete-answers-incomplete-evaluations">Complete answers and incomplete evaluations</a>
+      </div>
+      
+    </div> -->
+    
+  </div>
+</article>
+    </main>
+    <footer class="container-footer">
+      <div class="footer-copyright">
+  <span class="footer-copyright-text float-left">Copyright &copy; 2025. https://www.leonardespi.me.</span>
+
+</div>
+    </footer>
+  </div>
+
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+  document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
+    codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
+  });
+</script>
+
+</body>
+</html>

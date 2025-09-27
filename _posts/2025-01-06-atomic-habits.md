@@ -2,12 +2,9 @@
 layout: post
 title:  Atomic habits
 date: 2024-12-20 15:01:35 +0300
-author: Leonardo Espinosa
-description: Small changes can turn your life upside down, you might wanna start with this book.
-image: 
-tags: [Art]
-tags_color: '#cf66cfff'
-featured: false
+last_modified_at: 2024-12-20
+categories: [Art]
+tags: [books]
 ---
 
 Today I want to tell you about a book that not only I liked, but that marked a before-and-after in how I think about personal growth: *Atomic Habits* by James Clear.

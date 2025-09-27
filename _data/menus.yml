@@ -1,0 +1,23 @@
+- title: "Blog"
+  url:   "/"
+  
+- title: "About"
+  url:   "/about"
+
+- title: "Categories"
+  url:   "/categories"
+
+- title: "Projects"
+  url: "/projects"
+
+- title: "Music"
+  url: "/music"
+
+- title: "LinkedIn"
+  absoluteUrl: true
+  url: "https://www.linkedin.com/in/leonardespi/"
+
+- title: "Github"
+  absoluteUrl: true
+  url: "https://github.com/leonardespi"
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to write amazing test cases | Leonardo Espinosa</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="How to write amazing test cases" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hello everyone!" />
+<meta property="og:description" content="Hello everyone!" />
+<link rel="canonical" href="http://localhost:4000/write-amazing-testcases" />
+<meta property="og:url" content="http://localhost:4000/write-amazing-testcases" />
+<meta property="og:site_name" content="Leonardo Espinosa" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-20T06:01:35-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to write amazing test cases" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-20T00:00:00-06:00","datePublished":"2024-11-20T06:01:35-06:00","description":"Hello everyone!","headline":"How to write amazing test cases","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/write-amazing-testcases"},"url":"http://localhost:4000/write-amazing-testcases"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<meta name="keywords" content="Testing" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="alternate" type="application/rss+xml" title="Leonardo Espinosa - lead test engineer, musician and linguist. I love enchiladas." href="/feed.xml" />
+<link rel="stylesheet" type="text/css" href="/assets/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/highlight.css" />
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async ></script>
+
+
+
+<script defer src="/assets/script/theme.js"></script>
+<script defer src="/assets/script/script.js"></script>
+
+</head>
+<body onload="onLoad()">
+  <select id='themeSelector' onchange="toggleTheme()" aria-label="Select theme">
+</select>
+
+  <div class="container-wrapper">
+    <header class="container-header">
+      <div class="header-info">
+  <span class="header-info-name"><a href="/">Leonardo Espinosa</a></span>
+  <br>
+  <span class="header-info-desc">lead test engineer, musician and linguist. I love enchiladas.</span>
+</div>
+<nav class="header-nav">
+  <ul class="header-main-nav">
+  
+    <li class="header-main-nav-item"><a href="//">Blog</a></li>
+  
+    <li class="header-main-nav-item"><a href="//about">About</a></li>
+  
+    <li class="header-main-nav-item"><a href="//categories">Categories</a></li>
+  
+    <li class="header-main-nav-item"><a href="//projects">Projects</a></li>
+  
+    <li class="header-main-nav-item"><a href="//music">Music</a></li>
+  
+    <li class="header-main-nav-item"><a href="https://www.linkedin.com/in/leonardespi/">LinkedIn</a></li>
+  
+    <li class="header-main-nav-item"><a href="https://github.com/leonardespi">Github</a></li>
+  
+  </ul>
+</nav>
+    </header>
+    <main class="container-main">
+      <article class="container-post">
+  <div class="post-title">
+    <h1>How to write amazing test cases</h1>
+  </div>
+  <div class="post-author">
+    <span>Leonardo Espinosa</span>
+  </div>
+  <div class="post-content">
+    <p>Hello everyone!</p>
+
+<p>My name is Leo, I’m a quality assurance engineer. In the following guide, I will analyze one of the most fundamental skills every QA professional needs to master: <strong>writing effective test cases.</strong> It’s a central activity, especially when you’re starting your QA journey. As you gain experience, you’ll move on to designing comprehensive test strategies and understanding the bigger picture. But for now, let’s nail the basics! I’ll walk you through different test case design techniques, share tips for writing clear and concise test cases, and highlight common pitfalls to avoid.</p>
+
+<h3 id="what-is-a-test-case">What is a test case?</h3>
+
+<p>Before diving in, let’s define what we’re dealing with. A test case is a set of conditions or actions that a tester executes to verify that a specific feature or functionality of a software application works as expected. Think of it as a detailed set of instructions for testing a specific aspect of your software.</p>
+
+<p>A well-written test case should include:</p>
+
+<ul>
+  <li><strong>Test Case ID:</strong> A unique identifier for easy tracking.</li>
+  <li><strong>Test Case Description:</strong> A clear, concise description of what is being tested.</li>
+  <li><strong>Preconditions:</strong> Any conditions that must be met before executing the test case.</li>
+  <li><strong>Test Steps:</strong> A step-by-step guide on how to execute the test.</li>
+  <li><strong>Expected Result:</strong> The desired outcome of the test.</li>
+  <li><strong>Actual Result:</strong> The actual outcome observed during testing.</li>
+  <li><strong>Status:</strong> Pass/Fail/Blocked/Skipped.</li>
+</ul>
+
+<h3 id="test-case-design-techniques">Test case design techniques</h3>
+
+<p>There are several techniques you can use to design effective test cases. Let’s explore some popular ones:</p>
+
+<ul>
+  <li><strong>Equivalence Partitioning:</strong> Divide input data into groups or partitions expected to behave similarly. Then select a representative value from each partition to test. This helps reduce the number of test cases while still achieving good coverage.</li>
+  <li><strong>Boundary Value Analysis:</strong> Focus on testing the boundaries of input values. For example, if a field accepts values between 1 and 100, you would test with 1, 100, 0, and 101. This helps identify errors that often occur at the edges of valid ranges.</li>
+  <li><strong>State Transition Testing:</strong> Used for systems with different states. Create test cases to verify transitions between states based on different inputs or events.</li>
+  <li><strong>Decision Table Testing:</strong> Useful when multiple inputs and conditions affect the output. Create a table listing all possible input combinations and expected outputs, then design test cases to cover each combination.</li>
+  <li><strong>Use Case Testing:</strong> Focuses on testing the system from the user’s perspective. Identify different user scenarios and create test cases to simulate those scenarios.</li>
+</ul>
+
+<h3 id="tips-for-writing-effective-test-cases">Tips for writing effective test cases</h3>
+
+<ul>
+  <li><strong>Keep it clear and concise:</strong> Use simple language and avoid ambiguity.</li>
+  <li><strong>Focus on one thing at a time:</strong> Each test case should validate a single, specific functionality.</li>
+  <li><strong>Make it reusable:</strong> Write test cases that can be reused in future test cycles.</li>
+  <li><strong>Include expected results:</strong> Clearly define the expected result for each step.</li>
+  <li><strong>Prioritize test cases:</strong> Not all test cases are equal. Prioritize based on risk and impact.</li>
+  <li><strong>Review and update:</strong> Regularly review and update your test cases as the software evolves.</li>
+</ul>
+
+<h3 id="common-mistakes-to-avoid">Common mistakes to avoid</h3>
+
+<ul>
+  <li><strong>Overly complex test cases:</strong> Keep them focused and easy to understand.</li>
+  <li><strong>Neglecting negative testing:</strong> Don’t just test expected behavior; also test invalid inputs and error conditions.</li>
+  <li><strong>Insufficient test coverage:</strong> Ensure your test cases cover all critical functionalities and scenarios.</li>
+  <li><strong>Poorly defined expected results:</strong> Ambiguous expected results make it hard to determine pass or fail.</li>
+  <li><strong>Not updating test cases:</strong> Outdated test cases can lead to inaccurate results and missed defects.</li>
+</ul>
+
+<p>By following these guidelines and avoiding common mistakes, you can write effective test cases that help ensure your software’s quality and reliability. Remember, practice makes perfect! So keep writing, keep learning, and keep improving your testing skills. Hello!</p>
+
+<p>See you in the next post!</p>
+
+  </div>
+  <hr>
+  <div class="post-info">
+    <div class="post-date">
+      Written on 2024-11-20, updated at 2024-11-20.
+    </div>
+    <div class="post-categories">
+      <span>Categories: </span>
+      
+      <a href="/category/quality-assurance" class="post-category">Quality Assurance</a>
+      
+    </div>
+    <div class="post-tags">
+      <span>Tags: </span>
+      
+      <a href="/tag/testing" class="post-tag">Testing</a>
+      
+    </div>
+    <!-- <div class="post-tools">
+      
+      <div>
+        <span>Next: </span><a href="/find-your-way-in-tech">Find your way in tech</a>
+      </div>
+      
+      
+      <div>
+        <span>Previous: </span><a href="/im-a-qa">Im a QA</a>
+      </div>
+      
+    </div> -->
+    
+  </div>
+</article>
+    </main>
+    <footer class="container-footer">
+      <div class="footer-copyright">
+  <span class="footer-copyright-text float-left">Copyright &copy; 2025. https://www.leonardespi.me.</span>
+
+</div>
+    </footer>
+  </div>
+
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+  document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
+    codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
+  });
+</script>
+
+</body>
+</html>

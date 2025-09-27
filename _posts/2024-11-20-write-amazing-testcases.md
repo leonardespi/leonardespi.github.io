@@ -2,12 +2,9 @@
 layout: post
 title: How to write amazing test cases
 date: 2024-11-20 15:01:35 +0300
-author: Leonardo Espinosa
-description: This 5 min guide will teach how to write the best test cases to be recognized as a great qa
-image: 
+last_modified_at: 2024-11-20
+categories: [Quality Assurance]
 tags: [Testing]
-tags_color: '#4A90E2'
-featured: true
 ---
 
 Hello everyone!

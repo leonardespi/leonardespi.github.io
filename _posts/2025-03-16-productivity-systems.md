@@ -2,11 +2,9 @@
 layout: post
 title: Productivity Systems
 date: 2025-03-16 15:01:35 +0300
-description: Productividad personal. más allá de GTD y PARA, la clave es un sistema simple y vivo que libere tu mente. ¡Menos hacer, mejor hacer!
-image: 
-tags: [Productivity]
-tags_color: '#4CAF50'
-featured: false
+last_modified_at: 2025-02-23
+categories: [Productivity]
+tags: [productivity]
 ---
 
 Today I want to talk to you about a topic that’s been a roller coaster in my life: **personal productivity**.

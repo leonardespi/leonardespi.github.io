@@ -2,12 +2,9 @@
 layout: post
 title:  Resume Builder - The best way
 date: 2025-09-25 15:01:35 +0300
-author: Leonardo Espinosa
-description: This guide shows how to write the ideal resume for tech jobs
-image:
-tags: [Projects]
-tags_color: '#8cdd55ff'
-featured: false
+last_modified_at: 2025-09-23
+categories: [Projects]
+tags: [productivity]
 ---
 *Your Résumé Deserves Better: An Approach to ATS-Friendly Structure*
 
