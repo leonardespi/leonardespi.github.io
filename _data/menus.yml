@@ -1,17 +1,17 @@
 - title: "Blog"
-  url:   "/"
+  url:   ""
   
 - title: "About"
-  url:   "/about"
+  url:   "about"
 
 - title: "Categories"
-  url:   "/categories"
+  url:   "categories"
 
 - title: "Projects"
-  url: "/projects"
+  url: "projects"
 
 - title: "Music"
-  url: "/music"
+  url: "music"
 
 - title: "LinkedIn"
   absoluteUrl: true
