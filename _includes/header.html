@@ -5,8 +5,25 @@
 </div>
 <nav class="header-nav">
   <ul class="header-main-nav">
-  {% for item in site.data.menus %}
-    <li class="header-main-nav-item"><a href="{% if item.absoluteUrl != true %}{{ site.baseurl }}/{% endif %}{{ item.url }}">{% if item.default %}{{ site.data.lang[site.language][item.default] }}{% else %}{{ item.title }}{% endif %}</a></li>
-  {% endfor %}
+    {% assign pushed = false %}
+    {% for item in site.data.menus %}
+      {% assign is_absolute = item.absoluteUrl | default: item.urlAbsolute %}
+      {% assign classes = 'header-main-nav-item' %}
+
+      {% if is_absolute and pushed == false %}
+        {% assign classes = classes | append: ' push-right' %}
+        {% assign pushed = true %}
+      {% endif %}
+
+      <li class="{{ classes }}">
+        <a href="{% if is_absolute %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">
+          {% if item.default %}
+            {{ site.data.lang[site.language][item.default] }}
+          {% else %}
+            {{ item.title }}
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>
