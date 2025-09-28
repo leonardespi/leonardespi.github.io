@@ -6,11 +6,41 @@ permalink: /categories/
 
 <article class="page-container">
   <div class="categories-title">
-    <h1>{{ site.data.lang[site.language].categories_title }}</h1>
+    <h1>{{ site.data.lang[site.language].categories_title | default: "Categories" }}</h1>
   </div>
-  <ul class="categories-list">
-    {% for category in site.categories %}
-      <li><a href="{{ base.url }}/category/{{ category | first | slugify }}">{{ category | first }}</a></li>
-    {% endfor %}
-  </ul>
+
+  {% comment %}
+    site.categories is a hash: { "cat-name" => [posts...] }
+    We sort it by category name for stable output.
+  {% endcomment %}
+  {% assign categories_sorted = site.categories | sort %}
+
+  {% for cat in categories_sorted %}
+    {% assign cat_name = cat[0] %}
+    {% assign cat_posts = cat[1] | sort: "date" | reverse %}
+
+    <section class="category-block" id="{{ cat_name | slugify }}">
+      <h2 class="category-name">{{ cat_name }}</h2>
+      {% if cat_posts == empty %}
+        <p><em>No posts yet.</em></p>
+      {% else %}
+        <ul class="category-posts">
+          {% for post in cat_posts %}
+            <li>
+              <a href="{{ site.baseurl }}{{ post.url }}">
+                {{ post.date | date: "%d %b %Y" }} : {{ post.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  {% endfor %}
 </article>
+
+<style>
+  .category-block { margin-bottom: 2rem; }
+  .category-name { margin: 0 0 .5rem 0; font-size: 1.25rem; }
+  .category-posts { list-style: disc; margin-left: 1.25rem; }
+  .category-posts li { margin: .25rem 0; }
+</style>

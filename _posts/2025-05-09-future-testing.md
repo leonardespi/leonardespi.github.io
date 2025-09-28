@@ -2,7 +2,7 @@
 layout: post
 title:  The testing for the future
 date: 2025-05-09 15:01:35 +0300
-alast_modified_at: 2025-02-23
+last_modified_at: 2025-02-23
 categories: [Quality Assurance]
 tags: [testing]
 ---
