@@ -1,12 +1,16 @@
 @charset "utf-8";
 
 .footer-copyright {
-  overflow: hidden;
-  margin: 2vw;
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: justify;      
+  margin-inline: 2vw;
 }
 
 .footer-copyright-text {
-  display: block;
+  display: inline-block; 
   position: relative;
   font-size: 14px;
+  
 }
