@@ -1,0 +1,87 @@
+
+/* Responsive, viewport-aware typography system (fluid scale) */
+
+/* 1) Define a small, readable fluid type scale using clamp().
+   - Keeps body text between ~15px and ~18px depending on viewport width.
+   - Headings scale proportionally, staying visually consistent across devices.
+*/
+:root {
+  /* Core steps (edit to taste). These use clamp(min, fluid, max). */
+  --step--1: clamp(1.0rem, 0.80rem + 0.40vw, 2.80rem);   /* small text, code, captions */
+  --step-0:  clamp(1.00rem, 0.90rem + 0.60vw, 2.125rem);  /* body */
+  --step-1:  clamp(1.00rem, 1.00rem + 1.10vw, 1.50rem);   /* h6/h5 */
+  --step-2:  clamp(1.25rem, 1.10rem + 1.50vw, 1.875rem);  /* h4 */
+  --step-3:  clamp(1.50rem, 1.25rem + 2.10vw, 1.80rem); /* h3 */
+  --step-4:  clamp(1.25rem, 1.50rem + 2.60vw, 2rem);   /* h2 */
+  --step-5:  clamp(1.50rem, 1.75rem + 3.20vw, 2.25rem);   /* h1 */
+  
+  /* Line lengths and rhythm */
+  --line-height-body: 1.6;
+  --line-height-head: 1.25;
+  --measure: 72ch; /* optimal reading measure */
+}
+
+/* 2) Apply to global elements */
+html {
+  /* Smooth font scaling across widths, with sensible bounds handled by clamp() above */
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: var(--step-0);
+  line-height: var(--line-height-body);
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+}
+
+/* 3) Headings: map to the scale so their visual proportion stays consistent */
+h1 { font-size: var(--step-5); line-height: var(--line-height-head); margin-top: 5vh; margin-bottom: 3vh;}
+h2 { font-size: var(--step-4); line-height: var(--line-height-head); margin-top: 3vh; margin-bottom: 3vh;}
+h3 { font-size: var(--step-3); line-height: var(--line-height-head); margin-top: 3vh; margin-bottom: 3vh;}
+h4 { font-size: var(--step-2); line-height: var(--line-height-head); }
+h5 { font-size: var(--step-1); line-height: var(--line-height-head); }
+h6 { font-size: var(--step-1); line-height: var(--line-height-head); }
+
+/* 4) Paragraph spacing & lists */
+p, ul, ol, blockquote, pre, table {
+  margin-block: 0.75em;
+}
+
+
+
+/* 5) Code & pre blocks remain readable but compact */
+code, kbd, samp {
+  font-size: var(--step--1);
+}
+
+pre code, pre {
+  font-size: var(--step--1);
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+/* 6) Images & tables flow within the measure */
+img, svg, canvas, video {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 7) Support users who zoom or use system preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* 8) Optional: slightly widen article pages with sidebars if your layout has one */
+.container-main, .post, .page {
+  max-width: min(70rem, 92vw);
+}
+
+.footer-copyright-text {
+  font-size: var( --step--1);
+}

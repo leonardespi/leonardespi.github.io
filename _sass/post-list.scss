@@ -3,13 +3,12 @@
 .posts-list-item {
   display: block;
   position: relative;
-  line-height: 24px;
-  margin: 5px 0;
+  margin: 2vh 0;
   overflow: hidden;
 }
 
 .posts-list-item-name {
-  width: calc(100% - 100px);
+  width: calc(90% - 120px);
   font-weight: 300;
 }
 

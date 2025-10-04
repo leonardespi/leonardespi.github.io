@@ -3,7 +3,7 @@
 .header-info {
   display: block;
   position: relative;
-  margin: 10px;
+  margin: 20px 20px 1vh 10px;
 }
 
 .header-info-name {
@@ -11,12 +11,10 @@
   font-weight: bold;
 }
 
-.header-info-desc {
-  font-size: .9em;
-}
+
 
 .header-main-nav {
-  margin: 0;
+  margin-bottom: 10px;
   list-style: none;
 }
 
@@ -25,5 +23,5 @@
   position: relative;
   float: left;
   line-height: 24px;
-  margin: 0 10px;
+  margin: 0 2vh;
 }

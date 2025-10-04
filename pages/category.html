@@ -20,7 +20,7 @@ permalink: /categories/
     {% assign cat_posts = cat[1] | sort: "date" | reverse %}
 
     <section class="category-block" id="{{ cat_name | slugify }}">
-      <h2 class="category-name">{{ cat_name }}</h2>
+      <h3 class="category-name">{{ cat_name }}</h3>
       {% if cat_posts == empty %}
         <p><em>No posts yet.</em></p>
       {% else %}
@@ -40,7 +40,7 @@ permalink: /categories/
 
 <style>
   .category-block { margin-bottom: 2rem; }
-  .category-name { margin: 0 0 .5rem 0; font-size: 1.25rem; }
+  .category-name { margin: 0 0 .5rem 0; }
   .category-posts { list-style: disc; margin-left: 1.25rem; }
   .category-posts li { margin: .25rem 0; }
 </style>

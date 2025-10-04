@@ -2,6 +2,7 @@
 
 .post-title {
   text-align: center;
+  margin-top: 4vh;
 }
 
 .post-author {
@@ -9,7 +10,7 @@
 }
 
 .post-content p {
-  line-height: 20px;
+  line-height: 4vh;
 }
 
 .post-content img {
@@ -19,9 +20,17 @@
 
 .post-info {
   line-height: 24px;
-  margin: 10px 0;
+  margin-top: 5vh;
 }
 
 .post-category, .post-tag {
   margin: 0 5px;
+}
+
+.post-date {
+  margin-bottom: 1vh;
+}
+
+.post-tools div {
+  margin-bottom: 1vh;
 }

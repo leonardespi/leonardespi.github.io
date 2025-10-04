@@ -3,7 +3,7 @@
 .container-wrapper {
   width: 100%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 15000px;
   margin-top: 5px;
 }
 
@@ -17,12 +17,11 @@
 .container-main {
   width: 95%;
   margin: 10px auto;
-  overflow: hidden;
   min-height: calc(100vh - 180px);
 }
 
 .container-footer {
-  padding: 10px 0;
+  padding: 50px 0;
   border-top: solid 1px #aaa;
   overflow: hidden;
   align-content: center;
