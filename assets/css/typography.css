@@ -6,14 +6,13 @@
    - Headings scale proportionally, staying visually consistent across devices.
 */
 :root {
-  /* Core steps (edit to taste). These use clamp(min, fluid, max). */
-  --step--1: clamp(0.875rem, 0.80rem + 0.40vw, 2.80rem);   /* small text, code, captions */
-  --step-0:  clamp(1.00rem, 0.90rem + 0.60vw, 2.125rem);  /* body */
-  --step-1:  clamp(1.00rem, 1.00rem + 0.90vw, 1.50rem);   /* h6/h5 */
-  --step-2:  clamp(1.10rem, 1.00rem + 1.20vw, 1.875rem);  /* h4 */
-  --step-3:  clamp(1.5rem, 1.1rem + 1.50vw, 1.80rem); /* h3 */
-  --step-4:  clamp(1.5rem, 1.2rem + 1.80vw, 2rem);   /* h2 */
-  --step-5:  clamp(1.8rem, 1.2rem + 2.00vw, 2.25rem);   /* h1 */
+  --step--1: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);      /* small */
+  --step-0:  clamp(1.125rem, 1rem + 0.5vw, 1.375rem);       /* body */
+  --step-1:  clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);     /* h6/h5 */
+  --step-2:  clamp(1.375rem, 1.1rem + 1.1vw, 2rem);         /* h4 */
+  --step-3:  clamp(1.5rem, 1.15rem + 1.4vw, 2.5rem);        /* h3 */
+  --step-4:  clamp(1.625rem, 1.175rem + 1.7vw, 3rem);       /* h2 */
+  --step-5:  clamp(1.5rem, 1.2rem + 2vw, 3.75rem);          /* h1 */
   
   /* Line lengths and rhythm */
   --line-height-body: 1.6;
