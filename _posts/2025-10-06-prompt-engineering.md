@@ -106,9 +106,7 @@ By enforcing **consistency through constraint**, not creativity, prompts become 
 
 ---
 
-### 5. Prompt Engineering as a Force Multiplier, Not a Job Threat
-
-> “AI won’t take your job. People who know how to use AI effectively will.”
+### AI won’t take your job. People who know how to use it will.
 
 The productivity between ad-hoc users and structured prompt designers is widening.
 For engineers, prompt literacy compounds in two ways:
@@ -116,7 +114,9 @@ For engineers, prompt literacy compounds in two ways:
 1. **Time leverage:** fewer retries impacts on faster iteration.
 2. **Cognitive leverage:** clearer task framing is related to higher-quality outputs.
 
-Prompt engineering doesn’t replace programming; it extends it — adding a **semantic control layer** atop probabilistic computation.
+Prompt engineering doesn’t replace programming; it extends it — adding a **semantic control layer** atop probabilistic computation. (This also applies to all areas within tech, QAs, BAs, even project managers lol)
+
+To sum up, AI won’t take your job. People who know how to use it will. So please, be one of them.
 
 ---
 
