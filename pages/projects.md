@@ -21,8 +21,7 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 ##### Technologies Used
 
 
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge) ![Shell](https://img.shields.io/badge/Shell-FFD500?logo=shell&logoColor=000&style=for-the-badge) 
-
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge) 
 ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000&style=for-the-badge) ![Ollama](https://img.shields.io/badge/Ollama-000?logo=ollama&logoColor=fff&style=for-the-badge) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=fff&style=for-the-badge) ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?logo=googlegemini&logoColor=fff&style=for-the-badge) ![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff&style=for-the-badge)
 
 ---
