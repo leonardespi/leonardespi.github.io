@@ -17,7 +17,7 @@
   /* Line lengths and rhythm */
   --line-height-body: 1.6;
   --line-height-head: 1.25;
-  --measure: 72ch; /* optimal reading measure */
+  --measure: 83ch; /* optimal reading measure */
 }
 
 /* 2) Apply to global elements */

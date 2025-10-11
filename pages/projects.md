@@ -9,74 +9,78 @@ Welcome to my project showcase. Below are some of the key applications and tools
 
 ---
 
-## [POLQA (Politics Quality Assessment)](https://github.com/polqa-framework/politics-qa)
+## <a href="https://polqa-framework.github.io/polqa-site/" target=_blank rel="noopener noreferrer"> POLQA (Politics Quality Assessment) <a>
 
-**Overview**
+##### Overview
+
 A modular CLI framework to evaluate LLM outputs with reproducible runs, curated datasets, and prompt variants—covering both functional and qualitative criteria.
 
-**Technologies / Tools Used**
-
-* Python, Shell
-* Node.js / TypeScript
-* YAML/JSONL datasets; deterministic seeds
-* Pluggable providers, parsers, exporters
-
-**Key Features**
-
-* Tagged datasets with difficulty strata; seeded sampling
-* Metrics: exact match, ROUGE-L/BLEU (lightweight), pass@k, rule-based checks
-* Exporters for CSV/JSON and run manifests for auditability
-* Extensible adapters for providers and scoring
-
-**Outcome**
+##### Outcome
 Enabled systematic, transparent evaluation of prompts and models, improving QA rigor and comparability across experiments.
 
+##### Technologies Used
+
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge) ![Shell](https://img.shields.io/badge/Shell-FFD500?logo=shell&logoColor=000&style=for-the-badge) 
+
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000&style=for-the-badge) ![Ollama](https://img.shields.io/badge/Ollama-000?logo=ollama&logoColor=fff&style=for-the-badge) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=fff&style=for-the-badge) ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?logo=googlegemini&logoColor=fff&style=for-the-badge) ![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff&style=for-the-badge)
 
 ---
+<br>
 
-## [Resume Builder](https://github.com/leonardespi/resume-builder)
+## <a href="https://www.leonardespi.me/resume-builder/" target=_blank rel="noopener noreferrer"> Resume Builder <a>
 
-**Overview**
+
+##### Overview
+
 A web application to create Harvard-style, ATS-friendly resumes with pixel-precise PDF export.
 
-**Technologies Used**
-
-* JavaScript/TypeScript, HTML5, CSS3
-* **html2canvas** with DOM cloning (`prepareCloneForPdf`)
-* Lightweight theming and `.pdf-compact` print styles
-
-**Key Features**
-
-* Live, structured editing with section presets
-* Deterministic PDF export (**scale: 2**, stripped transitions/animations/transforms)
-* Preserved margins and typography; consistent layout across exports
-* Multi-profile variants via JSON schema (planned)
-
-**Outcome**
+##### Outcome
 Consistent, professional resumes generated rapidly and reliably, eliminating layout jitter and ensuring repeatable results.
+
+
+##### Technologies Used
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
 
 ---
 
-## [SPA (System for Thought & Action)](https://github.com/leonardespi/spa)
+<br>
 
-**Overview**
+## <a href="https://github.com/leonardespi/spa" target=_blank rel="noopener noreferrer"> SPA (System for Thought & Action) <a>
+
+##### Overview
+
 A personal productivity architecture that unifies capture, organization, and execution. It fuses PARA, GTD, and lightweight SCRUM to translate long-term goals into actionable projects.
 
-**Technologies Used**
-
-* Obsidian (Markdown vaults), Mermaid
-* Google Calendar / Google Tasks (timeboxing & execution)
-* Node.js/TypeScript CLI helpers (scaffolding, reviews)
-
-**Key Features**
-
-* Hierarchy: **Core → Areas → Domains → Projects**
-* **Cache filter** for short-lived inputs; **Vault** for persistent knowledge
-* Tasks as the single source of execution; calendar strictly for output/time blocks
-* Weekly/Monthly review templates with snapshots
-
-**Outcome**
+##### Outcome
 Reduced friction in planning and review, improved weekly throughput, and a reproducible workflow that scales with complexity.
+
+
+##### Technologies Used
+
+![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?logo=obsidian&logoColor=fff&style=for-the-badge) ![Mermaid](https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid&logoColor=fff&style=for-the-badge) ![Google Calendar](https://img.shields.io/badge/Google%20Calendar-4285F4?logo=googlecalendar&logoColor=fff&style=for-the-badge) ![GNU Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=for-the-badge)
+
+---
+
+<br>
+
+
+## <a href="https://www.leonardespi.me/readme-wizard/" target=_blank rel="noopener noreferrer"> README Wizard <a>
+
+##### Overview
+
+Generate a clean, minimal README (User or Project) that helps you craft professional, elegant markdowns without clutter — simple, structured, and beautiful.
+
+##### Outcome
+
+The outcome of the README Wizard project is a professional-looking, well-structured README that communicates clarity and quality without visual noise.
+
+##### Technologies Used
+
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
+
 
 ---
 
