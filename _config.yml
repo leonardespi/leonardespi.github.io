@@ -1,27 +1,13 @@
-# Welcome to Jekyll-Paper!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Leonardo Espinosa
 email: leointhecode@gmail.com
 name: Leonardo Espinosa
 description:  # this means to ignore newlines until "baseurl:"
    
 keywords: [Blog, Leonardo Espinosa, Leonardespi, Computer Science, Testing]
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.leonardespi.me" # the base hostname & protocol for your site, e.g. http://example.com
-domain: "leonardespi.me" # the domain name for your site, e.g. example.com
+baseurl: "" 
+url: "https://www.leonardespi.me" 
+domain: "leonardespi.me" 
 language: en
 # Supported languages list:
 # en: English
@@ -36,7 +22,7 @@ language: en
 
 analytics:   # the Google Analytics property ID, e.g. UA-XXXXX-Y
 
-paginate: 25
+paginate: 15
 paginate_path: "/page:num/"
 
 comments: false  # enable comments
