@@ -27,6 +27,24 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 ---
 <br>
 
+## <a href="http://www.leonardespi.me/automation-testers-handbook-demo/" target=_blank rel="noopener noreferrer"> The Modern Web Automation Tester's Handbook <a>
+
+
+##### Overview
+
+The automation testers handbook demo site was created as a helpful resource to practice the art of automation, overall it was created specifically for testers that wanted to perform a jump from manual to automation testing.
+
+##### Outcome
+
+A continuous and well prove learning path to transform testers in automation test engineers
+
+##### Technologies Used
+
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?logo=selenium&logoColor=fff&style=for-the-badge) ![Cypress](https://img.shields.io/badge/Cypress-69D3A7?logo=cypress&logoColor=fff&style=for-the-badge) ![Robot Framework](https://img.shields.io/badge/Robot%20Framework-000?logo=robotframework&logoColor=fff&style=for-the-badge) ![Appium](https://img.shields.io/badge/Appium-EE376D?logo=appium&logoColor=fff&style=for-the-badge) ![CodeceptJS](https://img.shields.io/badge/CodeceptJS-F6E05E?logo=codeceptjs&logoColor=000&style=for-the-badge)
+
+---
+<br>
+
 ## <a href="https://www.leonardespi.me/resume-builder/" target=_blank rel="noopener noreferrer"> Resume Builder <a>
 
 
