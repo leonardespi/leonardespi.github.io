@@ -15,7 +15,7 @@ tags: [ai]
 
 ---
 
-## The importance of prompt engineering
+### The importance of prompt engineering
 
 The rise of large language models (LLMs) has shifted the interaction design from buttons to natural language. For us (I mean engineers), a prompt is one of the **primary interfaces** to AI systems.  
 
@@ -25,7 +25,7 @@ As models integrate deeper into workflows (coding, research, product design), pr
 
 ---
 
-#### Some Background 
+### Some Background 
 
 1. Early prompt engineering (circa 2020–2022) was heuristic-driven — trial, error, and folklore.  
 2. By 2024, model providers began publishing *prompt reliability guidelines* (OpenAI, Anthropic, O’Reilly).  
