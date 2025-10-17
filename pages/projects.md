@@ -27,7 +27,7 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 ---
 <br>
 
-## <a href="http://www.leonardespi.me/automation-testers-handbook-demo/" target=_blank rel="noopener noreferrer"> The Modern Web Automation Tester's Handbook <a>
+## <a href="http://www.leonardespi.me/automation-demo-site/" target=_blank rel="noopener noreferrer"> The Modern Web Automation Tester's Handbook <a>
 
 
 ##### Overview
