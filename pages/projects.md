@@ -27,12 +27,18 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 ---
 <br>
 
-## <a href="http://www.leonardespi.me/automation-demo-site/" target=_blank rel="noopener noreferrer"> The Automation Demo Site <a>
+## <a href="https://www.leonardespi.me/automation-bootcamp-site/" target=_blank rel="noopener noreferrer"> The Automation Bootcamp <a>
 
 
 ##### Overview
 
-The automation testers handbook demo site was created as a helpful resource to practice the art of automation, overall it was created specifically for testers that wanted to perform a jump from manual to automation testing.
+I created this site and guide when I received my first promotion to a staff position. At the time, I was both excited and nervous — suddenly responsible for the growth of so many people. So, I built this guide as the kind of mentorship experience I wish I’d had: something clear, practical, and human. It’s meant for my colleagues, peers, and especially my mentees. 
+
+It contains: 
+
+- An extended guide to make a jump from Manual tester to automation test engineer
+- A Demo site to put in practice the most common challenges as an automation tester
+- A GH repository with exercises on each topic from zero to hero!!
 
 ##### Outcome
 
