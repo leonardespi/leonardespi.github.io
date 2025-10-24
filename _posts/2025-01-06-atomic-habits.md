@@ -3,7 +3,7 @@ layout: post
 title:  Atomic habits
 date: 2024-12-20 15:01:35 +0300
 last_modified_at: 2024-12-20
-categories: [Art]
+categories: [Books]
 ---
 
 Today I want to tell you about a book that not only I liked, but that marked a before-and-after in how I think about personal growth: *Atomic Habits* by James Clear.
