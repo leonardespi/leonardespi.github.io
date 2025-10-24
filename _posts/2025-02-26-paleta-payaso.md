@@ -4,7 +4,6 @@ title:  Paleta Payaso
 date: 2025-02-23 15:01:35 +0300
 last_modified_at: 2025-02-23
 categories: [Music]
-tags: [music]
 ---
 
 “**Paleta Payaso**” was born from the silly, dumb, foolish confusion that infatuation leaves you with.

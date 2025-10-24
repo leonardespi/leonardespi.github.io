@@ -3,8 +3,7 @@ layout: post
 title:   Robot Framework in agile QA Teams
 date: 2025-10-16 15:01:35 +0300
 last_modified_at: 2025-10-16
-categories: [Quality Assurance]
-tags: [Testing]
+categories: [Testing]
 ---
 
 - **Robot Framework** remains one of the most maintainable open-source automation tools for Agile teams balancing technical and non-technical contributors.  

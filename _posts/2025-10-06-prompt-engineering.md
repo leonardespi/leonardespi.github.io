@@ -4,7 +4,6 @@ title:   Prompt Engineering insights and missconceptions
 date: 2025-10-06 15:01:35 +0300
 last_modified_at: 2025-10-08
 categories: [AI]
-tags: [ai]
 ---
 
 

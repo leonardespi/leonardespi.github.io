@@ -4,7 +4,6 @@ title:  Tuve que haber hecho caso a mamá
 date: 2025-02-23 15:01:35 +0300
 last_modified_at: 2025-02-23
 categories: [Music]
-tags: [music]
 ---
 “**I should’ve listened to Mom**” was born from that frustration you feel when you realize—too late—that, in fact… your mom was right.
 

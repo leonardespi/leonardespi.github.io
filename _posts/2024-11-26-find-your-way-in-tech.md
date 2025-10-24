@@ -3,8 +3,7 @@ layout: post
 title:  Find your way in tech
 date: 2024-11-26 15:01:35 +0300
 last_modified_at: 2024-11-26
-categories: [Software]
-tags: [Tech]
+categories: [Testing]
 ---
 
 Hello everyone!

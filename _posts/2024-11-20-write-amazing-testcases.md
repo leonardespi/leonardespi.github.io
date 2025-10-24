@@ -3,8 +3,7 @@ layout: post
 title: How to write amazing test cases
 date: 2024-11-20 15:01:35 +0300
 last_modified_at: 2024-11-20
-categories: [Quality Assurance]
-tags: [Testing]
+categories: [Testing]
 ---
 
 Hello everyone!

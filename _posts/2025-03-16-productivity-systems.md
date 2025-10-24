@@ -3,8 +3,7 @@ layout: post
 title: Productivity Systems
 date: 2025-03-16 15:01:35 +0300
 last_modified_at: 2025-02-23
-categories: [Productivity]
-tags: [productivity]
+categories: [Management]
 ---
 
 Today I want to talk to you about a topic that’s been a roller coaster in my life: **personal productivity**.

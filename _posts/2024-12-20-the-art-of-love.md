@@ -4,7 +4,6 @@ title:  The art of love
 date: 2024-12-20 15:01:35 +0300
 last_modified_at: 2024-12-20
 categories: [Art]
-tags: [books]
 ---
 
 Today I want to talk about a subject that has accompanied me through many stages of my life, though not always consciously: the art of loving. I call it an art because, as I discovered while reading Erich Fromm, love is not something that simply happens; it is something you learn, cultivate, and refine.

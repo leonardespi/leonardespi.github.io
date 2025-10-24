@@ -4,7 +4,6 @@ title:  Bias, hallucinations and dirty data
 date: 2025-04-29 15:01:35 +0300
 last_modified_at: 2025-04-29
 categories: [AI]
-tags: [ai]
 ---
 
 **Errors are no longer always in the code…**

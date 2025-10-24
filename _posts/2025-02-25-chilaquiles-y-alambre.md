@@ -4,7 +4,6 @@ title:  Chilaquiles y alambre
 date: 2025-02-23 15:01:35 +0300
 last_modified_at: 2025-02-23
 categories: [Music]
-tags: [music]
 ---
 
 “**Chilaquiles y alambre**” is part of the EP *Chilaquiles con recuerdos*—the beginning of a journey. It speaks to the feeling of a love once close that has faded. The song is about a memory that, though **ephemeral**, is also constant and sharp; simple things like the rumble of the metro or a plate of green chilaquiles are enough to set synapses firing in our brains.

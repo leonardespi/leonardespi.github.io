@@ -4,7 +4,6 @@ title:  Creativity in the AI world
 date: 2024-12-16 15:01:35 +0300
 last_modified_at: 2024-12-16
 categories: [AI]
-tags: [ai]
 ---
 
 

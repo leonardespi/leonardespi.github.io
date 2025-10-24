@@ -3,8 +3,7 @@ layout: post
 title:   Prompt Injection - The New SQL Injection
 date: 2025-09-29 15:01:35 +0300
 last_modified_at: 2025-09-29
-categories: [Quality Assurance]
-tags: [testing]
+categories: [Testing]
 ---
 <br>
 

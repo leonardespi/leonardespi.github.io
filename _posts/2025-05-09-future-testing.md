@@ -3,8 +3,7 @@ layout: post
 title:  The testing for the future
 date: 2025-05-09 15:01:35 +0300
 last_modified_at: 2025-02-23
-categories: [Quality Assurance]
-tags: [testing]
+categories: [Testing]
 ---
 
 **Before, testing software meant making sure the buttons worked.**
