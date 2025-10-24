@@ -27,7 +27,7 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 ---
 <br>
 
-## <a href="https://www.leonardespi.me/automation-bootcamp-site/" target=_blank rel="noopener noreferrer"> The Automation Bootcamp <a>
+## <a href="https://www.leonardespi.me/automation-learn/" target=_blank rel="noopener noreferrer"> The Automation Bootcamp <a>
 
 
 ##### Overview
