@@ -104,6 +104,20 @@ The outcome of the README Wizard project is a professional-looking, well-structu
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
 
+---
+
+<br>
+
+
+## <a href="https://www.leonardespi.me/" target=_blank rel="noopener noreferrer"> SynLeo<a>
+
+##### Overview
+
+SynLeo is an AI and music project where an AI persona was created in the form of a "digital Leo" that performs music, currently the project is in an early stage and there is not enough data to reach conclutions. Below you can fin the platform where the AI content is uploaded.
+
+##### Platforms
+
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/test) [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://tiktok.com/@test) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtube.com/@test)
 
 ---
 
