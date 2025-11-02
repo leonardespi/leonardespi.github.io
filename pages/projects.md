@@ -32,7 +32,7 @@ Enabled systematic, transparent evaluation of prompts and models, improving QA r
 
 ##### Overview
 
-I created this site and guide when I received my first promotion to a staff position. At the time, I was both excited and nervous — suddenly responsible for the growth of so many people. So, I built this guide as the kind of mentorship experience I wish I’d had: something clear, practical, and human. It’s meant for my colleagues, peers, and especially my mentees. 
+I created this program when I received my first promotion to a lead position. At the time, I was both excited and nervous — suddenly responsible for the growth of so many people. So, I built this guide as the kind of mentorship experience I wish I’d had.
 
 It contains: 
 
@@ -49,22 +49,20 @@ A continuous and well prove learning path to transform testers in automation tes
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?logo=selenium&logoColor=fff&style=for-the-badge) ![Cypress](https://img.shields.io/badge/Cypress-69D3A7?logo=cypress&logoColor=fff&style=for-the-badge) ![Robot Framework](https://img.shields.io/badge/Robot%20Framework-000?logo=robotframework&logoColor=fff&style=for-the-badge) ![Appium](https://img.shields.io/badge/Appium-EE376D?logo=appium&logoColor=fff&style=for-the-badge) ![CodeceptJS](https://img.shields.io/badge/CodeceptJS-F6E05E?logo=codeceptjs&logoColor=000&style=for-the-badge)
 
 ---
+
 <br>
 
-## <a href="https://www.leonardespi.me/resume-builder/" target=_blank rel="noopener noreferrer"> Resume Builder <a>
 
+## <a href="https://www.leonardespi.me/" target=_blank rel="noopener noreferrer"> SynLeo<a>
 
 ##### Overview
 
-A web application to create Harvard-style, ATS-friendly resumes with pixel-precise PDF export.
+SynLeo is an AI and music project where an AI persona was created in the form of a "digital Leo" that performs music, currently the project is in an early stage and there is not enough data to reach conclutions. Below you can fin the platform where the AI content is uploaded.
 
-##### Outcome
-Consistent, professional resumes generated rapidly and reliably, eliminating layout jitter and ensuring repeatable results.
+##### Platforms
 
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/test) [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://tiktok.com/@test) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtube.com/@test) ![Spotify](https://img.shields.io/badge/Spotify-1ED760?logo=spotify&logoColor=fff&style=for-the-badge) ![Apple Music](https://img.shields.io/badge/Apple%20Music-FA243C?logo=applemusic&logoColor=fff&style=for-the-badge) ![YouTube Music](https://img.shields.io/badge/YouTube%20Music-F00?logo=youtubemusic&logoColor=fff&style=for-the-badge) ![ByteDance](https://img.shields.io/badge/ByteDance-3C8CFF?logo=bytedance&logoColor=fff&style=for-the-badge) ![Snapchat](https://img.shields.io/badge/Snapchat-FFFC00?logo=snapchat&logoColor=000&style=for-the-badge) ![SoundCloud](https://img.shields.io/badge/SoundCloud-F50?logo=soundcloud&logoColor=fff&style=for-the-badge)
 
-##### Technologies Used
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
 
 ---
 
@@ -88,6 +86,26 @@ Reduced friction in planning and review, improved weekly throughput, and a repro
 
 <br>
 
+## <a href="https://www.leonardespi.me/resume-builder/" target=_blank rel="noopener noreferrer"> Resume Builder <a>
+
+
+##### Overview
+
+A web application to create Harvard-style, ATS-friendly resumes with pixel-precise PDF export.
+
+##### Outcome
+Consistent, professional resumes generated rapidly and reliably, eliminating layout jitter and ensuring repeatable results.
+
+
+##### Technologies Used
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
+
+
+---
+
+<br>
+
 
 ## <a href="https://www.leonardespi.me/readme-wizard/" target=_blank rel="noopener noreferrer"> README Wizard <a>
 
@@ -103,21 +121,6 @@ The outcome of the README Wizard project is a professional-looking, well-structu
 
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) ![Jinja](https://img.shields.io/badge/Jinja-7E0C1B?logo=jinja&logoColor=fff&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
-
----
-
-<br>
-
-
-## <a href="https://www.leonardespi.me/" target=_blank rel="noopener noreferrer"> SynLeo<a>
-
-##### Overview
-
-SynLeo is an AI and music project where an AI persona was created in the form of a "digital Leo" that performs music, currently the project is in an early stage and there is not enough data to reach conclutions. Below you can fin the platform where the AI content is uploaded.
-
-##### Platforms
-
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/test) [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://tiktok.com/@test) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtube.com/@test)
 
 ---
 
