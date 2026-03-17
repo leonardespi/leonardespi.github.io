@@ -1,0 +1,200 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  article?: boolean;
+  publishedDate?: string;   // ISO string — used for og:article:published_time
+}
+
+const {
+  title = 'Leonardo Espinosa',
+  description = 'IT Architect and SDET Lead at Clip. Writing about quality engineering, system design, and building technology that scales with intent.',
+  image = '/og-default.png',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  article = false,
+  publishedDate,
+} = Astro.props;
+
+const pageTitle = title === 'Leonardo Espinosa'
+  ? title
+  : `${title} | Leonardo Espinosa`;
+
+const ogImage = new URL(image, Astro.site).href;
+
+// ── JSON-LD ──────────────────────────────────────────────────────
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Leonardo Espinosa',
+  url: 'https://www.leonardespi.me',
+  image: 'https://www.leonardespi.me/og-default.png',
+  jobTitle: 'Automation Test Lead',
+  description: 'IT Architect and SDET Lead at Clip, specializing in AI/LLM governance, system design, and quality architecture.',
+  knowsLanguage: ['es', 'en', 'fr'],
+  sameAs: [
+    'https://github.com/leonardespi',
+    'https://linkedin.com/in/leonardespi',
+    'https://x.com/leonardespi',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mexico City',
+    addressCountry: 'MX',
+  },
+};
+
+const articleSchema = article && publishedDate ? {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: pageTitle,
+  description,
+  image: ogImage,
+  url: canonicalURL,
+  datePublished: publishedDate,
+  author: {
+    '@type': 'Person',
+    name: 'Leonardo Espinosa',
+    url: 'https://www.leonardespi.me',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Leonardo Espinosa',
+    url: 'https://www.leonardespi.me',
+  },
+} : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Anti-flash: apply saved theme before first paint -->
+    <script is:inline>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', saved || preferred);
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F8F7F4" />
+
+    <!-- Primary meta -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Leonardo Espinosa" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={pageTitle} />
+    {article && publishedDate && (
+      <meta property="article:published_time" content={publishedDate} />
+    )}
+    {article && (
+      <meta property="article:author" content="https://www.leonardespi.me/about" />
+    )}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@leonardespii" />
+    <meta name="twitter:creator" content="@leonardespii" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={pageTitle} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Google Fonts — preconnect first, then stylesheet (non-blocking with display=swap) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- JSON-LD: Person (every page) -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <!-- JSON-LD: BlogPosting (article pages only) -->
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    )}
+
+    <ClientRouter />
+
+    <!-- Persist theme across View Transitions (runs once, survives navigation) -->
+    <script>
+      document.addEventListener('astro:before-swap', (e) => {
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        (e as TransitionBeforeSwapEvent).newDocument.documentElement.setAttribute('data-theme', theme);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Skip to main content (accessibility — hidden until focused) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <Header />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0 0 0.5rem 0.5rem;
+    text-decoration: none;
+    transition: top 0.15s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Page transition: subtle fade on the main content area */
+  @keyframes vt-fade-in  { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes vt-fade-out { to   { opacity: 0; transform: translateY(-4px); } }
+
+  ::view-transition-old(root) {
+    animation: 180ms ease-out both vt-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation: 220ms ease-out both vt-fade-in;
+  }
+</style>

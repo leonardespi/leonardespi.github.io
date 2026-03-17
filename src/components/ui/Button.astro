@@ -1,0 +1,61 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'ghost';
+  size?: 'sm' | 'md';
+  external?: boolean;
+  download?: string;
+}
+
+const { href, variant = 'primary', size = 'md', external = false, download } = Astro.props;
+
+const padding = size === 'sm'
+  ? '0.5rem 1rem'
+  : '0.75rem 1.5rem';
+
+const fontSize = size === 'sm' ? '0.875rem' : '1rem';
+
+const base = `
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: ${padding};
+  font-family: var(--font-body);
+  font-size: ${fontSize};
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  cursor: pointer;
+  white-space: nowrap;
+`;
+
+const variantStyles: Record<string, string> = {
+  primary: 'background: var(--color-accent); color: #FFFFFF; border: 1px solid var(--color-accent);',
+  ghost:   'background: transparent; color: var(--color-text); border: 1px solid var(--color-border);',
+};
+
+const hoverClass = variant === 'primary' ? 'btn-primary' : 'btn-ghost';
+---
+
+<a
+  href={href}
+  style={`${base} ${variantStyles[variant]}`}
+  class={hoverClass}
+  {...external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+  {...download ? { download } : {}}
+>
+  <slot />
+</a>
+
+<style>
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+  }
+
+  .btn-ghost:hover {
+    background: var(--color-bg-muted);
+    border-color: var(--color-text-muted);
+  }
+</style>

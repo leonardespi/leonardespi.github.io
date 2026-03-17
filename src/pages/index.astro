@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Tag from '../components/ui/Tag.astro';
+import Hero from '../components/sections/Hero.astro';
+import Button from '../components/ui/Button.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch last 3 published posts, sorted by date descending
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const featuredProjects = [
+  {
+    name: 'POLQA',
+    tagline: 'LLM Output Governance & Bias Evaluation Framework',
+    description:
+      'A modular framework for governing LLM output quality at scale. Addresses a critical gap in AI governance: most evaluation tooling is opaque, single-provider, or academically siloed. POLQA enforces reproducibility, auditability, and cross-model comparability.',
+    tags: ['Python', 'LLM Governance', 'Adversarial Testing', 'OpenAI'],
+    href: 'https://polqa-framework.github.io/polqa-site/',
+    accent: true,
+  },
+  {
+    name: 'Automation Learn',
+    tagline: 'Scalable QA Capability — From Manual to Automated',
+    description:
+      'A structured curriculum designed to decentralize automation knowledge and reduce dependency on individual contributors. The architectural decision: opinionated learning paths over encyclopedic references, so engineers build transferable judgment, not just tool familiarity.',
+    tags: ['Selenium', 'Cypress', 'CI/CD', 'Open Source'],
+    href: 'https://github.com/leonardespi/automation-learn',
+    accent: false,
+  },
+  {
+    name: 'Resume Builder',
+    tagline: 'Structured Data → Professional Document Pipeline',
+    description:
+      'Separates content from presentation — a clean architectural boundary that most resume tools collapse. YAML as the source of truth; PDF as a deterministic artifact. Optimized for ATS parsing without sacrificing human readability.',
+    tags: ['Python', 'PDF Generation', 'CLI', 'Open Source'],
+    href: 'https://github.com/leonardespi/resume-builder',
+    accent: false,
+  },
+];
+---
+
+<BaseLayout>
+  <!-- ─────────────────────────────────────────
+       HERO
+  ───────────────────────────────────────────── -->
+  <Hero
+    variant="home"
+    eyebrow="Hey, I'm Leo"
+    title="I design systems<br />that scale."
+    subtitle="IT Architect and SDET Lead at Clip. Aligning technical strategy with business objectives, governing quality at scale, and designing resilient architectures across fintech and distributed systems."
+    trajectory="IT Architect · SDET Lead at Clip (PayClip)"
+    ctas={[
+      { href: '/blog',     label: 'Read the Blog',  variant: 'primary' },
+      { href: '/projects', label: 'See Projects',   variant: 'ghost' },
+    ]}
+  />
+
+  <!-- ─────────────────────────────────────────
+       RECENT WRITING
+  ───────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Writing</h2>
+        <a href="/blog" class="section-link">All posts →</a>
+      </div>
+
+      <div class="posts-list">
+        {recentPosts.map((post) => (
+          <a href={`/blog/${post.id}`} class="post-item">
+            <div class="post-meta">
+              <time datetime={post.data.date.toISOString()} class="post-date">
+                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+              {post.data.tags.slice(0, 2).map(tag => <Tag label={tag} />)}
+            </div>
+            <h3 class="post-title">{post.data.title}</h3>
+            <p class="post-description">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       FEATURED PROJECTS
+  ───────────────────────────────────────────── -->
+  <section class="section section--muted">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <a href="/projects" class="section-link">All projects →</a>
+      </div>
+
+      <div class="projects-grid">
+        {featuredProjects.map((project) => (
+          <a href={project.href} class={`project-card ${project.accent ? 'project-card--accent' : ''}`} target="_blank" rel="noopener noreferrer">
+            <div class="project-header">
+              <h3 class="project-name">{project.name}</h3>
+              <span class="project-tagline">{project.tagline}</span>
+            </div>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map(tag => <Tag label={tag} color={project.accent ? 'accent' : 'default'} />)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       CTA
+  ───────────────────────────────────────────── -->
+  <section class="section section--cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2 class="cta-title">Architecture, quality, and the space between.</h2>
+          <p class="cta-body">
+            If you're looking for an IT Architect who can evaluate trade-offs rigorously,
+            align engineering decisions with business outcomes, and build the governance frameworks
+            that make scale sustainable — let's talk.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <Button href="/resume" variant="primary">View Resume</Button>
+          <Button href="mailto:leo@leonardespi.me" variant="ghost">Get in Touch</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Sections ── */
+  .section {
+    padding-block: clamp(3rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section--muted {
+    background: var(--color-bg-muted);
+  }
+
+  .section--cta {
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+    color: var(--color-text);
+  }
+
+  .section-link {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  .section-link:hover {
+    opacity: 0.75;
+  }
+
+  /* ── Posts ── */
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .post-item {
+    display: block;
+    padding-block: 1.75rem;
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: background 0.15s;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .post-item:hover {
+    background: var(--color-bg-muted);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-date {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 0.375rem;
+    line-height: 1.3;
+    transition: color 0.15s;
+  }
+
+  .post-item:hover .post-title {
+    color: var(--color-accent);
+  }
+
+  .post-description {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── Projects ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding: 1.5rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .project-card--accent {
+    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 3%, var(--color-bg-card));
+  }
+
+  .project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .project-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .project-tagline {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-weight: 450;
+  }
+
+  .project-description {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    flex: 1;
+    text-align: justify;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: auto;
+  }
+
+  /* ── CTA ── */
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-block: 1rem;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-body {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+import Button from '../ui/Button.astro';
+
+interface CTA {
+  href: string;
+  label: string;
+  variant?: 'primary' | 'ghost';
+  external?: boolean;
+}
+
+interface Props {
+  variant?: 'home' | 'page';
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  /** Only used in 'home' variant */
+  trajectory?: string;
+  /** Only used in 'home' variant */
+  ctas?: CTA[];
+}
+
+const {
+  variant = 'page',
+  eyebrow,
+  title,
+  subtitle,
+  trajectory,
+  ctas = [],
+} = Astro.props;
+---
+
+{variant === 'home' ? (
+  <section class="hero hero--home">
+    <div class="container hero-content">
+      {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
+      <h1 class="hero-headline" set:html={title} />
+      {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+      {trajectory && <p class="hero-trajectory">{trajectory}</p>}
+      {ctas.length > 0 && (
+        <div class="hero-ctas">
+          {ctas.map(cta => (
+            <Button
+              href={cta.href}
+              variant={cta.variant ?? 'primary'}
+              external={cta.external}
+            >
+              {cta.label}
+            </Button>
+          ))}
+        </div>
+      )}
+      <slot />
+    </div>
+  </section>
+) : (
+  <header class="hero hero--page">
+    <div class="container">
+      {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
+      <h1 class="page-title" set:html={title} />
+      {subtitle && <p class="page-subtitle">{subtitle}</p>}
+      <slot />
+    </div>
+  </header>
+)}
+
+<style>
+  /* ── Shared ── */
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  /* ── Home variant ── */
+  .hero--home {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--color-text-muted);
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .hero-trajectory {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── Page variant ── */
+  .hero--page {
+    padding-block: 3.5rem 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    max-width: 560px;
+    margin-top: 0.5rem;
+  }
+</style>

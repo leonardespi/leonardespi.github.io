@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  // Sort newest → oldest for prev/next calculation
+  const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return sorted.map((post, index) => {
+    // In a newest-first list:
+    //   nextPost (newer, published after) = sorted[index - 1]
+    //   prevPost (older, published before) = sorted[index + 1]
+    const newerPost = index > 0 ? sorted[index - 1] : null;
+    const olderPost = index < sorted.length - 1 ? sorted[index + 1] : null;
+
+    return {
+      params: { slug: post.id },
+      props: {
+        post,
+        prevPost: olderPost
+          ? { title: olderPost.data.title, id: olderPost.id }
+          : null,
+        nextPost: newerPost
+          ? { title: newerPost.data.title, id: newerPost.id }
+          : null,
+      },
+    };
+  });
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+
+// ── Reading time ──────────────────────────────────────────────────
+// Strip markdown syntax, count words, calculate at ~200 wpm
+function estimateReadingTime(body: string): number {
+  const text = body
+    .replace(/```[\s\S]*?```/g, '')    // fenced code blocks
+    .replace(/`[^`]+`/g, '')           // inline code
+    .replace(/!\[.*?\]\(.*?\)/g, '')   // images
+    .replace(/\[.*?\]\(.*?\)/g, '$1') // links (keep text)
+    .replace(/#{1,6}\s/g, '')          // headings
+    .replace(/[*_~>|`#\-]/g, '')      // misc markdown chars
+    .trim();
+
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(wordCount / 200));
+}
+
+const readingTime = estimateReadingTime(post.body ?? '');
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  tags={post.data.tags}
+  image={post.data.image}
+  readingTime={readingTime}
+  prevPost={prevPost}
+  nextPost={nextPost}
+>
+  <Content />
+</BlogLayout>

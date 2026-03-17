@@ -1,0 +1,102 @@
+---
+title: "Big O: The Language of Scalable Systems"
+description: "Big O Notation is not just for whiteboard interviews — it's the tool architects use to reason about whether a system survives at scale. A practical guide for engineers who want to design, not just code."
+date: 2025-03-25
+tags: ["Architecture & Systems", "Tools & Craft"]
+draft: false
+---
+
+Today I want to talk to you about something that, while it may seem intimidating at first, is **absolutely essential** if you want to build a solid career in Tech … and that is … **Big O Notation**.
+
+**Understanding Big O in a practical way can be the difference between writing solutions that merely work and designing systems that scale, endure, and succeed in the real world.**
+
+Let's go step by step:
+
+---
+
+### What is Big O Notation?
+
+Big O Notation is a **formal language** we use to **describe how an algorithm behaves as the input grows**.
+
+It's not about measuring specific runtimes in seconds or milliseconds. **It's about understanding how the amount of resources the algorithm needs (time or memory) changes as the data grows.**
+
+In other words: **Big O abstracts away hardware, language, and local optimizations** to focus on scalability.
+
+Example:
+
+* An algorithm that processes each element exactly once has linear time: **O(n)**.
+* One that compares every element against every other has quadratic time: **O(n²)**.
+
+---
+
+### Why is it so important?
+
+If you're going to build real applications, you shouldn't only ask:
+*"Does it work on my laptop with 5 data points?"*
+but also:
+*"What happens when this system handles 5 million concurrent users?"*
+
+Big O lets you:
+
+* **Compare algorithms**: choose the best solution for a given problem.
+* **Anticipate bottlenecks**: before your production servers collapse.
+* **Pass technical interviews**: most SDE (Software Development Engineer) interviews use algorithm problems where you must analyze efficiency.
+* **Design scalable systems**: thinking about the future, not just the present.
+
+A poor complexity decision can turn a working system into **an unmanageable monster**.
+
+---
+
+### The most common complexities (and how to spot them)
+
+Here's a mini guide to situate typical algorithmic complexities:
+
+|    Notation    | Description                                          | Common example                                |
+| :------------: | :--------------------------------------------------- | :-------------------------------------------- |
+|    **O(1)**    | Constant. Does not depend on input size.             | Direct access to an array element (`arr[i]`). |
+|  **O(log n)**  | Logarithmic. Input is halved each step.              | Binary search on a sorted array.              |
+|    **O(n)**    | Linear. Processes each element once.                 | Sequential search in an unsorted list.        |
+| **O(n log n)** | Quasilinear. Mix of linearity and logarithm.         | Merge Sort, average-case QuickSort.           |
+|    **O(n²)**   | Quadratic. Each element is compared with all others. | Brute-force pair search.                      |
+|    **O(2ⁿ)**   | Exponential. Grows dangerously fast.                 | Solving subset-sum by brute force.            |
+|    **O(n!)**   | Factorial. Infeasible for large inputs.              | Pure permutation solutions (as in TSP).       |
+
+---
+
+### How do you analyze an algorithm's complexity?
+
+When determining an algorithm's Big O, focus on:
+
+1. **Identifying nested loops**:
+
+   * Each nested loop typically multiplies complexity.
+2. **Recognizing problem division**:
+
+   * Does the problem split in halves recursively? Think **O(log n)** or **O(n log n)**.
+3. **Evaluating recursion**:
+
+   * Recursion trees can reveal hidden complexities.
+4. **Ignoring constants**:
+
+   * **O(2n)** is the same as **O(n)** at scale.
+5. **Focusing on the dominant term**:
+
+   * If you have **O(n² + n)**, you keep **O(n²)** to describe growth.
+
+<br>
+**Practical rule**:
+When in doubt, simulate how runtime grows as input grows and note which pattern dominates.
+
+---
+
+### Big O in technical interviews
+
+**Pro tip**: Writing a working algorithm isn't enough.
+In technical interviews (Google, Amazon, Microsoft, etc.) they expect you to:
+
+* Implement a solution that is both **functional and efficient**.
+* Explain your reasoning about time and space complexity.
+* Propose improvements if you find bottlenecks.
+
+<br>
+Many times, improving from **O(n²)** to **O(n log n)** can be **the difference between a "thanks for your time" and "we'd like to make you an offer."**

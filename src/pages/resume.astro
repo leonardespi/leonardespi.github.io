@@ -1,0 +1,517 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import Button from '../components/ui/Button.astro';
+import Tag from '../components/ui/Tag.astro';
+
+import type { TimelineItem } from '../components/sections/Timeline.astro';
+
+const experience: TimelineItem[] = [
+  {
+    period: 'Jan 2026 – Present',
+    role: 'SDET Lead',
+    org: 'Clip (PayClip)',
+    orgUrl: 'https://clip.mx',
+    location: 'Mexico City, MX',
+    current: true,
+    bullets: [
+      'Partner with Architecture Design, Business, and Growth units to evaluate technical feasibility and profitability of upcoming projects, ensuring high ROI on engineering efforts.',
+      'Lead cross-functional E2E testing initiatives across distributed teams in China and Argentina — streamlining communication and synchronizing release cycles.',
+      'Architect testing frameworks for sharded database environments using SQL and Java-based tooling to ensure data integrity across high-volume fintech transactions.',
+      'Build scalable automation suites with TestNG and iTestNG to reduce time-to-market while maintaining the strict quality margins required for financial product growth.',
+    ],
+    tags: ['Java', 'TestNG', 'SQL', 'E2E Testing', 'Fintech', 'Sharded DBs', 'Distributed Teams'],
+  },
+  {
+    period: 'Jun 2025 – Jan 2026',
+    role: 'L4 Test Automation Lead',
+    org: 'Zurich Insurance',
+    location: 'Mexico City, MX · Hybrid',
+    current: false,
+    bullets: [
+      'Automated testing with Python, Selenium, and Guidewire across complex insurance product workflows.',
+      'Performed LLM model testing using red-teaming techniques to evaluate output reliability and safety.',
+      'Used Azure DevOps pipelines to ensure CI/CD quality gates across all releases.',
+      'Performed regression testing for minor and major releases; migrated legacy test cases to a new environment.',
+      'Led a QA team of 3 engineers in an Agile development environment.',
+    ],
+    tags: ['Python', 'Selenium', 'Guidewire', 'Azure DevOps', 'LLM Testing', 'Red Teaming', 'Agile'],
+  },
+  {
+    period: 'Jun 2024 – Jun 2025',
+    role: 'L3 Test Automation Engineer',
+    org: 'Applica Inc',
+    location: 'Remote',
+    current: false,
+    bullets: [
+      'Automated testing with CodeceptJS, Appium, Robot Framework, and Selenium — cut manual effort by 4 hours/sprint.',
+      'Improved test speed by 30% on new products via TestRail-based plans and cases.',
+      'Designed test plan and strategy reaching 95% requirements coverage with zero critical defects escaping production.',
+      'Ran cross-browser/device tests with Sauce Labs to ensure consistent UX across platforms.',
+      'Logged and tracked 300+ defects, contributing to a 30% reduction in post-release critical bugs.',
+      'Conducted UX testing with AXE devtools to validate usability and accessibility for vulnerable communities.',
+      'Built and maintained CI/CD pipelines with Azure DevOps & Jenkins — sped up defect detection by 60%.',
+      'Led a team of 5 test engineers in Agile environments; mentored new hires and cut ramp-up time by 50%.',
+    ],
+    tags: ['CodeceptJS', 'Appium', 'Robot Framework', 'Selenium', 'TestRail', 'Azure DevOps', 'Jenkins', 'Accessibility'],
+  },
+  {
+    period: 'Feb 2024 – Jun 2024',
+    role: 'L2 Test Automation Engineer',
+    org: 'Wipro',
+    location: 'Mexico City, MX · On-site',
+    current: false,
+    bullets: [
+      'Automated regression tests with Selenium, Cucumber (BDD) — cut test time by 20%.',
+      'Built API tests in Postman to ensure backend reliability.',
+      'Mentored 4 junior QA engineers, boosting team automation skills.',
+    ],
+    tags: ['Selenium', 'Cucumber', 'BDD', 'Postman', 'Java'],
+  },
+  {
+    period: 'Nov 2022 – Feb 2024',
+    role: 'L2 Test Automation Engineer',
+    org: 'Keywords Studios',
+    location: 'Mexico City, MX · On-site',
+    current: false,
+    bullets: [
+      'Led manual QA for high-traffic game titles — ensured functional and localization quality.',
+      'Executed full regression testing for major and minor patches and releases.',
+      'Assisted in design of test plan and strategy, reducing regression cycle time by 40%.',
+      'Piloted AI-driven testing for internal tools — evaluated efficiency and ethical implications.',
+    ],
+    tags: ['Manual QA', 'Regression Testing', 'Localization', 'Game Testing', 'AI Testing'],
+  },
+  {
+    period: 'Aug 2020 – Nov 2022',
+    role: 'L1 Automation Engineer',
+    org: 'UNAM',
+    location: 'Mexico City, MX · On-site',
+    current: false,
+    bullets: [
+      'Developed Selenium scripts in Python — saved 6 hours/week in manual tasks.',
+      'Created RESTful APIs for seamless system integration.',
+      'Worked on Debian-based Linux servers.',
+    ],
+    tags: ['Python', 'Selenium', 'REST APIs', 'Linux'],
+  },
+];
+
+const certifications = [
+  { name: 'ISTQB Certified Tester Foundation Level (CTFL)', year: '2024', issuer: 'ISTQB' },
+  { name: 'Google Cloud Computing Foundations',             year: '2024', issuer: 'Google' },
+  { name: 'Postman API Fundamentals Student Expert',        year: '2024', issuer: 'Postman' },
+  { name: 'BigQuery: Analytics & Machine Learning',         year: '2021', issuer: 'Google' },
+  { name: 'Python 3 Specialization',                        year: '2021', issuer: 'Coursera / University of Michigan' },
+  { name: 'Cybersecurity Essentials',                       year: '2021', issuer: 'CISCO' },
+];
+
+const education = [
+  {
+    degree: 'B.Sc. Linguistics',
+    institution: 'UNAM — National Autonomous University of Mexico',
+    years: '2025 – Present',
+    note: 'GPA: 4.0/4.0',
+  },
+  {
+    degree: 'B.Sc. Computer Engineering',
+    institution: 'UTEL — Universidad Tecnológica Latinoamericana en Línea',
+    years: '2021 – 2025',
+    note: 'GPA: 3.8/4.0',
+  },
+  {
+    degree: 'A.Sc. Informatics',
+    institution: 'COS — CDMX, MX',
+    years: '2017 – 2019',
+    note: 'GPA: 3.9/4.0',
+  },
+];
+
+const languages = [
+  { name: 'Spanish', level: 'Native' },
+  { name: 'English', level: 'Fluent · C1' },
+  { name: 'French',  level: 'Proficient · B1' },
+];
+---
+
+<BaseLayout
+  title="Resume"
+  description="Leonardo Espinosa — IT Architect and SDET Lead at Clip. 5+ years designing resilient systems across fintech, insurance, and enterprise software. Full CV."
+>
+  <div style="padding-block: 4rem 6rem;">
+
+    <!-- Header -->
+    <div class="container">
+      <div class="resume-header">
+        <div class="resume-identity">
+          <p class="eyebrow">Resume</p>
+          <h1>Leonardo Espinosa</h1>
+          <p class="resume-title">IT Architect · SDET Lead at Clip</p>
+          <p class="resume-location">Mexico City, MX · <a href="mailto:leointhecode@gmail.com">leointhecode@gmail.com</a> · <a href="https://leonardespi.me">leonardespi.me</a></p>
+        </div>
+        <div class="resume-actions">
+          <Button href="/leonardo-espinosa-cv.pdf" variant="primary" download="Leonardo Espinosa_CV.pdf">Download PDF</Button>
+          <Button href="https://linkedin.com/in/leonardespi" variant="ghost" external={true}>LinkedIn</Button>
+        </div>
+      </div>
+
+      <div class="resume-summary">
+        <p>
+          IT Architect and SDET Lead with 5+ years designing and governing quality systems across
+          fintech, insurance, gaming, and enterprise software. At Clip, partners with Architecture Design
+          and Business units to evaluate technical feasibility and ROI on engineering initiatives, leads
+          E2E governance across distributed teams in China and Argentina, and architects data integrity
+          frameworks for high-volume fintech transactions. Known for translating complex system
+          constraints into clear architectural decisions and aligning test strategy with organizational
+          scalability goals.
+        </p>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="container resume-section">
+      <h2 class="resume-section-title">Experience</h2>
+      <Timeline items={experience} />
+    </div>
+
+    <!-- Skills -->
+    <div class="container resume-section">
+      <h2 class="resume-section-title">Technical Skills</h2>
+      <div class="skills-table">
+        <div class="skill-row">
+          <span class="skill-label">Languages</span>
+          <div class="skill-tags">
+            {['Python', 'Java', 'JavaScript', 'Lua', 'SQL'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Test Automation</span>
+          <div class="skill-tags">
+            {['Selenium', 'Robot Framework', 'Appium', 'Pytest', 'CodeceptJS', 'Cucumber', 'Cypress'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">API & Performance</span>
+          <div class="skill-tags">
+            {['Postman', 'SoapUI', 'JMeter'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Cloud & DevOps</span>
+          <div class="skill-tags">
+            {['GCP', 'Git', 'Docker', 'Kubernetes', 'Jenkins', 'Azure DevOps', 'GitHub Actions'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">AI & Quality</span>
+          <div class="skill-tags">
+            {['Adversarial Testing', 'Red-team Testing', 'Bias Testing', 'LLM Testing'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Data</span>
+          <div class="skill-tags">
+            {['PostgreSQL', 'BigQuery', 'Big Data', 'SQL Databases'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Process & Tools</span>
+          <div class="skill-tags">
+            {['Jira', 'Confluence', 'TestRail', 'Xray', 'Zephyr', 'Agile/Scrum'].map(s => <Tag label={s} />)}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications + Education in two columns -->
+    <div class="container resume-section">
+      <div class="two-col">
+
+        <div>
+          <h2 class="resume-section-title">Certifications</h2>
+          <ul class="cert-list">
+            {certifications.map(({ name, year, issuer }) => (
+              <li>
+                <div>
+                  <span class="cert-name">{name}</span>
+                  <span class="cert-issuer">{issuer}</span>
+                </div>
+                <span class="cert-year">{year}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="resume-section-title">Education</h2>
+          {education.map(({ degree, institution, years, note }) => (
+            <div class="edu-item">
+              <p class="edu-degree">{degree}</p>
+              <p class="edu-institution">{institution}</p>
+              <p class="edu-years">{years}</p>
+              <p class="edu-note">{note}</p>
+            </div>
+          ))}
+
+          <h2 class="resume-section-title" style="margin-top: 2.5rem;">Languages</h2>
+          <ul class="lang-list">
+            {languages.map(({ name, level }) => (
+              <li>
+                <span class="lang-name">{name}</span>
+                <span class="lang-level">{level}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── Header ── */
+  .resume-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+
+  .resume-identity h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.375rem;
+    color: var(--color-text);
+  }
+
+  .resume-title {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.375rem;
+  }
+
+  .resume-location {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .resume-location a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .resume-location a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resume-actions {
+    display: flex;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-self: center;
+  }
+
+  .resume-summary {
+    padding: 1.5rem;
+    background: var(--color-bg-muted);
+    border-radius: 0.625rem;
+    border: 1px solid var(--color-border);
+    margin-bottom: 0;
+  }
+
+  .resume-summary p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    max-width: 820px;
+    text-align: justify;
+  }
+
+  /* ── Sections ── */
+  .resume-section {
+    padding-top: 3rem;
+    margin-top: 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: 3rem;
+  }
+
+  .resume-section-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Skills table ── */
+  .skills-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-block: 0.875rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .skill-row:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .skill-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    padding-top: 0.25rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  /* ── Two column layout ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ── Certifications ── */
+  .cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cert-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cert-name {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .cert-issuer {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 0.125rem;
+  }
+
+  .cert-year {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  /* ── Education ── */
+  .edu-item {
+    padding-bottom: 1.25rem;
+  }
+
+  .edu-degree {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-institution {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-years {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ── Languages ── */
+  .lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .lang-list li {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 0.625rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lang-name {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .lang-level {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>
