@@ -1,12 +1,34 @@
-# output
-_site
+# build output
+dist/
+# generated types
+.astro/
 
-# cache
-.sass-cache
-.jekyll-metadata
+# dependencies
+node_modules/
 
-# gem lock file
-Gemfile.lock
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Mac OSX
+# environment variables
+.env
+.env.production
+.env*.local
+
+# macOS-specific files
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# editor settings
+.idea/
+.vscode/
+
+# migration staging (already imported into src/content/blog/)
+old-posts/
+
+# Claude Code
+CLAUDE.md
+.claude/
