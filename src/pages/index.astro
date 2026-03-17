@@ -344,5 +344,21 @@ const featuredProjects = [
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .cta-actions > :global(a) {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .cta-actions {
+      width: auto;
+    }
+
+    .cta-actions > :global(a) {
+      flex: none;
+    }
   }
 </style>
