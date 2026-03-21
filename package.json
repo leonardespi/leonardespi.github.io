@@ -18,7 +18,10 @@
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.5",
     "astro-icon": "^1.1.5",
+    "mermaid": "^11.13.0",
+    "plantuml-encoder": "^1.4.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "unist-util-visit": "^5.1.0"
   }
 }

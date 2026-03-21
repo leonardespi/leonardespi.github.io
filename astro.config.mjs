@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
+import { remarkPlantuml } from './src/plugins/remark-plantuml.mjs';
+import { remarkMermaid } from './src/plugins/remark-mermaid.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +18,9 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  markdown: {
+    remarkPlugins: [remarkPlantuml, remarkMermaid],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

@@ -91,7 +91,6 @@ const formattedDate = dateObj.toLocaleDateString('en-US', {
           class="post-headliner-img"
           loading="eager"
           decoding="async"
-          onerror="this.closest('.post-headliner').remove()"
         />
       </div>
     )}
@@ -100,6 +99,31 @@ const formattedDate = dateObj.toLocaleDateString('en-US', {
     <article class="prose">
       <slot />
     </article>
+
+    <script>
+      import mermaid from 'mermaid';
+
+      function initMermaid() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: isDark ? 'dark' : 'neutral',
+          fontFamily: 'var(--font-body)',
+        });
+        mermaid.run({ querySelector: '.mermaid' });
+      }
+
+      // Remove headliner container if the image fails to load.
+      document.querySelector('.post-headliner-img')
+        ?.addEventListener('error', (e) => {
+          (e.target as HTMLElement).closest('.post-headliner')?.remove();
+        });
+
+      // Module scripts are deferred — DOM is ready by execution time.
+      // Also re-run after Astro view transitions.
+      initMermaid();
+      document.addEventListener('astro:page-load', initMermaid);
+    </script>
 
     <!-- Post navigation: prev / next -->
     <nav class="post-nav" aria-label="Post navigation">
@@ -170,7 +194,7 @@ const formattedDate = dateObj.toLocaleDateString('en-US', {
   }
 
   .post-title {
-    font-family: var(--font-display);
+    font-family: var(--font-display),serif;
     font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -258,7 +282,7 @@ const formattedDate = dateObj.toLocaleDateString('en-US', {
   }
 
   .post-nav-title {
-    font-family: var(--font-display);
+    font-family: var(--font-display),serif;
     font-size: 0.9375rem;
     color: var(--color-text);
     line-height: 1.3;
@@ -281,5 +305,33 @@ const formattedDate = dateObj.toLocaleDateString('en-US', {
 
   .post-nav-back a:hover {
     color: var(--color-accent);
+  }
+
+  /* Diagrams: Mermaid & PlantUML */
+  :global(.mermaid),
+  :global(.diagram) {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    overflow-x: auto;
+  }
+
+  :global(.plantuml-diagram) {
+    margin: 2rem 0;
+    text-align: center;
+    padding: 1rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+  }
+
+  :global(.plantuml-diagram img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :global(.mermaid svg) {
+    max-width: 100%;
+    height: auto;
   }
 </style>

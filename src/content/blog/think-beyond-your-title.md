@@ -48,7 +48,7 @@ A(Self) --> B(Team/Feature)
 B --> C(System/Domain)
 C --> D(Organization)
 D --> E(Industry)
-````
+```
 
 * **Self:** Mastery of tools, habits, and reliability.
 * **Team:** Driving features end-to-end; reviewing peers' work.
