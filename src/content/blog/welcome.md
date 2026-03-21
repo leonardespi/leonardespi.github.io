@@ -1,7 +1,7 @@
 ---
 title: "Why the Best IT Architects Come from Quality Engineering"
 description: "The skills that make you dangerous as a quality engineer are the exact same ones that define great IT architecture. Here's the case — and why that path produces better architects than most."
-date: 2025-03-16
+date: 2026-03-16
 tags: ["Career & Growth", "Architecture & Systems", "Quality Engineering"]
 draft: false
 image: "https://images.unsplash.com/photo-1773332598451-8a0a59941912?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
