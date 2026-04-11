@@ -4,6 +4,15 @@ import Tag from '../components/ui/Tag.astro';
 import Hero from '../components/sections/Hero.astro';
 import Button from '../components/ui/Button.astro';
 import { getCollection } from 'astro:content';
+import { readFileSync } from 'node:fs';
+import { load as parseYaml } from 'js-yaml';
+import { resolve } from 'node:path';
+
+const siteConfig = parseYaml(
+  readFileSync(resolve('src/content/site.yml'), 'utf8')
+) as { index: Record<string, boolean> };
+
+const sections = siteConfig.index;
 
 // Fetch last 3 published posts, sorted by date descending
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -46,7 +55,7 @@ const featuredProjects = [
   <!-- ─────────────────────────────────────────
        HERO
   ───────────────────────────────────────────── -->
-  <Hero
+  {sections.hero && <Hero
     variant="home"
     eyebrow="Hey, I'm Leo"
     title="I design systems<br />that scale."
@@ -56,11 +65,12 @@ const featuredProjects = [
       { href: '/blog',     label: 'Read the Blog',  variant: 'primary' },
       { href: '/projects', label: 'See Projects',   variant: 'ghost' },
     ]}
-  />
+  />}
 
   <!-- ─────────────────────────────────────────
        RECENT WRITING
   ───────────────────────────────────────────── -->
+  {sections.recent_writing && (
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -84,10 +94,12 @@ const featuredProjects = [
       </div>
     </div>
   </section>
+  )}
 
   <!-- ─────────────────────────────────────────
        FEATURED PROJECTS
   ───────────────────────────────────────────── -->
+  {sections.featured_projects && (
   <section class="section section--muted">
     <div class="container">
       <div class="section-header">
@@ -111,10 +123,12 @@ const featuredProjects = [
       </div>
     </div>
   </section>
+  )}
 
   <!-- ─────────────────────────────────────────
        CTA
   ───────────────────────────────────────────── -->
+  {sections.cta && (
   <section class="section section--cta">
     <div class="container">
       <div class="cta-inner">
@@ -133,6 +147,7 @@ const featuredProjects = [
       </div>
     </div>
   </section>
+  )}
 </BaseLayout>
 
 <style>

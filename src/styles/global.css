@@ -8,14 +8,14 @@
    ───────────────────────────────────────────── */
 @theme {
   /* Colors */
-  --color-bg:        #F8F7F4;
-  --color-bg-card:   #FFFFFF;
-  --color-bg-muted:  #F0EEE9;
-  --color-text:      #1A1A1A;
-  --color-text-muted:#6B6966;
-  --color-border:    #E5E3DF;
-  --color-accent:       #C95E1A; /* Burnt orange */
-  --color-accent-hover: #A84A12;
+  --color-bg:        #F5F0EA;
+  --color-bg-card:   #EDE8E0;
+  --color-bg-muted:  #EDE8E0;
+  --color-text:      #1C1A17;
+  --color-text-muted:#6B6460;
+  --color-border:    #D5CFC6;
+  --color-accent:       #C17D52;
+  --color-accent-hover: #8A5E3A;
 
   /* Typography */
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -31,7 +31,7 @@
    Outcome text colour (light default)
    ───────────────────────────────────────────── */
 :root {
-  --color-outcome-text: #7A3210;
+  --color-outcome-text: #7A4A28;
 }
 
 /* ─────────────────────────────────────────────
@@ -41,12 +41,12 @@ html[data-theme="dark"] {
   --color-bg:           #2A2724;
   --color-bg-card:      #333028;
   --color-bg-muted:     #3A362D;
-  --color-text:         #F0EEE9;
-  --color-text-muted:   #A09890;
-  --color-border:       #46423A;
-  --color-accent:       #C95E1A;
-  --color-accent-hover: #D96A20;
-  --color-outcome-text: #E8936A;
+  --color-text:         #F0EBE3;
+  --color-text-muted:   #9A918A;
+  --color-border:       #2E2A25;
+  --color-accent:       #D4926A;
+  --color-accent-hover: #C17D52;
+  --color-outcome-text: #D4926A;
 }
 
 /* ─────────────────────────────────────────────
