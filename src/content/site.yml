@@ -1,0 +1,8 @@
+# ─── Index page section toggles ─────────────────────────────
+# Set a section to false to hide it from the home page.
+
+index:
+  hero:             true
+  recent_writing:   true
+  featured_projects: false
+  cta:              true
