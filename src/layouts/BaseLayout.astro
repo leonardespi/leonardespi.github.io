@@ -3,6 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import '../styles/global.css';
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
   title?: string;
@@ -11,6 +12,7 @@ interface Props {
   canonicalURL?: string;
   article?: boolean;
   publishedDate?: string;   // ISO string — used for og:article:published_time
+  postLang?: 'en' | 'es';
 }
 
 const {
@@ -20,7 +22,10 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   article = false,
   publishedDate,
+  postLang,
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 
 const pageTitle = title === 'Leonardo Espinosa'
   ? title
@@ -72,7 +77,7 @@ const articleSchema = article && publishedDate ? {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <!-- Anti-flash: apply saved theme before first paint -->
     <script is:inline>
@@ -159,7 +164,7 @@ const articleSchema = article && publishedDate ? {
     <!-- Skip to main content (accessibility — hidden until focused) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <Header />
+    <Header postLang={postLang} />
     <main id="main-content" tabindex="-1">
       <slot />
     </main>

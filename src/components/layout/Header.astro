@@ -1,21 +1,42 @@
 ---
-const navItems = [
-  { label: 'Blog',     href: '/blog' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'About',    href: '/about' },
-  { label: 'Resume',   href: '/resume' },
+import { getLangFromUrl, getSiteContent, getAlternateUrl, prefix, WRITING_PATH } from '../../i18n/utils';
+
+interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;
+  dot?: boolean;
+}
+
+interface Props {
+  postLang?: 'en' | 'es';
+}
+
+const { postLang } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const site = getSiteContent(lang);
+const p = prefix(lang);
+
+const navItems: NavItem[] = [
+  { label: site.global.nav.work,     href: `${p}/work` },
+  { label: site.global.nav.services, href: `${p}/services` },
+  { label: site.global.nav.writing,  href: `${p}${WRITING_PATH}` },
+  { label: site.global.nav.now,      href: `${p}/now`, dot: true },
+  { label: site.global.nav.contact,  href: `${p}/contact` },
 ];
 
 const currentPath = Astro.url.pathname;
+const alternateUrl = getAlternateUrl(Astro.url);
+const languages: Record<string, string> = { en: 'EN', es: 'ES' };
 ---
 
 <header id="site-header">
   <div class="header-inner container">
 
     <!-- Logo / Name -->
-    <a href="/" class="logo" aria-label="Leonardo Espinosa — Home">
+    <a href={p === '' ? '/' : `${p}/`} class="logo" aria-label="Leonardo Espinosa — Home">
       <span class="logo-name">Leonardo Espinosa</span>
-      <span class="logo-title">IT Architect</span>
+      <span class="logo-title">{site.global.logo_subtitle}</span>
     </a>
 
     <!-- Right-side group: nav links + theme toggle -->
@@ -23,19 +44,43 @@ const currentPath = Astro.url.pathname;
 
       <nav class="desktop-nav" aria-label="Primary navigation">
         <ul>
-          {navItems.map(({ label, href }) => (
+          {navItems.map(({ label, href, external, dot }) => (
             <li>
               <a
                 href={href}
-                class={currentPath.startsWith(href) ? 'active' : ''}
-                aria-current={currentPath.startsWith(href) ? 'page' : undefined}
+                class={[
+                  !external && currentPath.startsWith(href) ? 'active' : '',
+                  dot ? 'nav-now' : '',
+                ].filter(Boolean).join(' ') || undefined}
+                aria-current={!external && currentPath.startsWith(href) ? 'page' : undefined}
+                {...external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
               >
+                {dot && <span class="now-dot" aria-hidden="true"></span>}
                 {label}
               </a>
             </li>
           ))}
         </ul>
       </nav>
+
+      <!-- Language toggle -->
+      <div class="lang-toggle" aria-label="Switch language">
+        {postLang ? (
+          <span class="lang-opt lang-opt--locked" aria-label={postLang === 'en' ? 'English' : 'Español'}>
+            {languages[postLang]}
+          </span>
+        ) : (
+          Object.entries(languages).map(([code, label]) => (
+            <a
+              href={code === lang ? currentPath : alternateUrl}
+              class={`lang-opt${code === lang ? ' lang-opt--active' : ''}`}
+              hreflang={code}
+              aria-label={code === 'en' ? 'English' : 'Español'}
+              aria-current={code === lang ? 'true' : undefined}
+            >{label}</a>
+          ))
+        )}
+      </div>
 
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
         <span class="icon-moon" aria-hidden="true">
@@ -84,9 +129,9 @@ const currentPath = Astro.url.pathname;
   <div class="mobile-nav-inner">
 
     <div class="mobile-nav-header">
-      <a href="/" class="logo" aria-label="Leonardo Espinosa — Home">
+      <a href={p === '' ? '/' : `${p}/`} class="logo" aria-label="Leonardo Espinosa — Home">
         <span class="logo-name">Leonardo Espinosa</span>
-        <span class="logo-title">IT Architect</span>
+        <span class="logo-title">{site.global.logo_subtitle}</span>
       </a>
       <button
         class="menu-close"
@@ -103,19 +148,42 @@ const currentPath = Astro.url.pathname;
 
     <nav aria-label="Mobile navigation">
       <ul class="mobile-nav-list">
-        {navItems.map(({ label, href }) => (
+        {navItems.map(({ label, href, external, dot }) => (
           <li>
             <a
               href={href}
-              class={currentPath.startsWith(href) ? 'active' : ''}
-              aria-current={currentPath.startsWith(href) ? 'page' : undefined}
+              class={[
+                !external && currentPath.startsWith(href) ? 'active' : '',
+                dot ? 'nav-now' : '',
+              ].filter(Boolean).join(' ') || undefined}
+              aria-current={!external && currentPath.startsWith(href) ? 'page' : undefined}
+              {...external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
             >
+              {dot && <span class="now-dot" aria-hidden="true"></span>}
               {label}
             </a>
           </li>
         ))}
       </ul>
     </nav>
+
+    <div class="mobile-nav-footer">
+      {postLang ? (
+        <span class="mobile-lang-locked">{languages[postLang]}</span>
+      ) : (
+        <div class="mobile-lang-toggle" aria-label="Switch language">
+          {Object.entries(languages).map(([code, label]) => (
+            <a
+              href={code === lang ? currentPath : alternateUrl}
+              class={`mobile-lang-opt${code === lang ? ' mobile-lang-opt--active' : ''}`}
+              hreflang={code}
+              aria-label={code === 'en' ? 'English' : 'Español'}
+              aria-current={code === lang ? 'true' : undefined}
+            >{label}</a>
+          ))}
+        </div>
+      )}
+    </div>
 
   </div>
 </dialog>
@@ -185,7 +253,75 @@ const currentPath = Astro.url.pathname;
     padding: 0;
   }
 
+  /* ── Language toggle ── */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .lang-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    height: 34px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1;
+  }
+
+  .lang-opt:not(.lang-opt--locked):first-child {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .lang-opt:hover {
+    background: var(--color-bg-muted);
+    color: var(--color-text);
+  }
+
+  .lang-opt--active {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .lang-opt--active:hover {
+    background: var(--color-accent-hover);
+    color: #fff;
+  }
+
+  .lang-opt--locked {
+    background: var(--color-accent);
+    color: #fff;
+    cursor: default;
+    pointer-events: none;
+    min-width: 52px;
+  }
+
+  /* ── Now dot indicator ── */
+  .now-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    margin-right: 0.3rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
   .desktop-nav a {
+    display: inline-flex;
+    align-items: center;
     font-family: var(--font-body);
     font-size: 0.9375rem;
     font-weight: 450;
@@ -370,6 +506,53 @@ const currentPath = Astro.url.pathname;
     color: var(--color-accent);
   }
 
+  .mobile-nav-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-lang-toggle {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mobile-lang-opt {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .mobile-lang-opt--active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+  }
+
+  .mobile-lang-locked {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 0.375rem;
+  }
+
   /* ── Responsive breakpoints ── */
   @media (max-width: 640px) {
     .desktop-nav {
@@ -378,6 +561,15 @@ const currentPath = Astro.url.pathname;
 
     .menu-toggle {
       display: flex;
+    }
+
+    .logo-title {
+      display: none;
+    }
+
+    .lang-toggle,
+    .theme-toggle {
+      display: none;
     }
   }
 
