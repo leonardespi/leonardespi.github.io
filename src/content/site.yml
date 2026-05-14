@@ -1,8 +1,395 @@
-# ─── Index page section toggles ─────────────────────────────
-# Set a section to false to hide it from the home page.
-
+# ─── Section visibility toggles ───────────────────────────────────────────────
+# Set false to hide a section from the home page.
 index:
-  hero:             true
-  recent_writing:   true
+  hero:              true
+  available_for:     true
+  now_feed:          true
+  recent_writing:    true
+  dual_identity:     true
   featured_projects: false
-  cta:              true
+  cta:               true
+
+# ─── Contact / social links (single source of truth) ──────────────────────────
+links:
+  email:     leointhecode@gmail.com
+  github:    https://github.com/leonardespi
+  linkedin:  https://linkedin.com/in/leonardespi
+  instagram: https://www.instagram.com/leonardespi/
+  work_name: a
+  work_href: https://miclip.mx/
+  twitter:  https://x.com/leonardespii
+  cv:       /leonardo-espinosa-cv.pdf
+
+# ─── Global UI (nav, logo, footer) ────────────────────────────────────────────
+global:
+  logo_subtitle:
+    en: IT Architect · Photographer · Musician
+    es: Arquitecto TI · Fotógrafo · Músico
+  nav:
+    work:     { en: Work,     es: Trabajo   }
+    services: { en: Services, es: Servicios }
+    writing:  { en: Writing,  es: Escritura }
+    now:      { en: Now,      es: Ahora     }
+    contact:  { en: Contact,  es: Contacto  }
+  footer:
+    tagline:
+      en: Available for consulting & creative work · Mexico City
+      es: Disponible para consultoría y trabajo creativo · Ciudad de México
+
+# ─── Pages ────────────────────────────────────────────────────────────────────
+pages:
+
+  # ── Home ────────────────────────────────────────────────────────────────────
+  home:
+    meta:
+      description:
+        en: IT Architect, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Arquitecto TI, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
+
+    hero:
+      eyebrow:
+        en: "Hey, I'm Leo"
+        es: "Hola, soy Leo"
+      title:
+        en: "I design systems<br />that scale."
+        es: "Diseño sistemas<br />que escalan."
+      subtitle:
+        en: IT Architect by training. Photographer and musician by choice. I bring the same rigor to both — and that's what makes the work different.
+        es: Arquitecto TI por formación. Fotógrafo y músico por elección. Le meto el mismo rigor a los dos — y eso es lo que hace diferente el trabajo.
+      trajectory:
+        en: 'IT Architect · SDET Lead at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+        es: 'Arquitecto TI · SDET Lead en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+      ctas:
+        - label: { en: Read the Blog,  es: Leer el Blog    }
+          href: /writing
+          variant: primary
+        - label: { en: See Projects,   es: Ver Proyectos   }
+          href: /work
+          variant: ghost
+
+    available_for:
+      label: { en: "Available for",  es: "Disponible para" }
+      cta:   { en: "Get in touch",   es: "Hablemos"        }
+      items:
+        - text: { en: "IT Architecture consulting",                         es: "Consultoría de Arquitectura TI" }
+          detail: { en: "(distributed systems, fintech, cloud)",              es: "(sistemas distribuidos, fintech, cloud)" }
+        - text: { en: "Photography · Digital illustration · Music",        es: "Fotografía · Ilustración digital · Música" }
+          detail: { en: "(CDMX · monthly retainers available)",               es: "(CDMX · disponible en modelo de suscripción)" }
+        - text: { en: "Technical writing & documentation",                  es: "Redacción técnica y documentación" }
+        - text: { en: "Open source collaboration",                          es: "Colaboración open source" }
+
+    now_feed:
+      badge:   { en: Now,         es: Ahora       }
+      updated: { en: "Updated May 2026 · Mexico City",           es: "Actualizado en mayo 2026 · Ciudad de México"         }
+      link:    { en: "Full update →",                            es: "Ver más →"                                           }
+      rows:
+        - label: { en: Building,   es: Construyendo }
+          value:
+            en: 'POLQA — LLM evaluation & bias tooling. Quality systems governance at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
+            es: 'POLQA — evaluación de LLMs y detección de sesgos. Gobernanza de calidad en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
+        - label: { en: Creating,   es: Creando }
+          value: { en: "CDMX street architecture photography series. Shot on film.",                 es: "Serie fotográfica de arquitectura urbana en CDMX. En analógico." }
+        - label: { en: Learning,   es: Aprendiendo }
+          value: { en: "Digital illustration — building a consistent visual language.",              es: "Ilustración digital — construyendo un lenguaje visual consistente." }
+
+    writing:
+      title: { en: Recent Writing,        es: Lo más reciente            }
+      all:   { en: "All posts →",         es: "Todos los artículos →"   }
+
+    dual_identity:
+      title: { en: "Beyond the stack",    es: "Más allá del código"      }
+      copy:
+        en: "I'm an IT Architect who photographs and makes music. The work crosses over more than people expect. My technical decisions carry artistic references. My photos carry engineering logic. I don't separate the two — I never have."
+        es: "Soy un Arquitecto TI que fotografía y hace música. El trabajo se cruza más de lo que la gente espera. Mis decisiones técnicas llevan referencias artísticas. Mis fotos llevan lógica de ingeniería. No los separo — nunca lo he hecho."
+      link:   { en: "See all work →",     es: "Ver todo →"               }
+      samples:
+        - key: photo
+          label: { en: Photography,       es: Fotografía                 }
+        - key: illustration
+          label: { en: Illustration,      es: Ilustración                }
+        - key: music
+          label: { en: Music,             es: Música                     }
+
+    cta:
+      title:
+        en: "Architecture, quality, and the space between."
+        es: "Arquitectura, calidad y lo que pasa entre ambas."
+      body:
+        en: "If you're looking for an IT Architect who can evaluate trade-offs rigorously, align engineering decisions with business outcomes, and build the governance frameworks that make scale sustainable — let's talk."
+        es: "Si buscas un Arquitecto TI que evalúe trade-offs con rigor, que conecte las decisiones técnicas con resultados de negocio y que construya la gobernanza necesaria para sostener la escala — hablemos."
+      resume:  { en: "View Resume",       es: "Ver Currículum"           }
+      contact: { en: "Get in Touch",      es: "Contactar"                }
+
+  # ── Services ─────────────────────────────────────────────────────────────────
+  services:
+    meta:
+      title:       { en: Services,       es: Servicios                  }
+      description:
+        en: "IT Architecture consulting and creative services by Leonardo Espinosa — distributed systems, fintech, cloud, photography, illustration, and music production."
+        es: "Consultoría de Arquitectura TI y servicios creativos de Leonardo Espinosa — sistemas distribuidos, fintech, cloud, fotografía, ilustración y producción musical."
+    header:
+      eyebrow: { en: "What I offer",      es: "Lo que ofrezco"           }
+      title:   { en: Services,            es: Servicios                  }
+      subtitle:
+        en: "Two disciplines, one way of thinking. Available for project-based, retainer, or one-time engagements."
+        es: "Dos disciplinas, una sola forma de pensar. Disponible por proyecto, retainer o sesiones puntuales."
+
+    technical:
+      tag:   { en: Technical,             es: Técnico                    }
+      title: { en: "IT Architecture Consulting", es: "Consultoría de Arquitectura TI" }
+      intro:
+        en: "I design and review the systems that move money, govern AI output, and hold under load. Engagements are trade-off-driven — I tell you what breaks before it does."
+        es: "Diseño y reviso los sistemas que mueven dinero, gobiernan outputs de IA y aguantan carga real. Cada proyecto arranca por los trade-offs: te digo qué se va a romper antes de que pase."
+      services:
+        - name: { en: "Distributed Systems Design & Review",           es: "Diseño y revisión de sistemas distribuidos"               }
+          desc: { en: "Architecture reviews, failure mode analysis, and greenfield design for distributed systems. Fintech and payments infrastructure experience at scale.", es: "Revisiones de arquitectura, análisis de modos de fallo y diseño desde cero. Experiencia operando a escala en infraestructura fintech y de pagos." }
+        - name: { en: "Cloud Architecture",                            es: "Arquitectura cloud"                                       }
+          desc: { en: "Azure · GCP. Landing zone design, cost governance, migration planning, and multi-cloud strategy. No vendor lock-in advocacy — only what the system actually needs.", es: "Azure y GCP. Diseño de landing zones, gobernanza de costos, planes de migración y estrategia multi-cloud. Sin promover vendor lock-in — solo lo que el sistema realmente necesita." }
+        - name: { en: "CI/CD Governance & Quality Engineering",        es: "Gobernanza CI/CD e ingeniería de calidad"                 }
+          desc: { en: "Build the pipelines that make releases safe. QA automation frameworks, test architecture, and the governance layers that prevent quality from becoming a bottleneck.", es: "Construyo los pipelines que hacen los releases seguros. Frameworks de automatización QA, arquitectura de pruebas y la gobernanza necesaria para que la calidad no se vuelva el cuello de botella." }
+        - name: { en: "LLM Evaluation & AI Governance",               es: "Evaluación de LLMs y gobernanza de IA"                    }
+          desc: { en: "Structured evaluation frameworks for LLM output quality, bias detection, and reproducibility. Built on the same principles behind the POLQA framework.", es: "Frameworks estructurados para evaluar calidad de output, detectar sesgos y garantizar reproducibilidad. Construidos sobre los mismos principios que POLQA." }
+        - name: { en: "Technical Feasibility & ROI Assessment",        es: "Factibilidad técnica y evaluación de ROI"                 }
+          desc: { en: "Before you build, know the cost. I translate engineering trade-offs into language that lands in boardrooms — and back again.", es: "Antes de construir, hay que conocer el costo. Traduzco trade-offs técnicos a un lenguaje que funciona en una sala de juntas — y al revés." }
+      engagement:
+        title: { en: "Engagement models",      es: "Modelos de trabajo"       }
+        items:
+          - text:   { en: "One-time architecture review session", es: "Sesión puntual de revisión de arquitectura" }
+            detail: { en: "(2h)",                                 es: "(2h)"                                       }
+          - text:   { en: "Project-based consulting",             es: "Consultoría por proyecto"                  }
+          - text:   { en: "Ongoing advisory retainer",            es: "Asesoría continua en retainer"             }
+            detail: { en: "(monthly)",                            es: "(mensual)"                                  }
+      cta: { en: "Contact for pricing and availability", es: "Contactar para disponibilidad y precios" }
+
+    creative:
+      tag:   { en: Creative,              es: Creativo                   }
+      title: { en: "Creative Services",   es: "Servicios creativos"      }
+      intro:
+        en: "The same systematic thinking behind distributed systems applies here. Available in Mexico City and remotely for digital deliverables."
+        es: "El mismo pensamiento sistemático que aplico a los sistemas distribuidos vive aquí. Disponible en Ciudad de México y de forma remota para entregables digitales."
+      disciplines:
+        - name: { en: Photography,         es: Fotografía               }
+          items:
+            - { en: "Commercial & product shoots",           es: "Sesiones comerciales y de producto"       }
+            - { en: "Portrait & personal branding sessions", es: "Retratos y marca personal"                }
+            - { en: "Available in CDMX",                     es: "Disponible en CDMX"                      }
+        - name: { en: "Digital Illustration", es: "Ilustración digital"  }
+          items:
+            - { en: "Brand illustration & identity",         es: "Ilustración para marca e identidad"      }
+            - { en: "Editorial & conceptual illustration",   es: "Ilustración editorial y conceptual"      }
+            - { en: "Icon sets & UI illustration",           es: "Sets de iconos e ilustración para UI"    }
+        - name: { en: "Music Production",  es: "Producción musical"      }
+          items:
+            - { en: "Original compositions & jingles",       es: "Composiciones originales y jingles"      }
+            - { en: "Brand audio & sonic identity",          es: "Audio de marca e identidad sonora"       }
+            - text: { en: "Song production",                 es: "Producción de canciones"                 }
+              detail: { en: "(full pipeline)",               es: "(pipeline completo)"                     }
+      retainer:
+        en: "Creative services are available as one-time projects or monthly retainers with defined deliverables per tier. Contact for current availability and pricing."
+        es: "Los servicios creativos se ofrecen como proyectos únicos o como retainer mensual, con entregables definidos por nivel. Contactar para disponibilidad y precios vigentes."
+      cta: { en: "Contact for pricing and availability", es: "Contactar para disponibilidad y precios" }
+
+  # ── Work ─────────────────────────────────────────────────────────────────────
+  work:
+    meta:
+      title:       { en: Work,          es: Trabajo                     }
+      description:
+        en: "Technical projects and creative work by Leonardo Espinosa — systems, photography, illustration, and music."
+        es: "Proyectos técnicos y trabajo creativo de Leonardo Espinosa — sistemas, fotografía, ilustración y música."
+    header:
+      eyebrow:  { en: Portfolio,        es: Portafolio                  }
+      title:    { en: Work,             es: Trabajo                     }
+      subtitle:
+        en: "Systems designed, images made, sounds built. Two disciplines, one process."
+        es: "Sistemas diseñados, imágenes creadas, sonidos construidos. Dos disciplinas, un mismo proceso."
+    filters:
+      all:          { en: All,          es: Todo        }
+      technical:    { en: Technical,    es: Técnico     }
+      photography:  { en: Photography,  es: Fotografía  }
+      illustration: { en: Illustration, es: Ilustración }
+      music:        { en: Music,        es: Música      }
+    technical:
+      title:    { en: "Technical Projects", es: "Proyectos técnicos"    }
+      gh_label: { en: "View all on GitHub →", es: "Ver todo en GitHub →" }
+      featured_label: { en: Featured,   es: Destacado                   }
+      projects:
+        - name: POLQA
+          href: https://polqa-framework.github.io/polqa-site/
+          featured: true
+          tags: [Python, LLM Governance, Adversarial Testing, OpenAI]
+          tagline:
+            en: LLM Output Governance & Bias Evaluation Framework
+            es: Gobernanza de Output LLM y Evaluación de Sesgos
+          description:
+            en: A modular CLI framework for governing LLM output quality at scale. Provider-agnostic, reproducible, and built for auditability across model versions. Supports HuggingFace, Ollama, OpenAI, Claude, and custom endpoints.
+            es: Framework CLI modular para gobernar la calidad de output de LLMs a escala. Agnóstico de proveedor, reproducible y construido para auditabilidad entre versiones de modelos. Soporta HuggingFace, Ollama, OpenAI, Claude y endpoints personalizados.
+        - name: Automation Learn
+          href: https://github.com/leonardespi/automation-learn
+          featured: false
+          tags: [Selenium, Cypress, Robot Framework, CI/CD]
+          tagline:
+            en: "Scalable QA Capability — From Manual to Automated"
+            es: "Capacidad QA Escalable — De Manual a Automatizado"
+          description:
+            en: Opinionated learning paths designed to institutionalize quality knowledge rather than keep it person-dependent. Covers Selenium, Cypress, API testing, CI/CD, and test architecture.
+            es: Rutas de aprendizaje diseñadas para institucionalizar el conocimiento de calidad en lugar de mantenerlo dependiente de personas. Cubre Selenium, Cypress, pruebas de API, CI/CD y arquitectura de pruebas.
+        - name: SynLeo
+          href: https://github.com/leonardespi/synleo
+          featured: false
+          tags: [Python, Generative AI, System Design, Creative Tech]
+          tagline:
+            en: Generative AI Architecture for Creative Systems
+            es: Arquitectura de IA Generativa para Sistemas Creativos
+          description:
+            en: An architectural exploration of generative AI applied to music production. Voice modeling, lyric generation, and governance challenges unique to AI-generated creative content.
+            es: Una exploración arquitectónica de la IA generativa aplicada a la producción musical. Modelado de voz, generación de letras y desafíos de gobernanza únicos al contenido creativo generado por IA.
+        - name: Resume Builder
+          href: https://github.com/leonardespi/resume-builder
+          featured: false
+          tags: [Python, PDF Generation, CLI, YAML]
+          tagline:
+            en: "Structured Data → Professional Document Pipeline"
+            es: "Datos Estructurados → Pipeline de Documento Profesional"
+          description:
+            en: "Separates content from presentation — YAML as source of truth, PDF as a deterministic artifact. Optimized for ATS parsing without sacrificing human readability."
+            es: "Separa contenido de presentación — YAML como fuente de verdad, PDF como artefacto determinista. Optimizado para parseo ATS sin sacrificar legibilidad humana."
+        - name: "SPA — System for Thought & Action"
+          href: https://github.com/leonardespi/spa
+          featured: false
+          tags: [Obsidian, Information Architecture, GTD, Systems Design]
+          tagline:
+            en: Information Architecture for High-Complexity Knowledge Work
+            es: Arquitectura de Información para Trabajo de Conocimiento Complejo
+          description:
+            en: "A personal operating system synthesizing PARA, GTD, and SCRUM into one coherent schema. Stricter structure over flexibility — consistency reduces cognitive load."
+            es: "Un sistema operativo personal que sintetiza PARA, GTD y SCRUM en un esquema coherente. Estructura más estricta sobre flexibilidad — la consistencia reduce la carga cognitiva."
+        - name: README Wizard
+          href: https://github.com/leonardespi/readme-wizard
+          featured: false
+          tags: [Python, CLI, Markdown, Documentation]
+          tagline:
+            en: Documentation as a First-Class Engineering Artifact
+            es: Documentación como Artefacto de Ingeniería de Primera Clase
+          description:
+            en: "Treats README generation as a structured pipeline problem. Minimal schema forces four questions every README must answer: what, install, use, contribute."
+            es: "Trata la generación de READMEs como un problema de pipeline estructurado. El esquema mínimo fuerza cuatro preguntas que todo README debe responder: qué, instalar, usar, contribuir."
+    creative:
+      title: { en: "Creative Work",     es: "Trabajo creativo"          }
+      photography:
+        tag:   { en: Photography,       es: Fotografía                  }
+        title: { en: "CDMX Street & Architecture", es: "Arquitectura urbana · CDMX" }
+        note:  { en: "Full gallery coming soon. Shot on film, available in CDMX.", es: "Galería completa próximamente. En película, disponible en CDMX." }
+        placeholders:
+          - { en: "CDMX Architecture I",   es: "Arquitectura CDMX I"    }
+          - { en: "CDMX Architecture II",  es: "Arquitectura CDMX II"   }
+          - { en: "CDMX Architecture III", es: "Arquitectura CDMX III"  }
+          - { en: "Street · Reforma",      es: "Calle · Reforma"        }
+          - { en: "Brutalism Study",       es: "Estudio Brutalista"     }
+          - { en: "Light & Decay",         es: "Luz y Decadencia"       }
+      illustration:
+        tag:   { en: Illustration,      es: Ilustración                 }
+        title: { en: "Digital & Conceptual", es: "Digital y conceptual" }
+        note:  { en: "Brand illustration, editorial, and UI illustration. Full portfolio in progress.", es: "Ilustración para marca, editorial y UI. Portafolio en construcción." }
+        placeholders:
+          - { en: "Systems Map I",        es: "Mapa de Sistemas I"      }
+          - { en: "Systems Map II",       es: "Mapa de Sistemas II"     }
+          - { en: "Conceptual · Flow",    es: "Conceptual · Flujo"      }
+          - { en: "Editorial Study",      es: "Estudio Editorial"       }
+      music:
+        tag:   { en: Music,             es: Música                      }
+        title: { en: "Production & Composition", es: "Producción y composición" }
+        p1:
+          en: "Ambient compositions, modular synthesis, and field recordings. Also: original jingles, brand audio, and full song production pipelines."
+          es: "Piezas ambient, síntesis modular y grabaciones de campo. También jingles originales, audio de marca y pipelines completos de producción musical."
+        p2_prefix: { en: "Available on SoundCloud — link coming soon. For production work,", es: "Próximamente en SoundCloud. Para trabajos de producción," }
+        p2_link:   { en: "get in touch",  es: "contáctame"              }
+        placeholder: { en: "Audio samples coming soon", es: "Muestras de audio próximamente" }
+
+  # ── Now ──────────────────────────────────────────────────────────────────────
+  now:
+    meta:
+      title:       { en: Now,           es: Ahora                       }
+      description:
+        en: "What Leonardo Espinosa is working on right now — projects, learning, creating, and recently shipped."
+        es: "En qué está trabajando Leonardo Espinosa ahora mismo — proyectos, aprendizaje, creación y lo último publicado."
+    header:
+      last_updated: { en: "Last updated: May 2026", es: "Última actualización: mayo 2026" }
+      location:     { en: "· Mexico City",           es: "· Ciudad de México"              }
+      title:        { en: Now,                        es: Ahora                             }
+      about:
+        before_link:
+          en: "A running snapshot of what I'm actually doing. Updated roughly once a month. Inspired by"
+          es: "Una instantánea de lo que estoy haciendo en este momento. La actualizo una vez al mes, más o menos. Inspirada en las páginas \"now\" que propuso"
+        link_text:
+          en: "Derek Sivers' now page movement"
+          es: "Derek Sivers"
+        after_link: "."
+    sections:
+      building:
+        title: { en: "Currently building", es: "Construyendo"           }
+        paragraphs:
+          - en: 'At <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>, designing and governing the quality systems that sit under our payments infrastructure — test architecture, CI/CD pipeline governance, and the frameworks that make releases safe at scale.'
+            es: 'En <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>, diseño y gobierno los sistemas de calidad que sostienen nuestra infraestructura de pagos: arquitectura de pruebas, gobernanza de pipelines CI/CD y los frameworks que hacen los releases seguros a escala.'
+          - en: "Personally: <strong>POLQA</strong>, a modular framework for LLM output evaluation and bias detection. The problem it solves — reproducible, cross-model, auditable AI evaluation — is still mostly unsolved in production contexts."
+            es: "En lo personal: <strong>POLQA</strong>, un framework modular para evaluar outputs de LLM y detectar sesgos. El problema que resuelve — evaluación de IA reproducible, multi-modelo y auditable — sigue abierto en la mayoría de los contextos de producción."
+      learning:
+        title: { en: "Currently learning", es: "Aprendiendo"            }
+        paragraphs:
+          - en: "Going deeper on AI governance frameworks and how they interact with financial regulation — specifically what DORA and emerging LATAM fintech compliance frameworks mean for teams running LLMs in production."
+            es: "Profundizando en gobernanza de IA y cómo se cruza con la regulación financiera. En concreto, qué implican DORA y los marcos de cumplimiento fintech que están surgiendo en LATAM para los equipos que llevan LLMs a producción."
+          - en: "On the creative side: medium format film photography. Slower, more deliberate. Good counterweight to the terminal."
+            es: "Del lado creativo: fotografía en película de formato medio. Más lenta, más deliberada. Buen contrapeso al terminal."
+      creating:
+        title: { en: "Currently creating", es: "Creando"                }
+        paragraphs:
+          - en: "A photography series focused on CDMX street architecture — the overlap between brutalist structure and organic decay. No filters. Shot on film."
+            es: "Una serie fotográfica sobre la arquitectura urbana de CDMX — la tensión entre la estructura brutalista y la decadencia orgánica. Sin filtros. En película."
+          - en: "A few ambient music sketches that may or may not become something. Mostly modular synthesis and field recordings."
+            es: "Algunos bocetos de música ambient que pueden o no convertirse en algo. Sobre todo síntesis modular y grabaciones de campo."
+      shipped:
+        title: { en: "Recently shipped",   es: "Publicado recientemente" }
+        paragraphs:
+          - en: "Rebuilt this site — moving away from a static CV toward something that actually reflects what I do across technical and creative work. This now page is part of that effort."
+            es: "Reconstruí este sitio. Dejé atrás el CV estático para hacer algo que refleje de verdad lo que hago, técnico y creativo. Esta página \"ahora\" es parte de ese rediseño."
+          - prefix: { en: "Latest writing:", es: "Último artículo:"    }
+            link_href: /writing/bias-hallucinations-dirty-data
+            link_label: { en: "Bias, Hallucinations & Dirty Data", es: "Sesgos, alucinaciones y datos sucios" }
+            suffix: { en: "— on why LLM evaluation failures are usually a data problem first.", es: "— por qué los fallos al evaluar LLMs casi siempre son, primero, un problema de datos." }
+
+  # ── Contact ──────────────────────────────────────────────────────────────────
+  contact:
+    meta:
+      title: { en: Contact,             es: Contacto                    }
+      description:
+        en: "Get in touch with Leonardo Espinosa for IT Architecture consulting, creative services, or open source collaboration."
+        es: "Contacta a Leonardo Espinosa para consultoría de Arquitectura TI, servicios creativos o colaboración en código abierto."
+    header:
+      eyebrow: { en: "Get in touch",    es: "Ponte en contacto"         }
+      title:   { en: "Let's talk.",     es: "Hablemos."                 }
+      intro:
+        en: "I reply within 48 hours. Tell me what you're working on — even if it's still vague."
+        es: "Respondo en menos de 48 horas. Cuéntame en qué estás trabajando — aunque todavía no esté del todo claro."
+    options:
+      label: { en: "What are you looking for?", es: "¿Qué andas buscando?" }
+      items:
+        - title: { en: Technical,       es: Técnico                     }
+          desc:  { en: "IT Architecture consulting, distributed systems, fintech, cloud, CI/CD, LLM evaluation.", es: "Consultoría de Arquitectura TI, sistemas distribuidos, fintech, cloud, CI/CD, evaluación de LLMs." }
+          subject: { en: "Technical%20Consulting%20Inquiry", es: "Consulta%20T%C3%A9cnica" }
+          icon: monitor
+        - title: { en: Creative,        es: Creativo                    }
+          desc:  { en: "Photography, digital illustration, music production. CDMX-based or remote for digital deliverables.", es: "Fotografía, ilustración digital, producción musical. En CDMX o remoto para entregables digitales." }
+          subject: { en: "Creative%20Services%20Inquiry", es: "Consulta%20Creativa" }
+          icon: smile
+        - title: { en: "Both / Not sure", es: "Ambos / No estoy seguro" }
+          desc:  { en: "Open source collaboration, general questions, or just to say hi. The brief can be loose.", es: "Colaboración open source, preguntas generales o simplemente saludar. El brief puede ser amplio." }
+          subject: { en: "Collaboration%20Inquiry",  es: "Colaboraci%C3%B3n"  }
+          icon: users
+    meta_info:
+      - label: { en: "Response time",   es: "Tiempo de respuesta"       }
+        value: { en: "Within 48 hours", es: "Menos de 48 horas"         }
+      - label: { en: Location,          es: Ubicación                   }
+        value: { en: "Mexico City · Remote available", es: "Ciudad de México · Remoto disponible" }
+      - label: { en: "Direct email",    es: "Email directo"             }
+        is_email: true
+    elsewhere:
+      label: { en: Elsewhere,           es: "También por aquí"          }

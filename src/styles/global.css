@@ -206,6 +206,21 @@ code, pre {
 }
 
 /* ─────────────────────────────────────────────
+   Clip employer link (injected via JS replace)
+   ───────────────────────────────────────────── */
+.clip-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+.clip-link:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+/* ─────────────────────────────────────────────
    Focus styles (accessibility)
    ───────────────────────────────────────────── */
 :focus-visible {
