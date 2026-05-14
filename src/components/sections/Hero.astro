@@ -35,7 +35,7 @@ const {
       {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
       <h1 class="hero-headline" set:html={title} />
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
-      {trajectory && <p class="hero-trajectory">{trajectory}</p>}
+      {trajectory && <p class="hero-trajectory" set:html={trajectory} />}
       {ctas.length > 0 && (
         <div class="hero-ctas">
           {ctas.map(cta => (
