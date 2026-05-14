@@ -10,6 +10,13 @@ import { remarkMermaid } from './src/plugins/remark-mermaid.mjs';
 export default defineConfig({
   site: 'https://www.leonardespi.me',
   output: 'static',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [
     sitemap({
       changefreq: 'weekly',
