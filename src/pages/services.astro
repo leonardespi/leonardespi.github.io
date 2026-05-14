@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import { getSiteContent } from '../i18n/utils';
+
+const site = getSiteContent('en');
+const { pages, links } = site;
+const services = pages.services;
+---
+
+<BaseLayout title={services.meta.title} description={services.meta.description}>
+  <Hero
+    variant="page"
+    eyebrow={services.header.eyebrow}
+    title={services.header.title}
+    subtitle={services.header.subtitle}
+  />
+
+  <div class="services-page container--narrow container">
+
+    <!-- ── Technical ──────────────────────────────────── -->
+    <section class="service-section">
+      <div class="service-section-header">
+        <span class="service-section-tag">{services.technical.tag}</span>
+        <h2 class="service-section-title">{services.technical.title}</h2>
+        <p class="service-section-intro">{services.technical.intro}</p>
+      </div>
+
+      <div class="service-cards">
+        {services.technical.services.map((s: any) => (
+          <div class="service-card">
+            <h3 class="service-name">{s.name}</h3>
+            <p class="service-desc">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="engagement-models">
+        <h3 class="engagement-title">{services.technical.engagement.title}</h3>
+        <ul class="engagement-list">
+          {services.technical.engagement.items.map((item: any) => (
+            <li>
+              <span class="arrow">→</span> {item.text}
+              {item.detail && <span class="detail">{item.detail}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <a href={`mailto:${links.email}`} class="cta-link">
+        {services.technical.cta}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- ── Creative ───────────────────────────────────── -->
+    <section class="service-section">
+      <div class="service-section-header">
+        <span class="service-section-tag service-section-tag--creative">{services.creative.tag}</span>
+        <h2 class="service-section-title">{services.creative.title}</h2>
+        <p class="service-section-intro">{services.creative.intro}</p>
+      </div>
+
+      <div class="creative-grid">
+        {services.creative.disciplines.map((disc: any) => (
+          <div class="creative-block">
+            <h3 class="creative-name">{disc.name}</h3>
+            <ul class="creative-list">
+              {disc.items.map((item: any) =>
+                typeof item === 'string'
+                  ? <li>{item}</li>
+                  : <li>{item.text} <span class="detail">{item.detail}</span></li>
+              )}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <p class="retainer-note">{services.creative.retainer}</p>
+
+      <a href={`mailto:${links.email}`} class="cta-link">
+        {services.creative.cta}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .services-page {
+    padding-block: 0 5rem;
+  }
+
+  .service-section {
+    padding-block: 3.5rem;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  .service-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .service-section-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .service-section-tag--creative {
+    color: var(--color-text-muted);
+    background: var(--color-bg-muted);
+  }
+
+  .service-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-section-intro {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  .service-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+
+  .service-card {
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+
+  .service-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    max-width: 580px;
+  }
+
+  .engagement-models {
+    margin-bottom: 1.75rem;
+  }
+
+  .engagement-title {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .engagement-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .engagement-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .arrow {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  .detail {
+    font-size: 0.875em;
+    opacity: 0.75;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .cta-link:hover {
+    opacity: 0.75;
+  }
+
+  .creative-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .creative-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .creative-block {
+      border-right: 1px solid var(--color-border);
+      border-bottom: none;
+    }
+
+    .creative-block:last-child {
+      border-right: none;
+    }
+  }
+
+  .creative-block {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 640px) {
+    .creative-block {
+      padding: 1.5rem;
+      border-bottom: none;
+    }
+
+    .creative-block:first-child {
+      padding-left: 0;
+    }
+  }
+
+  .creative-name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-text);
+    margin-bottom: 0.875rem;
+  }
+
+  .creative-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .creative-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    padding-left: 0.875rem;
+    position: relative;
+  }
+
+  .creative-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+    font-size: 0.75em;
+    top: 0.15em;
+  }
+
+  .retainer-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    border-left: 2px solid var(--color-border);
+    padding-left: 1rem;
+    margin-bottom: 1.75rem;
+    font-style: italic;
+  }
+</style>

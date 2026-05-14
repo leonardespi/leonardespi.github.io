@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Tag from '../../components/ui/Tag.astro';
 import { getCollection } from 'astro:content';
+import { WRITING_PATH } from '../../i18n/utils';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -36,16 +37,22 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
       </p>
     </header>
 
-    <!-- Tag filters -->
-    {allTags.length > 0 && (
-      <div class="tag-cloud" id="tag-filters" role="group" aria-label="Filter posts by tag">
-        {allTags.map(tag => (
-          <button class="tag-btn" data-tag={tag} aria-pressed="false">
-            {tag}
-          </button>
-        ))}
+    <!-- Filters -->
+    <div class="filters-section">
+      <div class="filter-row" id="lang-filters" role="group" aria-label="Filter by language">
+        <span class="filter-label">Language</span>
+        <button class="tag-btn lang-btn" data-lang="en" aria-pressed="false">English</button>
+        <button class="tag-btn lang-btn" data-lang="es" aria-pressed="false">Spanish</button>
       </div>
-    )}
+      {allTags.length > 0 && (
+        <div class="filter-row tag-cloud" id="tag-filters" role="group" aria-label="Filter posts by tag">
+          <span class="filter-label">Topics</span>
+          {allTags.map(tag => (
+            <button class="tag-btn" data-tag={tag} aria-pressed="false">{tag}</button>
+          ))}
+        </div>
+      )}
+    </div>
 
     <!-- Posts by year -->
     {years.map(year => (
@@ -56,8 +63,8 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
             const d = post.data.date;
             const dayMonth = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             return (
-              <li data-post-tags={JSON.stringify(post.data.tags)}>
-                <a href={`/blog/${post.id}`} class="post-row">
+              <li data-post-tags={JSON.stringify(post.data.tags)} data-post-lang={post.data.lang}>
+                <a href={`${WRITING_PATH}/${post.id}`} class="post-row">
                   <time
                     datetime={d.toISOString()}
                     class="post-date"
@@ -92,39 +99,51 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
 </BaseLayout>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('#tag-filters .tag-btn');
-  const postItems = document.querySelectorAll<HTMLLIElement>('[data-post-tags]');
-  const yearSections = document.querySelectorAll<HTMLElement>('[data-year-section]');
+  function initBlogFilter() {
+    const tagButtons = document.querySelectorAll<HTMLButtonElement>('#tag-filters .tag-btn');
+    const langButtons = document.querySelectorAll<HTMLButtonElement>('#lang-filters .lang-btn');
+    const postItems = document.querySelectorAll<HTMLLIElement>('[data-post-tags]');
+    const yearSections = document.querySelectorAll<HTMLElement>('[data-year-section]');
+    if (!postItems.length) return;
 
-  let active = new Set<string>();
+    let activeTags = new Set<string>();
+    let activeLangs = new Set<string>();
 
-  function applyFilter() {
-    postItems.forEach(item => {
-      const tags: string[] = JSON.parse(item.dataset.postTags ?? '[]');
-      const visible = active.size === 0 || tags.some(t => active.has(t));
-      item.hidden = !visible;
+    function applyFilter() {
+      postItems.forEach(item => {
+        const tags: string[] = JSON.parse(item.dataset.postTags ?? '[]');
+        const lang = item.dataset.postLang ?? 'en';
+        const tagMatch = activeTags.size === 0 || tags.some(t => activeTags.has(t));
+        const langMatch = activeLangs.size === 0 || activeLangs.has(lang);
+        item.hidden = !(tagMatch && langMatch);
+      });
+      yearSections.forEach(section => {
+        const anyVisible = [...section.querySelectorAll<HTMLLIElement>('[data-post-tags]')]
+          .some(item => !item.hidden);
+        section.hidden = !anyVisible;
+      });
+    }
+
+    tagButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag!;
+        if (activeTags.has(tag)) { activeTags.delete(tag); btn.setAttribute('aria-pressed', 'false'); }
+        else { activeTags.add(tag); btn.setAttribute('aria-pressed', 'true'); }
+        applyFilter();
+      });
     });
 
-    yearSections.forEach(section => {
-      const anyVisible = [...section.querySelectorAll<HTMLLIElement>('[data-post-tags]')]
-        .some(item => !item.hidden);
-      section.hidden = !anyVisible;
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang!;
+        if (activeLangs.has(lang)) { activeLangs.delete(lang); btn.setAttribute('aria-pressed', 'false'); }
+        else { activeLangs.add(lang); btn.setAttribute('aria-pressed', 'true'); }
+        applyFilter();
+      });
     });
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tag = btn.dataset.tag!;
-      if (active.has(tag)) {
-        active.delete(tag);
-        btn.setAttribute('aria-pressed', 'false');
-      } else {
-        active.add(tag);
-        btn.setAttribute('aria-pressed', 'true');
-      }
-      applyFilter();
-    });
-  });
+  document.addEventListener('astro:page-load', initBlogFilter);
 </script>
 
 <style>
@@ -160,12 +179,35 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
     max-width: 540px;
   }
 
-  /* Tag filters */
+  /* Filters */
+  .filters-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 3rem;
+  }
+
+  .filter-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .filter-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    min-width: 4.5rem;
+    opacity: 0.7;
+  }
+
   .tag-cloud {
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
-    margin-bottom: 3rem;
   }
 
   .tag-btn {

@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSiteContent } from '../i18n/utils';
+
+const site = getSiteContent('en');
+const now = site.pages.now;
+const { building, learning, creating, shipped } = now.sections;
+---
+
+<BaseLayout title={now.meta.title} description={now.meta.description}>
+  <div class="now-page container--narrow container">
+
+    <header class="now-header">
+      <div class="now-meta">
+        <span class="now-updated">{now.header.last_updated}</span>
+        <span class="now-location">{now.header.location}</span>
+      </div>
+      <h1 class="now-title">{now.header.title}</h1>
+      <p class="now-about">
+        {now.header.about.before_link} <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">{now.header.about.link_text}</a>{now.header.about.after_link}
+      </p>
+    </header>
+
+    <div class="now-content">
+
+      {[building, learning, creating].map((section: any) => (
+        <section class="now-section">
+          <h2 class="now-section-title">{section.title}</h2>
+          <div class="now-section-body">
+            {section.paragraphs.map((para: string) => (
+              <p set:html={para} />
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section class="now-section">
+        <h2 class="now-section-title">{shipped.title}</h2>
+        <div class="now-section-body">
+          {shipped.paragraphs.map((para: any) =>
+            typeof para === 'string'
+              ? <p set:html={para} />
+              : <p>{para.prefix} <a href={para.link_href}>{para.link_label}</a>{para.suffix}</p>
+          )}
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .now-page {
+    padding-block: 4rem 6rem;
+  }
+
+  .now-header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .now-meta {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .now-location {
+    margin-left: 0.25rem;
+  }
+
+  .now-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  .now-about {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  .now-about a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .now-about a:hover {
+    text-decoration-color: var(--color-accent);
+  }
+
+  .now-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .now-section {
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .now-section:last-child {
+    border-bottom: none;
+  }
+
+  .now-section-title {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .now-section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .now-section-body p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .now-section-body :global(strong) {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .now-section-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .now-section-body a:hover {
+    text-decoration-color: var(--color-accent);
+  }
+</style>

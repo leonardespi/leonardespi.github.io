@@ -4,15 +4,29 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  // Sort newest → oldest for prev/next calculation
   const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return sorted.map((post, index) => {
-    // In a newest-first list:
-    //   nextPost (newer, published after) = sorted[index - 1]
-    //   prevPost (older, published before) = sorted[index + 1]
     const newerPost = index > 0 ? sorted[index - 1] : null;
     const olderPost = index < sorted.length - 1 ? sorted[index + 1] : null;
+
+    // Related posts: ranked by shared tag count, then by date, max 3
+    const related = sorted
+      .filter(p => p.id !== post.id)
+      .map(p => ({
+        post: p,
+        shared: p.data.tags.filter(t => post.data.tags.includes(t)).length,
+      }))
+      .filter(({ shared }) => shared > 0)
+      .sort((a, b) => b.shared - a.shared || b.post.data.date.valueOf() - a.post.data.date.valueOf())
+      .slice(0, 3)
+      .map(({ post: p }) => ({
+        id: p.id,
+        title: p.data.title,
+        description: p.data.description,
+        date: p.data.date,
+        tags: p.data.tags,
+      }));
 
     return {
       params: { slug: post.id },
@@ -24,12 +38,13 @@ export async function getStaticPaths() {
         nextPost: newerPost
           ? { title: newerPost.data.title, id: newerPost.id }
           : null,
+        relatedPosts: related,
       },
     };
   });
 }
 
-const { post, prevPost, nextPost } = Astro.props;
+const { post, prevPost, nextPost, relatedPosts } = Astro.props;
 const { Content } = await render(post);
 
 // ── Reading time ──────────────────────────────────────────────────
@@ -60,6 +75,8 @@ const readingTime = estimateReadingTime(post.body ?? '');
   readingTime={readingTime}
   prevPost={prevPost}
   nextPost={nextPost}
+  relatedPosts={relatedPosts}
+  postLang={post.data.lang}
 >
   <Content />
 </BlogLayout>
