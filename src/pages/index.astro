@@ -4,153 +4,412 @@ import Tag from '../components/ui/Tag.astro';
 import Hero from '../components/sections/Hero.astro';
 import Button from '../components/ui/Button.astro';
 import { getCollection } from 'astro:content';
-import { readFileSync } from 'node:fs';
-import { load as parseYaml } from 'js-yaml';
-import { resolve } from 'node:path';
+import { getSiteContent, WRITING_PATH } from '../i18n/utils';
 
-const siteConfig = parseYaml(
-  readFileSync(resolve('src/content/site.yml'), 'utf8')
-) as { index: Record<string, boolean> };
+const site = getSiteContent('en');
+const { pages, links, index: sections } = site;
+const home = pages.home;
 
-const sections = siteConfig.index;
-
-// Fetch last 3 published posts, sorted by date descending
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
-const featuredProjects = [
-  {
-    name: 'POLQA',
-    tagline: 'LLM Output Governance & Bias Evaluation Framework',
-    description:
-      'A modular framework for governing LLM output quality at scale. Addresses a critical gap in AI governance: most evaluation tooling is opaque, single-provider, or academically siloed. POLQA enforces reproducibility, auditability, and cross-model comparability.',
-    tags: ['Python', 'LLM Governance', 'Adversarial Testing', 'OpenAI'],
-    href: 'https://polqa-framework.github.io/polqa-site/',
-    accent: true,
-  },
-  {
-    name: 'Automation Learn',
-    tagline: 'Scalable QA Capability — From Manual to Automated',
-    description:
-      'A structured curriculum designed to decentralize automation knowledge and reduce dependency on individual contributors. The architectural decision: opinionated learning paths over encyclopedic references, so engineers build transferable judgment, not just tool familiarity.',
-    tags: ['Selenium', 'Cypress', 'CI/CD', 'Open Source'],
-    href: 'https://github.com/leonardespi/automation-learn',
-    accent: false,
-  },
-  {
-    name: 'Resume Builder',
-    tagline: 'Structured Data → Professional Document Pipeline',
-    description:
-      'Separates content from presentation — a clean architectural boundary that most resume tools collapse. YAML as the source of truth; PDF as a deterministic artifact. Optimized for ATS parsing without sacrificing human readability.',
-    tags: ['Python', 'PDF Generation', 'CLI', 'Open Source'],
-    href: 'https://github.com/leonardespi/resume-builder',
-    accent: false,
-  },
-];
 ---
 
-<BaseLayout>
-  <!-- ─────────────────────────────────────────
-       HERO
-  ───────────────────────────────────────────── -->
-  {sections.hero && <Hero
-    variant="home"
-    eyebrow="Hey, I'm Leo"
-    title="I design systems<br />that scale."
-    subtitle="IT Architect and SDET Lead at Clip. Aligning technical strategy with business objectives, governing quality at scale, and designing resilient architectures across fintech and distributed systems."
-    trajectory="IT Architect · SDET Lead at Clip (PayClip)"
-    ctas={[
-      { href: '/blog',     label: 'Read the Blog',  variant: 'primary' },
-      { href: '/projects', label: 'See Projects',   variant: 'ghost' },
-    ]}
-  />}
+<BaseLayout description={home.meta.description}>
+  <!-- ─── HERO ────────────────────────────────────────────────────────── -->
+  {sections.hero && (
+    <Hero
+      variant="home"
+      eyebrow={home.hero.eyebrow}
+      title={home.hero.title}
+      subtitle={home.hero.subtitle}
+      trajectory={home.hero.trajectory}
+      ctas={home.hero.ctas}
+    />
+  )}
 
-  <!-- ─────────────────────────────────────────
-       RECENT WRITING
-  ───────────────────────────────────────────── -->
+  <!-- ─── WIDGETS (Available for + Now feed) ─────────────────────────── -->
+  {(sections.available_for || sections.now_feed) && (
+    <section class="section section--widgets">
+      <div class="container">
+        <div class="widgets-grid">
+
+          {sections.available_for && (
+            <div class="widget-card widget-card--available">
+              <p class="available-label">{home.available_for.label}</p>
+              <ul class="available-list">
+                {home.available_for.items.map((item: any) => (
+                  <li>
+                    <span class="arrow">→</span> {item.text}
+                    {item.detail && <span class="detail">{item.detail}</span>}
+                  </li>
+                ))}
+              </ul>
+              <a href={`mailto:${links.email}`} class="available-cta">
+                {home.available_for.cta}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          )}
+
+          {sections.now_feed && (
+            <div class="widget-card widget-card--now">
+              <div class="now-badge">
+                <span class="now-pulse" aria-hidden="true"></span>
+                {home.now_feed.badge}
+              </div>
+              <div class="now-snapshot">
+                {home.now_feed.rows.map((row: any) => (
+                  <div class="now-row">
+                    <span class="now-row-label">{row.label}</span>
+                    <span class="now-row-value" set:html={row.value} />
+                  </div>
+                ))}
+              </div>
+              <span class="now-updated">{home.now_feed.updated}</span>
+              <a href="/now" class="now-cta">{home.now_feed.link}</a>
+            </div>
+          )}
+
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ─── RECENT WRITING ───────────────────────────────────────────────── -->
   {sections.recent_writing && (
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Recent Writing</h2>
-        <a href="/blog" class="section-link">All posts →</a>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">{home.writing.title}</h2>
+          <a href={WRITING_PATH} class="section-link">{home.writing.all}</a>
+        </div>
+        <div class="posts-list">
+          {recentPosts.map((post) => (
+            <a href={`${WRITING_PATH}/${post.id}`} class="post-item">
+              <div class="post-meta">
+                <time datetime={post.data.date.toISOString()} class="post-date">
+                  {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                </time>
+                {post.data.tags.slice(0, 2).map(tag => <Tag label={tag} />)}
+              </div>
+              <h3 class="post-title">{post.data.title}</h3>
+              <p class="post-description">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
       </div>
-
-      <div class="posts-list">
-        {recentPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="post-item">
-            <div class="post-meta">
-              <time datetime={post.data.date.toISOString()} class="post-date">
-                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-              </time>
-              {post.data.tags.slice(0, 2).map(tag => <Tag label={tag} />)}
-            </div>
-            <h3 class="post-title">{post.data.title}</h3>
-            <p class="post-description">{post.data.description}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+    </section>
   )}
 
-  <!-- ─────────────────────────────────────────
-       FEATURED PROJECTS
-  ───────────────────────────────────────────── -->
+  <!-- ─── DUAL IDENTITY ────────────────────────────────────────────────── -->
+  {sections.dual_identity && (
+    <section class="section section--identity">
+      <div class="container">
+        <div class="identity-inner">
+          <div class="identity-text">
+            <h2 class="section-title">{home.dual_identity.title}</h2>
+            <p class="identity-copy">{home.dual_identity.copy}</p>
+            <a href="/work" class="section-link">{home.dual_identity.link}</a>
+          </div>
+          <div class="identity-samples">
+            {home.dual_identity.samples.map((s: any) => (
+              <div class={`sample-card sample-card--${s.key}`}>
+                <span class="sample-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ─── FEATURED PROJECTS ────────────────────────────────────────────── -->
   {sections.featured_projects && (
-  <section class="section section--muted">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <a href="/projects" class="section-link">All projects →</a>
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <a href="/work" class="section-link">All projects →</a>
+        </div>
       </div>
-
-      <div class="projects-grid">
-        {featuredProjects.map((project) => (
-          <a href={project.href} class={`project-card ${project.accent ? 'project-card--accent' : ''}`} target="_blank" rel="noopener noreferrer">
-            <div class="project-header">
-              <h3 class="project-name">{project.name}</h3>
-              <span class="project-tagline">{project.tagline}</span>
-            </div>
-            <p class="project-description">{project.description}</p>
-            <div class="project-tags">
-              {project.tags.map(tag => <Tag label={tag} color={project.accent ? 'accent' : 'default'} />)}
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+    </section>
   )}
 
-  <!-- ─────────────────────────────────────────
-       CTA
-  ───────────────────────────────────────────── -->
+  <!-- ─── CTA ──────────────────────────────────────────────────────────── -->
   {sections.cta && (
-  <section class="section section--cta">
-    <div class="container">
-      <div class="cta-inner">
-        <div>
-          <h2 class="cta-title">Architecture, quality, and the space between.</h2>
-          <p class="cta-body">
-            If you're looking for an IT Architect who can evaluate trade-offs rigorously,
-            align engineering decisions with business outcomes, and build the governance frameworks
-            that make scale sustainable — let's talk.
-          </p>
-        </div>
-        <div class="cta-actions">
-          <Button href="/resume" variant="primary">View Resume</Button>
-          <Button href="mailto:leo@leonardespi.me" variant="ghost">Get in Touch</Button>
+    <section class="section section--cta">
+      <div class="container">
+        <div class="cta-inner">
+          <div>
+            <h2 class="cta-title">{home.cta.title}</h2>
+            <p class="cta-body">{home.cta.body}</p>
+          </div>
+          <div class="cta-actions">
+            <Button href={links.cv} variant="primary">{home.cta.resume}</Button>
+            <Button href={`mailto:${links.email}`} variant="ghost">{home.cta.contact}</Button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   )}
 </BaseLayout>
 
 <style>
+  /* ── Widgets section ── */
+  .section--widgets {
+    background: var(--color-bg-muted);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .widgets-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 720px) {
+    .widgets-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+  }
+
+  .widget-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* ── Available for card ── */
+  .available-label {
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--color-text);
+  }
+
+  .available-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+  }
+
+  .available-list li {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .available-list .arrow {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  .available-list .detail {
+    font-size: 0.875rem;
+    opacity: 0.75;
+  }
+
+  .available-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    align-self: flex-start;
+    transition: background 0.15s;
+    margin-top: auto;
+  }
+
+  .available-cta:hover {
+    background: var(--color-accent-hover);
+  }
+
+  /* ── Now feed card ── */
+  .now-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    align-self: flex-start;
+  }
+
+  .now-pulse {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.45; transform: scale(0.85); }
+  }
+
+  .now-snapshot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+    padding-left: 1.25rem;
+  }
+
+  .now-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  @media (min-width: 600px) {
+    .now-row {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .now-row-label {
+      flex-shrink: 0;
+      width: 70px;
+    }
+  }
+
+  .now-row-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    opacity: 0.75;
+  }
+
+  .now-row-value {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .now-updated {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    opacity: 0.65;
+  }
+
+  .now-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    align-self: flex-start;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: auto;
+  }
+
+  .now-cta:hover {
+    background: var(--color-bg-muted);
+    border-color: var(--color-text-muted);
+  }
+
+  /* ── Dual identity ── */
+  .section--identity {
+    background: var(--color-bg-muted);
+  }
+
+  .identity-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .identity-inner {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .identity-text {
+      flex: 0 0 400px;
+    }
+  }
+
+  .identity-copy {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-block: 1rem 1.5rem;
+  }
+
+  .identity-samples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.875rem;
+    flex: 1;
+  }
+
+  .sample-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 0.625rem;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.875rem;
+  }
+
+  .sample-card--photo {
+    background: color-mix(in srgb, var(--color-accent) 12%, var(--color-bg-card));
+  }
+
+  .sample-card--illustration {
+    background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-card));
+  }
+
+  .sample-card--music {
+    background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg-card));
+  }
+
+  .sample-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
   /* ── Sections ── */
   .section {
     padding-block: clamp(3rem, 6vw, 5rem);
@@ -251,76 +510,6 @@ const featuredProjects = [
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  /* ── Projects ── */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  @media (min-width: 900px) {
-    .projects-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-    padding: 1.5rem;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
-    text-decoration: none;
-    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
-  }
-
-  .project-card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  }
-
-  .project-card--accent {
-    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
-    background: color-mix(in srgb, var(--color-accent) 3%, var(--color-bg-card));
-  }
-
-  .project-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .project-name {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    color: var(--color-text);
-    line-height: 1.2;
-  }
-
-  .project-tagline {
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    font-weight: 450;
-  }
-
-  .project-description {
-    font-size: 0.9375rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    flex: 1;
-    text-align: justify;
-  }
-
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
-    margin-top: auto;
   }
 
   /* ── CTA ── */
