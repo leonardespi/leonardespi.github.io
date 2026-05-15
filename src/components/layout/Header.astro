@@ -18,10 +18,10 @@ const site = getSiteContent(lang);
 const p = prefix(lang);
 
 const navItems: NavItem[] = [
+  { label: site.global.nav.now,      href: `${p}/now`, dot: true },
   { label: site.global.nav.work,     href: `${p}/work` },
   { label: site.global.nav.services, href: `${p}/services` },
   { label: site.global.nav.writing,  href: `${p}${WRITING_PATH}` },
-  { label: site.global.nav.now,      href: `${p}/now`, dot: true },
   { label: site.global.nav.contact,  href: `${p}/contact` },
 ];
 
