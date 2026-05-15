@@ -117,6 +117,19 @@ const recentPosts = allPosts
           <div class="identity-samples">
             {home.dual_identity.samples.map((s: any) => (
               <div class={`sample-card sample-card--${s.key}`}>
+                {s.type === 'youtube' && s.src && (
+                  <iframe
+                    src={s.src}
+                    class="sample-embed"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                    title={s.label}
+                  />
+                )}
+                {s.type === 'image' && s.src && (
+                  <img src={s.src} alt={s.label} class="sample-image" loading="lazy" />
+                )}
                 <span class="sample-label">{s.label}</span>
               </div>
             ))}
@@ -399,7 +412,18 @@ const recentPosts = allPosts
     background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg-card));
   }
 
+  .sample-embed,
+  .sample-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+  }
+
   .sample-label {
+    position: relative;
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -408,6 +432,7 @@ const recentPosts = allPosts
     background: color-mix(in srgb, var(--color-bg) 85%, transparent);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
+    z-index: 1;
   }
 
   /* ── Sections ── */

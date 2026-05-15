@@ -11,14 +11,17 @@ index:
 
 # ─── Contact / social links (single source of truth) ──────────────────────────
 links:
-  email:     leointhecode@gmail.com
-  github:    https://github.com/leonardespi
-  linkedin:  https://linkedin.com/in/leonardespi
-  instagram: https://www.instagram.com/leonardespi/
-  work_name: a
-  work_href: https://miclip.mx/
-  twitter:  https://x.com/leonardespii
-  cv:       /leonardo-espinosa-cv.pdf
+  email:       leointhecode@gmail.com
+  github:      https://github.com/leonardespi
+  linkedin:    https://linkedin.com/in/leonardespi
+  instagram:   https://www.instagram.com/leonardespi/
+  work_name:   a
+  work_href:   https://miclip.mx/
+  twitter:     https://x.com/leonardespii
+  cv:          /leonardo-espinosa-cv.pdf
+  youtube:     https://www.youtube.com/@syn-leo
+  soundcloud:  https://soundcloud.com/leonardespi
+  behance:     https://www.behance.net/leonardespi
 
 # ─── Global UI (nav, logo, footer) ────────────────────────────────────────────
 global:
@@ -104,10 +107,16 @@ pages:
       link:   { en: "See all work →",     es: "Ver todo →"               }
       samples:
         - key: photo
+          type: image
+          src: https://res.cloudinary.com/dgzxjdbhg/image/upload/q_auto,f_auto,w_600/v1778816066/IMG_0785_hj90jj.jpg
           label: { en: Photography,       es: Fotografía                 }
         - key: illustration
+          type: image
+          src: https://res.cloudinary.com/dgzxjdbhg/image/upload/v1778853292/epicCastle_sase4s.png
           label: { en: Illustration,      es: Ilustración                }
         - key: music
+          type: youtube
+          src: https://www.youtube.com/embed/NkwqY4zhh8E
           label: { en: Music,             es: Música                     }
 
     cta:
@@ -191,6 +200,11 @@ pages:
 
   # ── Work ─────────────────────────────────────────────────────────────────────
   work:
+    sections:
+      technical:    true
+      photography:  true
+      illustration: false
+      music:        true
     meta:
       title:       { en: Work,          es: Trabajo                     }
       description:
@@ -209,9 +223,11 @@ pages:
       illustration: { en: Illustration, es: Ilustración }
       music:        { en: Music,        es: Música      }
     technical:
-      title:    { en: "Technical Projects", es: "Proyectos técnicos"    }
-      gh_label: { en: "View all on GitHub →", es: "Ver todo en GitHub →" }
-      featured_label: { en: Featured,   es: Destacado                   }
+      title:          { en: "Technical Projects", es: "Proyectos técnicos"    }
+      gh_label:       { en: "View all on GitHub →", es: "Ver todo en GitHub →" }
+      featured_label: { en: Featured,        es: Destacado                   }
+      meta_topics:    { en: Topics,          es: Tópicos                     }
+      meta_languages: { en: Languages,       es: Lenguajes                   }
       projects:
         - name: POLQA
           href: https://polqa-framework.github.io/polqa-site/
@@ -223,16 +239,6 @@ pages:
           description:
             en: A modular CLI framework for governing LLM output quality at scale. Provider-agnostic, reproducible, and built for auditability across model versions. Supports HuggingFace, Ollama, OpenAI, Claude, and custom endpoints.
             es: Framework CLI modular para gobernar la calidad de output de LLMs a escala. Agnóstico de proveedor, reproducible y construido para auditabilidad entre versiones de modelos. Soporta HuggingFace, Ollama, OpenAI, Claude y endpoints personalizados.
-        - name: Automation Learn
-          href: https://github.com/leonardespi/automation-learn
-          featured: false
-          tags: [Selenium, Cypress, Robot Framework, CI/CD]
-          tagline:
-            en: "Scalable QA Capability — From Manual to Automated"
-            es: "Capacidad QA Escalable — De Manual a Automatizado"
-          description:
-            en: Opinionated learning paths designed to institutionalize quality knowledge rather than keep it person-dependent. Covers Selenium, Cypress, API testing, CI/CD, and test architecture.
-            es: Rutas de aprendizaje diseñadas para institucionalizar el conocimiento de calidad en lugar de mantenerlo dependiente de personas. Cubre Selenium, Cypress, pruebas de API, CI/CD y arquitectura de pruebas.
         - name: SynLeo
           href: https://github.com/leonardespi/synleo
           featured: false
@@ -243,16 +249,6 @@ pages:
           description:
             en: An architectural exploration of generative AI applied to music production. Voice modeling, lyric generation, and governance challenges unique to AI-generated creative content.
             es: Una exploración arquitectónica de la IA generativa aplicada a la producción musical. Modelado de voz, generación de letras y desafíos de gobernanza únicos al contenido creativo generado por IA.
-        - name: Resume Builder
-          href: https://github.com/leonardespi/resume-builder
-          featured: false
-          tags: [Python, PDF Generation, CLI, YAML]
-          tagline:
-            en: "Structured Data → Professional Document Pipeline"
-            es: "Datos Estructurados → Pipeline de Documento Profesional"
-          description:
-            en: "Separates content from presentation — YAML as source of truth, PDF as a deterministic artifact. Optimized for ATS parsing without sacrificing human readability."
-            es: "Separa contenido de presentación — YAML como fuente de verdad, PDF como artefacto determinista. Optimizado para parseo ATS sin sacrificar legibilidad humana."
         - name: "SPA — System for Thought & Action"
           href: https://github.com/leonardespi/spa
           featured: false
@@ -263,33 +259,26 @@ pages:
           description:
             en: "A personal operating system synthesizing PARA, GTD, and SCRUM into one coherent schema. Stricter structure over flexibility — consistency reduces cognitive load."
             es: "Un sistema operativo personal que sintetiza PARA, GTD y SCRUM en un esquema coherente. Estructura más estricta sobre flexibilidad — la consistencia reduce la carga cognitiva."
-        - name: README Wizard
-          href: https://github.com/leonardespi/readme-wizard
-          featured: false
-          tags: [Python, CLI, Markdown, Documentation]
-          tagline:
-            en: Documentation as a First-Class Engineering Artifact
-            es: Documentación como Artefacto de Ingeniería de Primera Clase
-          description:
-            en: "Treats README generation as a structured pipeline problem. Minimal schema forces four questions every README must answer: what, install, use, contribute."
-            es: "Trata la generación de READMEs como un problema de pipeline estructurado. El esquema mínimo fuerza cuatro preguntas que todo README debe responder: qué, instalar, usar, contribuir."
     creative:
       title: { en: "Creative Work",     es: "Trabajo creativo"          }
       photography:
-        tag:   { en: Photography,       es: Fotografía                  }
-        title: { en: "CDMX Street & Architecture", es: "Arquitectura urbana · CDMX" }
-        note:  { en: "Full gallery coming soon. Shot on film, available in CDMX.", es: "Galería completa próximamente. En película, disponible en CDMX." }
+        tag:          { en: Photography,       es: Fotografía                  }
+        title:        { en: "CDMX Street & Architecture", es: "Arquitectura urbana · CDMX" }
+        behance_label: { en: "See more on Behance →", es: "Ver más en Behance →" }
+        note:         { en: "Full gallery coming soon. Shot on film, available in CDMX.", es: "Galería completa próximamente. En película, disponible en CDMX." }
         placeholders:
-          - { en: "CDMX Architecture I",   es: "Arquitectura CDMX I"    }
-          - { en: "CDMX Architecture II",  es: "Arquitectura CDMX II"   }
-          - { en: "CDMX Architecture III", es: "Arquitectura CDMX III"  }
-          - { en: "Street · Reforma",      es: "Calle · Reforma"        }
-          - { en: "Brutalism Study",       es: "Estudio Brutalista"     }
-          - { en: "Light & Decay",         es: "Luz y Decadencia"       }
+          - src: https://res.cloudinary.com/dgzxjdbhg/image/upload/q_auto,f_auto,w_800/v1778816066/IMG_0785_hj90jj.jpg
+            label: { en: "Eyes I",       es: "Ojos I"       }
+
+          - src: https://res.cloudinary.com/dgzxjdbhg/image/upload/q_auto,f_auto,w_800/v1778816070/IMG_0355_ow4app.jpg
+            label: { en: "Ordinary III", es: "Ordinario III"}
+          - src: https://res.cloudinary.com/dgzxjdbhg/image/upload/q_auto,f_auto,w_800/v1778816069/20260111_072716_tx44la.jpg
+            label: { en: "Landscape II", es: "Paisaje II"   }
       illustration:
-        tag:   { en: Illustration,      es: Ilustración                 }
-        title: { en: "Digital & Conceptual", es: "Digital y conceptual" }
-        note:  { en: "Brand illustration, editorial, and UI illustration. Full portfolio in progress.", es: "Ilustración para marca, editorial y UI. Portafolio en construcción." }
+        tag:          { en: Illustration,      es: Ilustración                 }
+        title:        { en: "Digital & Conceptual", es: "Digital y conceptual" }
+        behance_label: { en: "See more on Behance →", es: "Ver más en Behance →" }
+        note:         { en: "Brand illustration, editorial, and UI illustration. Full portfolio in progress.", es: "Ilustración para marca, editorial y UI. Portafolio en construcción." }
         placeholders:
           - { en: "Systems Map I",        es: "Mapa de Sistemas I"      }
           - { en: "Systems Map II",       es: "Mapa de Sistemas II"     }
@@ -298,6 +287,9 @@ pages:
       music:
         tag:   { en: Music,             es: Música                      }
         title: { en: "Production & Composition", es: "Producción y composición" }
+        embed: https://www.youtube.com/embed/NkwqY4zhh8E
+        cta_youtube:    { en: "More on YouTube",    es: "Más en YouTube"    }
+        cta_soundcloud: { en: "Listen on SoundCloud", es: "Escuchar en SoundCloud" }
         p1:
           en: "Ambient compositions, modular synthesis, and field recordings. Also: original jingles, brand audio, and full song production pipelines."
           es: "Piezas ambient, síntesis modular y grabaciones de campo. También jingles originales, audio de marca y pipelines completos de producción musical."
