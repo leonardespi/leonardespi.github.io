@@ -11,7 +11,8 @@ index:
 
 # ─── Contact / social links (single source of truth) ──────────────────────────
 links:
-  email:       leointhecode@gmail.com
+  email:          leointhecode@gmail.com
+  email_creative: leointheart@gmail.com
   github:      https://github.com/leonardespi
   linkedin:    https://linkedin.com/in/leonardespi
   instagram:   https://www.instagram.com/leonardespi/
@@ -371,6 +372,7 @@ pages:
         - title: { en: Creative,        es: Creativo                    }
           desc:  { en: "Photography, digital illustration, music production. CDMX-based or remote for digital deliverables.", es: "Fotografía, ilustración digital, producción musical. En CDMX o remoto para entregables digitales." }
           subject: { en: "Creative%20Services%20Inquiry", es: "Consulta%20Creativa" }
+          email: "{{email_creative}}"
           icon: smile
         - title: { en: "Both / Not sure", es: "Ambos / No estoy seguro" }
           desc:  { en: "Open source collaboration, general questions, or just to say hi. The brief can be loose.", es: "Colaboración open source, preguntas generales o simplemente saludar. El brief puede ser amplio." }

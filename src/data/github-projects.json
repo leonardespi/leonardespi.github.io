@@ -36,7 +36,7 @@
     "name": "pentesting-for-dummies",
     "description": "An open educational resource covering all layers of penetration testing with an AI-assisted workflow, written for junior cybersecurity engineers.",
     "url": "https://github.com/leonardespi/pentesting-for-dummies",
-    "homepage": null,
+    "homepage": "http://www.leonardespi.me/pentesting-for-dummies/",
     "topics": [
       "ai-assisted",
       "educational-resource",
@@ -74,7 +74,7 @@
     "name": "tempo-pm",
     "description": "Local-first project manager for visual deadline tracking. Features D3 Gantt charts, workload heatmaps, and burnout forecasting to manage complex task lifecycles.",
     "url": "https://github.com/leonardespi/tempo-pm",
-    "homepage": null,
+    "homepage": "http://www.leonardespi.me/tempo-pm/",
     "topics": [
       "local-first",
       "project-governance",
@@ -85,22 +85,22 @@
       {
         "name": "TypeScript",
         "color": "#3178c6",
-        "percentage": 80.1
+        "percentage": 77.5
       },
       {
         "name": "CSS",
         "color": "#663399",
-        "percentage": 15.6
+        "percentage": 18.8
       },
       {
         "name": "Shell",
         "color": "#89e051",
-        "percentage": 3.6
+        "percentage": 3.1
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "percentage": 0.6
+        "percentage": 0.5
       },
       {
         "name": "HTML",
