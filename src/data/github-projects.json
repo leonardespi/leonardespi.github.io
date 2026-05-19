@@ -1,10 +1,14 @@
 [
   {
     "name": "valua",
-    "description": "A blazing-fast Lua 5.4 to Lua 5.1/LuaJIT transpiler and static analyzer written in Rust.",
+    "description": "Bridge the Lua ecosystem gap: A Rust-powered transpiler from Lua 5.5 to Lua 5.1/LuaJIT. Modern features at raw LuaJIT speed.",
     "url": "https://github.com/leonardespi/valua",
     "homepage": null,
-    "topics": [],
+    "topics": [
+      "lua",
+      "luajit",
+      "transpiler"
+    ],
     "languages": [
       {
         "name": "Rust",
