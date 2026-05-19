@@ -1,5 +1,24 @@
 [
   {
+    "name": "valua",
+    "description": "A blazing-fast Lua 5.4 to Lua 5.1/LuaJIT transpiler and static analyzer written in Rust.",
+    "url": "https://github.com/leonardespi/valua",
+    "homepage": null,
+    "topics": [],
+    "languages": [
+      {
+        "name": "Rust",
+        "color": "#dea584",
+        "percentage": 96.8
+      },
+      {
+        "name": "Just",
+        "color": "#384d54",
+        "percentage": 3.2
+      }
+    ]
+  },
+  {
     "name": "politics-qa",
     "description": "A reproducible, deterministic CLI to measure political bias and positioning of LLMs on economic and social axes.",
     "url": "https://github.com/polqa-framework/politics-qa",
@@ -33,44 +52,6 @@
     ]
   },
   {
-    "name": "pentesting-for-dummies",
-    "description": "An open educational resource covering all layers of penetration testing with an AI-assisted workflow, written for junior cybersecurity engineers.",
-    "url": "https://github.com/leonardespi/pentesting-for-dummies",
-    "homepage": "http://www.leonardespi.me/pentesting-for-dummies/",
-    "topics": [
-      "ai-assisted",
-      "educational-resource",
-      "pentesting"
-    ],
-    "languages": [
-      {
-        "name": "Astro",
-        "color": "#ff5a03",
-        "percentage": 68.1
-      },
-      {
-        "name": "CSS",
-        "color": "#663399",
-        "percentage": 15.1
-      },
-      {
-        "name": "Vue",
-        "color": "#41b883",
-        "percentage": 13.8
-      },
-      {
-        "name": "TypeScript",
-        "color": "#3178c6",
-        "percentage": 1.9
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "percentage": 1
-      }
-    ]
-  },
-  {
     "name": "tempo-pm",
     "description": "Local-first project manager for visual deadline tracking. Features D3 Gantt charts, workload heatmaps, and burnout forecasting to manage complex task lifecycles.",
     "url": "https://github.com/leonardespi/tempo-pm",
@@ -85,22 +66,22 @@
       {
         "name": "TypeScript",
         "color": "#3178c6",
-        "percentage": 77.5
+        "percentage": 77.2
       },
       {
         "name": "CSS",
         "color": "#663399",
-        "percentage": 18.8
+        "percentage": 19.3
       },
       {
         "name": "Shell",
         "color": "#89e051",
-        "percentage": 3.1
+        "percentage": 2.9
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "percentage": 0.5
+        "percentage": 0.4
       },
       {
         "name": "HTML",
