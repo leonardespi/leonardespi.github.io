@@ -8,18 +8,17 @@
    ───────────────────────────────────────────── */
 @theme {
   /* Colors */
-  --color-bg:        #F5F0EA;
-  --color-bg-card:   #EDE8E0;
-  --color-bg-muted:  #EDE8E0;
-  --color-text:      #1C1A17;
+  --color-bg:        #F9F8F6;
+  --color-bg-card:   #F2EFE9;
+  --color-bg-muted:  #EBE8E2;
+  --color-text:      #1A1410;
   --color-text-muted:#6B6460;
-  --color-border:    #D5CFC6;
-  --color-accent:       #C17D52;
-  --color-accent-hover: #8A5E3A;
-
+  --color-border:    #E0DAD3;
+  --color-accent:       #E05A14;
+  --color-accent-hover: #C04E10;
   /* Typography */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
   /* Layout */
@@ -31,22 +30,22 @@
    Outcome text colour (light default)
    ───────────────────────────────────────────── */
 :root {
-  --color-outcome-text: #7A4A28;
+  --color-outcome-text: #C04E10;
 }
 
 /* ─────────────────────────────────────────────
    Dark mode overrides
    ───────────────────────────────────────────── */
 html[data-theme="dark"] {
-  --color-bg:           #2A2724;
-  --color-bg-card:      #333028;
-  --color-bg-muted:     #3A362D;
-  --color-text:         #F0EBE3;
-  --color-text-muted:   #9A918A;
-  --color-border:       #2E2A25;
-  --color-accent:       #D4926A;
-  --color-accent-hover: #C17D52;
-  --color-outcome-text: #D4926A;
+  --color-bg:           #0A0810;
+  --color-bg-card:      #13101F;
+  --color-bg-muted:     #1C1830;
+  --color-text:         #F0EDF8;
+  --color-text-muted:   #9B96AF;
+  --color-border:       #2A2440;
+  --color-accent:       #A878FF;
+  --color-accent-hover: #9D6EFF;
+  --color-outcome-text: #A878FF;
 }
 
 /* ─────────────────────────────────────────────
@@ -76,6 +75,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
@@ -89,8 +94,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 a {
@@ -131,11 +137,20 @@ code, pre {
   color: var(--color-text);
 }
 
+@media (min-width: 768px) {
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+}
+
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
   font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }

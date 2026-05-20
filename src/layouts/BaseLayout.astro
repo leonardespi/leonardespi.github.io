@@ -79,12 +79,17 @@ const articleSchema = article && publishedDate ? {
 <!doctype html>
 <html lang={lang}>
   <head>
+    <!-- Favicon links first — must be parsed before the inline script below queries them -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+
     <!-- Anti-flash: apply saved theme before first paint -->
     <script is:inline>
       (function () {
         var saved = localStorage.getItem('theme');
         var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', saved || preferred);
+        var theme = saved || preferred;
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
     <meta charset="UTF-8" />
@@ -123,9 +128,6 @@ const articleSchema = article && publishedDate ? {
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={pageTitle} />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -135,7 +137,7 @@ const articleSchema = article && publishedDate ? {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     />
 
     <meta name="generator" content={Astro.generator} />
