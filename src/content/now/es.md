@@ -1,50 +1,52 @@
 ---
 meta:
   title: "Ahora"
-  description: "En qué está trabajando Leonardo Espinosa ahora mismo — proyectos, aprendizaje, creación y lo último publicado."
+  description: "En qué está trabajando Leonardo Espinosa en este momento — proyectos, aprendizaje, creación y lanzamientos recientes."
 
 header:
-  last_updated: "Última actualización: mayo 2026"
+  last_updated: "Última actualización: mayo de 2026"
   location: "· Ciudad de México"
   title: "Ahora"
   about:
-    before_link: 'Una instantánea de lo que estoy haciendo en este momento. La actualizo una vez al mes, más o menos. Inspirada en las páginas "now" que propuso'
-    link_text: "Derek Sivers"
+    before_link: "Un registro continuo de lo que estoy haciendo realmente. Actualizado aproximadamente una vez al mes. Inspirado por el"
+    link_text: "movimiento de la página 'now' de Derek Sivers"
     after_link: "."
 
 widget:
   badge: "Ahora"
-  updated: "Actualizado en mayo 2026 · Ciudad de México"
-  link: "Ver más →"
+  updated: "Actualizado en mayo de 2026 · Ciudad de México"
+  link: "Actualización completa →"
   rows:
     - label: "Construyendo"
-      value: 'POLQA — evaluación de LLMs y detección de sesgos. Gobernanza de calidad en <a href="https://clip.mx" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
+      value: "Valua (framework en Rust) y arquitectura de calidad del núcleo de la e-wallet de Clip."
     - label: "Creando"
-      value: "Serie fotográfica de arquitectura urbana en CDMX. En analógico."
+      value: "Valu Studio y serie fotográfica de arquitectura callejera de la CDMX."
     - label: "Aprendiendo"
-      value: "Gobernanza de IA y marcos de cumplimiento fintech + fotografía en formato medio."
+      value: "AWS Solutions Architect Professional, TOGAF Standard y CISM."
 ---
 
-## Construyendo
+## Construyendo actualmente
 
-En [Clip](https://clip.mx), diseño y gobierno los sistemas de calidad que sostienen nuestra infraestructura de pagos: arquitectura de pruebas, gobernanza de pipelines CI/CD y los frameworks que hacen los releases seguros a escala.
+**Liderando la arquitectura de calidad**, la automatización de backend y el gobierno técnico para el ecosistema de la e-wallet en [Clip](https://www.miclip.mx). Enfocado en la resiliencia de backend de alto rendimiento, la integridad transaccional y los pipelines de pruebas de integración a escala.
 
-En lo personal: **POLQA**, un framework modular para evaluar outputs de LLM y detectar sesgos. El problema que resuelve — evaluación de IA reproducible, multi-modelo y auditable — sigue abierto en la mayoría de los contextos de producción.
+Desarrollando **Valua**, un framework de Rust de código abierto y alto rendimiento diseñado para incrustar e interactuar de forma segura con entornos de ejecución de scripts de Lua 5.5+ con LuaJIT.
 
-## Aprendiendo
+## Aprendiendo actualmente
 
-Profundizando en gobernanza de IA y cómo se cruza con la regulación financiera. En concreto, qué implican DORA y los marcos de cumplimiento fintech que están surgiendo en LATAM para los equipos que llevan LLMs a producción.
+Preparándome para las certificaciones **AWS Solutions Architect Professional** y **CPTS** para validar la experiencia en ingeniería con frameworks de la industria.
 
-Del lado creativo: fotografía en película de formato medio. Más lenta, más deliberada. Buen contrapeso al terminal.
+Estudiando los aspectos técnicos de la fotografía analógica de medio formato y el revelado manual.
 
-## Creando
+## Creando actualmente
 
-Una serie fotográfica sobre la arquitectura urbana de CDMX — la tensión entre la estructura brutalista y la decadencia orgánica. Sin filtros. En película.
+**Valu**, un proyecto enfocado en un estudio fotográfico. Actualmente produciendo una serie que documenta la arquitectura callejera de la CDMX en película de medio formato, centrándome en la intersección entre el diseño brutalista y el deterioro urbano.
 
-Algunos bocetos de música ambient que pueden o no convertirse en algo. Sobre todo síntesis modular y grabaciones de campo.
+Componiendo pistas ambientales minimalistas utilizando síntesis modular, grabaciones de campo y percusión acústica.
 
-## Publicado recientemente
+## Lanzado recientemente
 
-Reconstruí este sitio. Dejé atrás el CV estático para hacer algo que refleje de verdad lo que hago, técnico y creativo. Esta página "ahora" es parte de ese rediseño.
+Publicada la versión **Valua v1.0.0** en crates.io, consolidando la estabilidad de la API principal para el wrapper del runtime de Rust a Lua.
 
-Último artículo: [Sesgos, alucinaciones y datos sucios](/writing/bias-hallucinations-dirty-data) — por qué los fallos al evaluar LLMs casi siempre son, primero, un problema de datos.
+Realizada la primera sesión fotográfica oficial para **Valu**.
+
+Último post: [The Lua Fracture: 5.1 vs 5.4+](/writing/lua-fracture) — un análisis de la divergencia del ecosistema entre el clásico LuaJIT/5.1 y las implementaciones modernas de Lua estándar.

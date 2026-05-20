@@ -18,33 +18,35 @@ widget:
   link: "Full update →"
   rows:
     - label: "Building"
-      value: 'POLQA — LLM evaluation & bias tooling. Quality systems governance at <a href="https://clip.mx" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
+      value: "Valua (Rust framework) & Clip e-wallet core quality architecture."
     - label: "Creating"
-      value: "CDMX street architecture photography series. Shot on film."
+      value: "Valu Studio & CDMX street architecture photography series."
     - label: "Learning"
-      value: "AI governance frameworks + medium format film photography."
+      value: "AWS Solutions Architect Professional, TOGAF Standard, and CISM."
 ---
 
 ## Currently building
 
-At [Clip](https://clip.mx), designing and governing the quality systems that sit under our payments infrastructure — test architecture, CI/CD pipeline governance, and the frameworks that make releases safe at scale.
+**Leading core quality architecture**, backend automation, and technical governance for the e-wallet ecosystem at [Clip](https://www.miclip.mx). Focusing on high-throughput backend resiliency, transactional integrity, and integration testing pipelines at scale.
 
-Personally: **POLQA**, a modular framework for LLM output evaluation and bias detection. The problem it solves — reproducible, cross-model, auditable AI evaluation — is still mostly unsolved in production contexts.
+Developing **Valua**, an open-source, high-performance Rust framework designed for embedding and interfacing safely with lua 5.5 + with luaJIT scripting runtimes.
 
 ## Currently learning
 
-Going deeper on AI governance frameworks and how they interact with financial regulation — specifically what DORA and emerging LATAM fintech compliance frameworks mean for teams running LLMs in production.
+Preparing for the **AWS Solutions Architect Professional** and **CPTS** certifications to validate engineering experience with industry frameworks.
 
-On the creative side: medium format film photography. Slower, more deliberate. Good counterweight to the terminal.
+Studying the technical aspects of medium format film photography and manual development.
 
 ## Currently creating
 
-A photography series focused on CDMX street architecture — the overlap between brutalist structure and organic decay. No filters. Shot on film.
+**Valu**, a photography studio focus project. Currently producing a series documenting CDMX street architecture on medium format film, focusing on the intersection of brutalist design and urban decay.
 
-A few ambient music sketches that may or may not become something. Mostly modular synthesis and field recordings.
+Composing minimalist ambient tracks using modular synthesis, field recordings, and acoustic percussion.
 
 ## Recently shipped
 
-Rebuilt this site — moving away from a static CV toward something that actually reflects what I do across technical and creative work. This now page is part of that effort.
+Published **Valua v1.0.0** on crates.io, finalizing the core API stability for the Rust-to-Lua runtime wrapper.
 
-Latest writing: [Bias, Hallucinations & Dirty Data](/writing/bias-hallucinations-dirty-data) — on why LLM evaluation failures are usually a data problem first.
+Made the first official photography session for **Valu**
+
+Latest post: [The Lua Fracture: 5.1 vs 5.4+](/writing/lua-fracture) — an analysis of the ecosystem divergence between classic LuaJIT/5.1 and modern standard Lua implementations.
