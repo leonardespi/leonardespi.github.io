@@ -58,8 +58,8 @@ pages:
         en: "I design systems<br />that scale."
         es: "Diseño sistemas<br />que escalan."
       subtitle:
-        en: IT Architect by training. Photographer and musician by choice. I bring the same rigor to both — and that's what makes the work different.
-        es: Arquitecto TI por formación. Fotógrafo y músico por elección. Le meto el mismo rigor a los dos — y eso es lo que hace diferente el trabajo.
+        en: IT Architect, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Arquitecto TI, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
       trajectory:
         en: 'IT Architect · SDET Lead at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
         es: 'Arquitecto TI · SDET Lead en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
