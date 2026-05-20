@@ -4,9 +4,9 @@
     "description": "Bridge the Lua ecosystem gap: A Rust-powered transpiler from Lua 5.5 to Lua 5.1/LuaJIT. Modern features at raw LuaJIT speed.",
     "url": "https://github.com/leonardespi/valua",
     "homepage": null,
-    "stars": 2,
+    "stars": 3,
     "forks": 0,
-    "pushedAt": "2026-05-20T06:52:32Z",
+    "pushedAt": "2026-05-20T20:20:41Z",
     "archived": false,
     "topics": [
       "lua",
@@ -17,17 +17,17 @@
       {
         "name": "Rust",
         "color": "#dea584",
-        "percentage": 96.7
+        "percentage": 97
       },
       {
         "name": "Just",
         "color": "#384d54",
-        "percentage": 2.3
+        "percentage": 2.2
       },
       {
         "name": "Shell",
         "color": "#89e051",
-        "percentage": 0.9
+        "percentage": 0.8
       }
     ]
   },
@@ -108,6 +108,38 @@
         "name": "HTML",
         "color": "#e34c26",
         "percentage": 0.1
+      }
+    ]
+  },
+  {
+    "name": "devkit",
+    "description": "DevKit | A web toolbox for developers, QA, & architects to parse data, audit security, and build documentation 100% locally.",
+    "url": "https://github.com/leonardespi/devkit",
+    "homepage": "http://www.leonardespi.me/devkit/",
+    "stars": 0,
+    "forks": 0,
+    "pushedAt": "2026-05-20T21:07:36Z",
+    "archived": false,
+    "topics": [
+      "local-first",
+      "productivity",
+      "tooling"
+    ],
+    "languages": [
+      {
+        "name": "TypeScript",
+        "color": "#3178c6",
+        "percentage": 78.3
+      },
+      {
+        "name": "CSS",
+        "color": "#663399",
+        "percentage": 21.6
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "percentage": 0.2
       }
     ]
   }
