@@ -82,20 +82,6 @@ pages:
         - text: { en: "Technical writing & documentation",                  es: "Redacción técnica y documentación" }
         - text: { en: "Open source collaboration",                          es: "Colaboración open source" }
 
-    now_feed:
-      badge:   { en: Now,         es: Ahora       }
-      updated: { en: "Updated May 2026 · Mexico City",           es: "Actualizado en mayo 2026 · Ciudad de México"         }
-      link:    { en: "Full update →",                            es: "Ver más →"                                           }
-      rows:
-        - label: { en: Building,   es: Construyendo }
-          value:
-            en: 'POLQA — LLM evaluation & bias tooling. Quality systems governance at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
-            es: 'POLQA — evaluación de LLMs y detección de sesgos. Gobernanza de calidad en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>.'
-        - label: { en: Creating,   es: Creando }
-          value: { en: "CDMX street architecture photography series. Shot on film.",                 es: "Serie fotográfica de arquitectura urbana en CDMX. En analógico." }
-        - label: { en: Learning,   es: Aprendiendo }
-          value: { en: "Digital illustration — building a consistent visual language.",              es: "Ilustración digital — construyendo un lenguaje visual consistente." }
-
     writing:
       title: { en: Recent Writing,        es: Lo más reciente            }
       all:   { en: "All posts →",         es: "Todos los artículos →"   }
@@ -297,57 +283,6 @@ pages:
         p2_prefix: { en: "Available on SoundCloud — link coming soon. For production work,", es: "Próximamente en SoundCloud. Para trabajos de producción," }
         p2_link:   { en: "get in touch",  es: "contáctame"              }
         placeholder: { en: "Audio samples coming soon", es: "Muestras de audio próximamente" }
-
-  # ── Now ──────────────────────────────────────────────────────────────────────
-  now:
-    meta:
-      title:       { en: Now,           es: Ahora                       }
-      description:
-        en: "What Leonardo Espinosa is working on right now — projects, learning, creating, and recently shipped."
-        es: "En qué está trabajando Leonardo Espinosa ahora mismo — proyectos, aprendizaje, creación y lo último publicado."
-    header:
-      last_updated: { en: "Last updated: May 2026", es: "Última actualización: mayo 2026" }
-      location:     { en: "· Mexico City",           es: "· Ciudad de México"              }
-      title:        { en: Now,                        es: Ahora                             }
-      about:
-        before_link:
-          en: "A running snapshot of what I'm actually doing. Updated roughly once a month. Inspired by"
-          es: "Una instantánea de lo que estoy haciendo en este momento. La actualizo una vez al mes, más o menos. Inspirada en las páginas \"now\" que propuso"
-        link_text:
-          en: "Derek Sivers' now page movement"
-          es: "Derek Sivers"
-        after_link: "."
-    sections:
-      building:
-        title: { en: "Currently building", es: "Construyendo"           }
-        paragraphs:
-          - en: 'At <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>, designing and governing the quality systems that sit under our payments infrastructure — test architecture, CI/CD pipeline governance, and the frameworks that make releases safe at scale.'
-            es: 'En <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>, diseño y gobierno los sistemas de calidad que sostienen nuestra infraestructura de pagos: arquitectura de pruebas, gobernanza de pipelines CI/CD y los frameworks que hacen los releases seguros a escala.'
-          - en: "Personally: <strong>POLQA</strong>, a modular framework for LLM output evaluation and bias detection. The problem it solves — reproducible, cross-model, auditable AI evaluation — is still mostly unsolved in production contexts."
-            es: "En lo personal: <strong>POLQA</strong>, un framework modular para evaluar outputs de LLM y detectar sesgos. El problema que resuelve — evaluación de IA reproducible, multi-modelo y auditable — sigue abierto en la mayoría de los contextos de producción."
-      learning:
-        title: { en: "Currently learning", es: "Aprendiendo"            }
-        paragraphs:
-          - en: "Going deeper on AI governance frameworks and how they interact with financial regulation — specifically what DORA and emerging LATAM fintech compliance frameworks mean for teams running LLMs in production."
-            es: "Profundizando en gobernanza de IA y cómo se cruza con la regulación financiera. En concreto, qué implican DORA y los marcos de cumplimiento fintech que están surgiendo en LATAM para los equipos que llevan LLMs a producción."
-          - en: "On the creative side: medium format film photography. Slower, more deliberate. Good counterweight to the terminal."
-            es: "Del lado creativo: fotografía en película de formato medio. Más lenta, más deliberada. Buen contrapeso al terminal."
-      creating:
-        title: { en: "Currently creating", es: "Creando"                }
-        paragraphs:
-          - en: "A photography series focused on CDMX street architecture — the overlap between brutalist structure and organic decay. No filters. Shot on film."
-            es: "Una serie fotográfica sobre la arquitectura urbana de CDMX — la tensión entre la estructura brutalista y la decadencia orgánica. Sin filtros. En película."
-          - en: "A few ambient music sketches that may or may not become something. Mostly modular synthesis and field recordings."
-            es: "Algunos bocetos de música ambient que pueden o no convertirse en algo. Sobre todo síntesis modular y grabaciones de campo."
-      shipped:
-        title: { en: "Recently shipped",   es: "Publicado recientemente" }
-        paragraphs:
-          - en: "Rebuilt this site — moving away from a static CV toward something that actually reflects what I do across technical and creative work. This now page is part of that effort."
-            es: "Reconstruí este sitio. Dejé atrás el CV estático para hacer algo que refleje de verdad lo que hago, técnico y creativo. Esta página \"ahora\" es parte de ese rediseño."
-          - prefix: { en: "Latest writing:", es: "Último artículo:"    }
-            link_href: /writing/bias-hallucinations-dirty-data
-            link_label: { en: "Bias, Hallucinations & Dirty Data", es: "Sesgos, alucinaciones y datos sucios" }
-            suffix: { en: "— on why LLM evaluation failures are usually a data problem first.", es: "— por qué los fallos al evaluar LLMs casi siempre son, primero, un problema de datos." }
 
   # ── Contact ──────────────────────────────────────────────────────────────────
   contact:

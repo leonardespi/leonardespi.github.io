@@ -10,6 +10,9 @@ const site = getSiteContent('en');
 const { pages, links, index: sections } = site;
 const home = pages.home;
 
+const { frontmatter: nowData } = await import('../content/now/en.md');
+const nowWidget = nowData.widget;
+
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -58,18 +61,18 @@ const recentPosts = allPosts
             <div class="widget-card widget-card--now">
               <div class="now-badge">
                 <span class="now-pulse" aria-hidden="true"></span>
-                {home.now_feed.badge}
+                {nowWidget.badge}
               </div>
               <div class="now-snapshot">
-                {home.now_feed.rows.map((row: any) => (
+                {nowWidget.rows.map((row: any) => (
                   <div class="now-row">
                     <span class="now-row-label">{row.label}</span>
                     <span class="now-row-value" set:html={row.value} />
                   </div>
                 ))}
               </div>
-              <span class="now-updated">{home.now_feed.updated}</span>
-              <a href="/now" class="now-cta">{home.now_feed.link}</a>
+              <span class="now-updated">{nowWidget.updated}</span>
+              <a href="/now" class="now-cta">{nowWidget.link}</a>
             </div>
           )}
 

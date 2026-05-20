@@ -1,50 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getSiteContent } from '../i18n/utils';
 
-const site = getSiteContent('en');
-const now = site.pages.now;
-const { building, learning, creating, shipped } = now.sections;
+const { frontmatter, Content } = await import('../content/now/en.md');
+const { meta, header } = frontmatter;
 ---
 
-<BaseLayout title={now.meta.title} description={now.meta.description}>
+<BaseLayout title={meta.title} description={meta.description}>
   <div class="now-page container--narrow container">
 
     <header class="now-header">
       <div class="now-meta">
-        <span class="now-updated">{now.header.last_updated}</span>
-        <span class="now-location">{now.header.location}</span>
+        <span class="now-updated">{header.last_updated}</span>
+        <span class="now-location">{header.location}</span>
       </div>
-      <h1 class="now-title">{now.header.title}</h1>
+      <h1 class="now-title">{header.title}</h1>
       <p class="now-about">
-        {now.header.about.before_link} <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">{now.header.about.link_text}</a>{now.header.about.after_link}
+        {header.about.before_link} <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">{header.about.link_text}</a>{header.about.after_link}
       </p>
     </header>
 
     <div class="now-content">
-
-      {[building, learning, creating].map((section: any) => (
-        <section class="now-section">
-          <h2 class="now-section-title">{section.title}</h2>
-          <div class="now-section-body">
-            {section.paragraphs.map((para: string) => (
-              <p set:html={para} />
-            ))}
-          </div>
-        </section>
-      ))}
-
-      <section class="now-section">
-        <h2 class="now-section-title">{shipped.title}</h2>
-        <div class="now-section-body">
-          {shipped.paragraphs.map((para: any) =>
-            typeof para === 'string'
-              ? <p set:html={para} />
-              : <p>{para.prefix} <a href={para.link_href}>{para.link_label}</a>{para.suffix}</p>
-          )}
-        </div>
-      </section>
-
+      <Content />
     </div>
 
   </div>
@@ -99,49 +75,49 @@ const { building, learning, creating, shipped } = now.sections;
     text-decoration-color: var(--color-accent);
   }
 
+  /* Markdown body */
   .now-content {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
-  .now-section {
-    padding-block: 2rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .now-section:last-child {
-    border-bottom: none;
-  }
-
-  .now-section-title {
+  .now-content :global(h2) {
     font-family: var(--font-body);
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-accent);
+    margin-top: 0;
     margin-bottom: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
   }
 
-  .now-section-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
+  .now-content :global(h2:first-child) {
+    border-top: none;
+    padding-top: 0;
   }
 
-  .now-section-body p {
+  .now-content :global(p) {
     font-size: 1rem;
     color: var(--color-text-muted);
     line-height: 1.75;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0;
   }
 
-  .now-section-body :global(strong) {
+  .now-content :global(p:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .now-content :global(strong) {
     color: var(--color-text);
     font-weight: 600;
   }
 
-  .now-section-body a {
+  .now-content :global(a) {
     color: var(--color-accent);
     text-decoration: underline;
     text-decoration-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
@@ -149,7 +125,7 @@ const { building, learning, creating, shipped } = now.sections;
     transition: text-decoration-color 0.15s;
   }
 
-  .now-section-body a:hover {
+  .now-content :global(a:hover) {
     text-decoration-color: var(--color-accent);
   }
 </style>
