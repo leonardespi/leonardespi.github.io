@@ -13,9 +13,7 @@ interface Props {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  /** Only used in 'home' variant */
   trajectory?: string;
-  /** Only used in 'home' variant */
   ctas?: CTA[];
 }
 
@@ -31,13 +29,23 @@ const {
 
 {variant === 'home' ? (
   <section class="hero hero--home">
+    <div class="hero-decoration" aria-hidden="true">
+      <div class="hero-dots"></div>
+      <div class="hero-glow-purple"></div>
+      <div class="hero-glow-secondary"></div>
+    </div>
     <div class="container hero-content">
-      {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
-      <h1 class="hero-headline" set:html={title} />
-      {subtitle && <p class="hero-subtitle">{subtitle}</p>}
-      {trajectory && <p class="hero-trajectory" set:html={trajectory} />}
+      {eyebrow && (
+        <div class="hero-eyebrow-pill" style="--i:0">
+          <span class="eyebrow-pulse" aria-hidden="true"></span>
+          <span class="hero-eyebrow">{eyebrow}</span>
+        </div>
+      )}
+      <h1 class="hero-headline" set:html={title} style="--i:1" />
+      {subtitle && <p class="hero-subtitle" style="--i:2">{subtitle}</p>}
+      {trajectory && <p class="hero-trajectory" set:html={trajectory} style="--i:3" />}
       {ctas.length > 0 && (
-        <div class="hero-ctas">
+        <div class="hero-ctas" style="--i:4">
           {ctas.map(cta => (
             <Button
               href={cta.href}
@@ -55,7 +63,7 @@ const {
 ) : (
   <header class="hero hero--page">
     <div class="container">
-      {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
+      {eyebrow && <p class="hero-eyebrow--plain">{eyebrow}</p>}
       <h1 class="page-title" set:html={title} />
       {subtitle && <p class="page-subtitle">{subtitle}</p>}
       <slot />
@@ -64,50 +72,151 @@ const {
 )}
 
 <style>
-  /* ── Shared ── */
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-  }
-
   /* ── Home variant ── */
   .hero--home {
-    padding-block: clamp(4rem, 10vw, 8rem);
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding-block: 2rem 8rem;
     border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  /* Background decorations */
+  .hero-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hero-glow-purple,
+  .hero-glow-secondary {
+    display: none;
+  }
+
+  .hero-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in srgb, var(--color-accent) 28%, transparent) 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 90% 80% at 40% 50%, black 20%, transparent 75%);
+    opacity: 0.5;
+  }
+
+  .hero-glow-purple {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 60%;
+    height: 140%;
+    background: radial-gradient(
+      ellipse at center,
+      color-mix(in srgb, var(--color-accent) 16%, transparent) 0%,
+      transparent 65%
+    );
+  }
+
+  .hero-glow-secondary {
+    position: absolute;
+    bottom: -30%;
+    right: 8%;
+    width: 35%;
+    height: 90%;
+    background: radial-gradient(
+      ellipse at center,
+      color-mix(in srgb, var(--color-accent) 10%, transparent) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Stagger animation */
+  @keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: hero-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--i, 0) * 0.09s + 0.05s);
   }
 
   .hero-content {
-    max-width: 680px;
+    position: relative;
+    max-width: 900px;
   }
 
+  /* Eyebrow pill */
+  .hero-eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.875rem;
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    flex-shrink: 0;
+    animation: eyebrow-blink 2.4s ease-in-out infinite;
+  }
+
+  @keyframes eyebrow-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  /* Headline — massive, tight */
   .hero-headline {
-    font-family: var(--font-display),serif;
-    font-size: clamp(2.75rem, 7vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.04em;
     color: var(--color-text);
     margin-bottom: 1.5rem;
+    font-weight: 700;
   }
 
+  /* Subtitle */
   .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: clamp(1.0625rem, 2vw, 1.25rem);
     color: var(--color-text-muted);
-    max-width: 580px;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    max-width: 540px;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
   }
 
+  /* Trajectory — purple left border callout */
   .hero-trajectory {
     font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-text-muted);
+    border-left: 2px solid var(--color-accent);
+    padding-left: 1rem;
     margin-bottom: 2.5rem;
+    max-width: 520px;
   }
 
+  /* CTA row */
   .hero-ctas {
     display: flex;
     gap: 0.75rem;
@@ -124,7 +233,6 @@ const {
     .hero-ctas {
       width: auto;
     }
-
     .hero-ctas > :global(a) {
       flex: none;
     }
@@ -137,13 +245,23 @@ const {
     margin-bottom: 3rem;
   }
 
+  .hero-eyebrow--plain {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
   .page-title {
-    font-family: var(--font-display),serif;
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--color-text);
     margin-bottom: 0.75rem;
+    font-weight: 700;
   }
 
   .page-subtitle {
