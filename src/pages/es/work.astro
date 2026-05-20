@@ -13,6 +13,16 @@ const sections = work.sections;
 
 const featuredProject = githubProjects[0];
 const otherProjects   = githubProjects.slice(1);
+
+function relativeDate(iso: string | null | undefined): string {
+  if (!iso) return '';
+  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  if (days < 1) return 'today';
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
+}
 ---
 
 <BaseLayout title={work.meta.title} description={work.meta.description}>
@@ -40,6 +50,24 @@ const otherProjects   = githubProjects.slice(1);
         <a href={featuredProject.homepage ?? featuredProject.url} class="tech-featured" target="_blank" rel="noopener noreferrer">
           <span class="featured-badge">{tech.featured_label}</span>
           <h3 class="tech-featured-name">{featuredProject.name}</h3>
+          <div class="repo-stats">
+            {featuredProject.archived && <span class="archived-badge">Archived</span>}
+            <span class="stat-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              {featuredProject.stars ?? 0}
+            </span>
+            <span class="stat-sep">·</span>
+            <span class="stat-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"/><line x1="12" y1="12" x2="12" y2="15"/></svg>
+              {featuredProject.forks ?? 0}
+            </span>
+            {featuredProject.pushedAt && (
+              <>
+                <span class="stat-sep">·</span>
+                <span class="stat-item">Updated {relativeDate(featuredProject.pushedAt)}</span>
+              </>
+            )}
+          </div>
           <p class="tech-featured-desc">{featuredProject.description}</p>
           <div class="tech-meta">
             {featuredProject.topics?.length > 0 && (
@@ -67,7 +95,27 @@ const otherProjects   = githubProjects.slice(1);
       <div class="tech-grid">
         {otherProjects.map((p: any) => (
           <a href={p.homepage ?? p.url} class="tech-card" target="_blank" rel="noopener noreferrer">
-            <div><h3 class="tech-card-name">{p.name}</h3></div>
+            <div>
+              <h3 class="tech-card-name">{p.name}</h3>
+              <div class="repo-stats repo-stats--compact">
+                {p.archived && <span class="archived-badge">Archived</span>}
+                <span class="stat-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  {p.stars ?? 0}
+                </span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"/><line x1="12" y1="12" x2="12" y2="15"/></svg>
+                  {p.forks ?? 0}
+                </span>
+                {p.pushedAt && (
+                  <>
+                    <span class="stat-sep">·</span>
+                    <span class="stat-item">{relativeDate(p.pushedAt)}</span>
+                  </>
+                )}
+              </div>
+            </div>
             <p class="tech-card-desc">{p.description}</p>
             <div class="tech-meta">
               {p.topics?.length > 0 && (
@@ -209,6 +257,11 @@ const otherProjects   = githubProjects.slice(1);
   .tech-card:hover { border-color: var(--color-accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
   .tech-card-name { font-family: var(--font-display); font-size: 1.125rem; color: var(--color-text); margin-bottom: 0.2rem; }
   .tech-card-tagline { font-size: 0.8125rem; color: var(--color-text-muted); }
+  .repo-stats { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.875rem; }
+  .repo-stats--compact { margin-bottom: 0; margin-top: 0.2rem; }
+  .stat-item { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); opacity: 0.8; }
+  .stat-sep { font-size: 0.75rem; color: var(--color-border); }
+  .archived-badge { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-bg-muted); border: 1px solid var(--color-border); padding: 0.1em 0.5em; border-radius: 0.25rem; }
   .tech-card-desc { font-size: 0.9375rem; color: var(--color-text-muted); line-height: 1.65; flex: 1; }
   .tech-meta { display: flex; flex-direction: column; gap: 0.625rem; margin-top: auto; }
   .meta-group { display: flex; flex-direction: column; gap: 0.3rem; }

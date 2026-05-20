@@ -4,6 +4,10 @@
     "description": "Bridge the Lua ecosystem gap: A Rust-powered transpiler from Lua 5.5 to Lua 5.1/LuaJIT. Modern features at raw LuaJIT speed.",
     "url": "https://github.com/leonardespi/valua",
     "homepage": null,
+    "stars": 2,
+    "forks": 0,
+    "pushedAt": "2026-05-20T06:52:32Z",
+    "archived": false,
     "topics": [
       "lua",
       "luajit",
@@ -13,12 +17,17 @@
       {
         "name": "Rust",
         "color": "#dea584",
-        "percentage": 96.8
+        "percentage": 96.7
       },
       {
         "name": "Just",
         "color": "#384d54",
-        "percentage": 3.2
+        "percentage": 2.3
+      },
+      {
+        "name": "Shell",
+        "color": "#89e051",
+        "percentage": 0.9
       }
     ]
   },
@@ -27,6 +36,10 @@
     "description": "A reproducible, deterministic CLI to measure political bias and positioning of LLMs on economic and social axes.",
     "url": "https://github.com/polqa-framework/politics-qa",
     "homepage": "https://polqa-framework.github.io/polqa-site/",
+    "stars": 3,
+    "forks": 0,
+    "pushedAt": "2025-10-05T21:20:57Z",
+    "archived": false,
     "topics": [
       "data-analytics",
       "llm-benchmark",
@@ -60,6 +73,10 @@
     "description": "Local-first project manager for visual deadline tracking. Features D3 Gantt charts, workload heatmaps, and burnout forecasting to manage complex task lifecycles.",
     "url": "https://github.com/leonardespi/tempo-pm",
     "homepage": "http://www.leonardespi.me/tempo-pm/",
+    "stars": 1,
+    "forks": 0,
+    "pushedAt": "2026-05-16T23:54:12Z",
+    "archived": false,
     "topics": [
       "local-first",
       "project-governance",

@@ -30,6 +30,10 @@ const QUERY = `{
           description
           url
           homepageUrl
+          stargazerCount
+          forkCount
+          pushedAt
+          isArchived
           repositoryTopics(first: 10) {
             nodes {
               topic { name }
@@ -77,6 +81,10 @@ const projects = data.user.pinnedItems.nodes.map((repo) => ({
   description: repo.description ?? '',
   url: repo.url,
   homepage: repo.homepageUrl || null,
+  stars: repo.stargazerCount,
+  forks: repo.forkCount,
+  pushedAt: repo.pushedAt,
+  archived: repo.isArchived,
   topics: repo.repositoryTopics.nodes.map((n) => n.topic.name),
   languages: repo.languages.edges.map(({ size, node }) => ({
     name: node.name,
@@ -98,5 +106,6 @@ console.log(`✓ Written ${projects.length} projects to src/data/github-projects
 projects.forEach((p) => {
   const langs   = p.languages.map((l) => `${l.name} ${l.percentage}%`).join(', ');
   const topics  = p.topics.length ? ` topics: ${p.topics.join(', ')}` : '';
-  console.log(`  · ${p.name}${p.homepage ? ' → ' + p.homepage : ''} [${langs}]${topics}`);
+  const meta    = `★${p.stars} ⑂${p.forks} pushed:${p.pushedAt.slice(0, 10)}${p.archived ? ' [archived]' : ''}`;
+  console.log(`  · ${p.name}${p.homepage ? ' → ' + p.homepage : ''} [${langs}]${topics} ${meta}`);
 });
