@@ -184,40 +184,32 @@ const recentPosts = allPosts
     background: var(--color-bg-muted);
   }
 
-  /* ── Widget section — zero padding, panel flush to edge ── */
   .section--widgets {
-    padding-block: 0;
+    background: var(--color-bg-muted);
     border-bottom: 1px solid var(--color-border);
   }
 
   .widgets-grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   @media (min-width: 720px) {
     .widgets-grid {
       grid-template-columns: 1fr 1fr;
+      align-items: stretch;
     }
   }
 
   .widget-card {
-    padding: 2.5rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    background: var(--color-bg-card);
-  }
-
-  .widget-card--available {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  @media (min-width: 720px) {
-    .widget-card--available {
-      border-bottom: none;
-      border-right: 1px solid var(--color-border);
-    }
+    gap: 1.25rem;
   }
 
   /* ── Available for card ── */
