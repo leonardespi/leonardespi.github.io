@@ -1,0 +1,719 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+const email = 'leointhecode@gmail.com';
+
+const companies = [
+  { name: 'Ford', sector: 'Autos', logo: '/marquee_png/Ford-removebg-preview.png' },
+  { name: 'Zurich Aseguradora', sector: 'Seguros', logo: '/marquee_png/Zurich-removebg-preview.png' },
+  { name: 'The Home Depot', sector: 'Retail', logo: '/marquee_png/thd-removebg-preview.png' },
+  { name: 'Clip', sector: 'Pagos', logo: '/marquee_png/clip-removebg-preview.png' },
+  { name: 'Keyword Studios', sector: 'Videojuegos', logo: '/marquee_png/keywordsStudios-removebg-preview.png' },
+  { name: 'Acuity', sector: 'Software', logo: '/marquee_png/Acuity-removebg-preview.png' },
+  { name: 'Unqork', sector: 'Software', logo: '/marquee_png/unqork-removebg-preview.png' },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+
+    <script is:inline>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', saved || preferred);
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>Sitio web para tu negocio | Leonardo Espinosa</title>
+    <meta name="description" content="Diseño y desarrollo sitios web profesionales para pequeñas empresas y negocios en México. Entrega en 5–10 días hábiles desde $2,500 MXN." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <ClientRouter />
+
+    <script>
+      document.addEventListener('astro:before-swap', (e) => {
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        (e as TransitionBeforeSwapEvent).newDocument.documentElement.setAttribute('data-theme', theme);
+      });
+    </script>
+  </head>
+
+  <body>
+    <Header postLang="es" />
+
+    <main id="main-content">
+
+      <!-- ── HERO ─────────────────────────────────────────────────── -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="hero-eyebrow">Desarrollo web para PyMes</span>
+          <h1 class="hero-title">Tu negocio necesita<br />estar en internet.</h1>
+          <p class="hero-sub">
+            Diseño y publico tu sitio web en días, no en meses.
+            Rápido, profesional y optimizado para que tus clientes te encuentren.
+          </p>
+          <div class="hero-actions">
+            <a href={`mailto:${email}?subject=Quiero%20un%20sitio%20web`} class="btn-primary">
+              Quiero mi sitio web
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#paquetes" class="btn-ghost">Ver precios</a>
+          </div>
+          <p class="hero-note">Sin contratos largos · Entrega en 5–10 días hábiles</p>
+        </div>
+      </section>
+
+      <!-- ── TRUST STRIP ───────────────────────────────────────────── -->
+      <section class="trust-strip">
+        <p class="trust-label">He desarrollado soluciones para empresas como</p>
+        <div class="marquee">
+          <div class="marquee-track" id="marquee-track">
+            <div class="marquee-group" id="marquee-group-1">
+              {companies.map((c) => (
+                <div class="company-item">
+                  <img src={c.logo} alt={c.name} class="company-logo" />
+                  <span class="company-name">{c.name}</span>
+                  <span class="company-sector">{c.sector}</span>
+                </div>
+              ))}
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+              {companies.map((c) => (
+                <div class="company-item">
+                  <img src={c.logo} alt="" class="company-logo" />
+                  <span class="company-name">{c.name}</span>
+                  <span class="company-sector">{c.sector}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PACKAGES ──────────────────────────────────────────────── -->
+      <section class="packages section--normal" id="paquetes">
+        <div class="container--narrow container">
+          <div class="section-header">
+            <span class="section-tag">Paquetes y precios</span>
+            <h2 class="section-title">Lo que incluye cada paquete</h2>
+            <p class="section-sub">Precios fijos, sin sorpresas. Sabes exactamente qué recibes desde el primer día.</p>
+          </div>
+
+          <div class="package-grid">
+
+            <!-- Package 1 -->
+            <div class="package-card package-card--main">
+              <div class="package-top">
+                <span class="package-badge">Más popular</span>
+                <h3 class="package-name">Sitio web completo</h3>
+                <div class="package-price">
+                  <span class="price-amount">$2,500</span>
+                  <span class="price-currency">MXN</span>
+                </div>
+                <p class="package-note">+ costo del dominio (lo eliges y pagas tú)</p>
+              </div>
+              <ul class="package-features">
+                <li><span class="check" aria-hidden="true">✓</span> Diseño adaptado a tu imagen</li>
+                <li><span class="check" aria-hidden="true">✓</span> Optimizado para aparecer en Google</li>
+                <li><span class="check" aria-hidden="true">✓</span> Compatible con celular y tablet</li>
+                <li><span class="check" aria-hidden="true">✓</span> Estructura y contenido inicial</li>
+                <li><span class="check" aria-hidden="true">✓</span> Configuración del dominio incluida</li>
+                <li><span class="check" aria-hidden="true">✓</span> Entrega en 5–10 días hábiles</li>
+              </ul>
+              <a href={`mailto:${email}?subject=Quiero%20un%20sitio%20web%20completo`} class="package-cta">
+                Empezar ahora
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card">
+              <div class="package-top">
+                <h3 class="package-name">Mantenimiento mensual</h3>
+                <div class="package-price">
+                  <span class="price-amount">$250</span>
+                  <span class="price-currency">MXN / mes</span>
+                </div>
+                <p class="package-note">Cancelable en cualquier momento, sin penalizaciones</p>
+              </div>
+              <ul class="package-features">
+                <li><span class="check" aria-hidden="true">✓</span> Hasta 2 cambios de contenido al mes</li>
+                <li><span class="check" aria-hidden="true">✓</span> Respuesta en 48 horas hábiles</li>
+                <li><span class="check" aria-hidden="true">✓</span> Sin contratos de largo plazo</li>
+                <li><span class="check" aria-hidden="true">✓</span> Reporte mensual de visitas</li>
+                <li><span class="check" aria-hidden="true">✓</span> Tranquilidad de que todo funciona</li>
+              </ul>
+              <a href={`mailto:${email}?subject=Me%20interesa%20el%20mantenimiento%20mensual`} class="package-cta package-cta--ghost">
+                Preguntar sobre esto
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+          </div>
+
+          <p class="packages-footer">
+            ¿Necesitas algo más específico? Tiendas en línea, integraciones o funcionalidades extra se cotizan por separado.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── WHY ───────────────────────────────────────────────────── -->
+      <section class="why section--muted">
+        <div class="container--narrow container">
+          <div class="section-header">
+            <span class="section-tag">Por qué trabajar conmigo</span>
+            <h2 class="section-title">No eres un ticket, eres un cliente</h2>
+          </div>
+          <div class="why-grid">
+            <div class="why-item">
+              <span class="why-icon" aria-hidden="true">⚡</span>
+              <h3 class="why-title">Entrega rápida</h3>
+              <p class="why-desc">Tu sitio en 5 a 10 días hábiles desde que acordamos los detalles. Sin esperas de meses.</p>
+            </div>
+            <div class="why-item">
+              <span class="why-icon" aria-hidden="true">🎯</span>
+              <h3 class="why-title">Diseño a tu medida</h3>
+              <p class="why-desc">No uso plantillas genéricas. Cada sitio refleja la identidad y los valores de tu negocio.</p>
+            </div>
+            <div class="why-item">
+              <span class="why-icon" aria-hidden="true">📱</span>
+              <h3 class="why-title">Listo para el celular</h3>
+              <p class="why-desc">Más del 70% de búsquedas son desde móvil. Tu sitio se ve perfecto en cualquier pantalla.</p>
+            </div>
+            <div class="why-item">
+              <span class="why-icon" aria-hidden="true">🔍</span>
+              <h3 class="why-title">Google te va a encontrar</h3>
+              <p class="why-desc">Optimización básica de SEO incluida: velocidad, estructura y metadatos correctos desde el inicio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FINAL CTA ──────────────────────────────────────────────── -->
+      <section class="final-cta section--normal">
+        <div class="container--narrow container">
+          <h2 class="cta-title">¿Listo para empezar?</h2>
+          <p class="cta-sub">
+            Escríbeme con una descripción breve de tu negocio y te respondo
+            con un presupuesto en menos de 24 horas.
+          </p>
+          <a href={`mailto:${email}?subject=Quiero%20un%20sitio%20web%20para%20mi%20negocio`} class="btn-primary btn-primary--large">
+            Escríbeme ahora — {email}
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+    <script>
+      async function initMarquee() {
+        const track = document.getElementById('marquee-track') as HTMLElement | null;
+        const group1 = document.getElementById('marquee-group-1') as HTMLElement | null;
+        if (!track || !group1) return;
+
+        if (track.dataset.initialized) return;
+        track.dataset.initialized = 'true';
+
+        const images = [...group1.querySelectorAll('img')] as HTMLImageElement[];
+        await Promise.all(
+          images.map((img) =>
+            img.complete
+              ? Promise.resolve()
+              : new Promise<void>((r) => { img.onload = () => r(); img.onerror = () => r(); })
+          )
+        );
+
+        const groupWidth = group1.getBoundingClientRect().width;
+        const needed = groupWidth + window.innerWidth;
+
+        let totalWidth = track.getBoundingClientRect().width;
+        while (totalWidth < needed) {
+          const clone = group1.cloneNode(true) as HTMLElement;
+          clone.removeAttribute('id');
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+          totalWidth += groupWidth;
+        }
+
+        // Web Animations API — compositor thread, no CSS var race
+        const anim = track.animate(
+          [{ transform: 'translateX(0)' }, { transform: `translateX(-${groupWidth}px)` }],
+          { duration: 55000, iterations: Infinity, easing: 'linear' }
+        );
+
+        const marquee = track.parentElement;
+        if (marquee) {
+          marquee.addEventListener('mouseenter', () => anim.pause());
+          marquee.addEventListener('mouseleave', () => anim.play());
+        }
+      }
+      document.addEventListener('astro:page-load', initMarquee);
+    </script>
+  </body>
+</html>
+
+<style>
+  /* ── Hero ── */
+  .hero {
+    padding-block: 5rem 4rem;
+    background: var(--color-bg);
+  }
+
+  .hero-inner {
+    max-width: 680px;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.175rem);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .hero-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    opacity: 0.75;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary--large {
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .btn-ghost:hover {
+    background: var(--color-bg-muted);
+    color: var(--color-text);
+  }
+
+  /* ── Section bg alternation ── */
+  .section--muted {
+    background: var(--color-bg-muted);
+  }
+
+  .section--normal {
+    background: var(--color-bg);
+  }
+
+  /* ── Trust Strip ── */
+  .trust-strip {
+    padding-block: 2rem 0;
+    border-block: 1px solid var(--color-border);
+    background: var(--color-bg-muted);
+    overflow: hidden;
+  }
+
+  .trust-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    text-align: center;
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  /* ── Marquee ── */
+  .marquee {
+    overflow: hidden;
+    padding-block: 1rem 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .marquee {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .company-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    padding-inline: 2rem;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .company-logo {
+    height: 82px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    opacity: 0.75;
+    filter: grayscale(1);
+    transition: opacity 0.2s, filter 0.2s;
+  }
+
+  .company-item:hover .company-logo {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+
+  .company-name {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+    line-height: 1.2;
+    margin-top: 0.625rem;
+  }
+
+  .company-sector {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  /* ── Packages ── */
+  .packages {
+    padding-block: 5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-sub {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  .package-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .package-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .package-card {
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-bg-card);
+  }
+
+  .package-card--main {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 4%, var(--color-bg-card));
+    position: relative;
+  }
+
+  .package-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--color-accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .package-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .package-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 0.875rem;
+  }
+
+  .package-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .price-amount {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .price-currency {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .package-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .package-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+
+  .package-features li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .check {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .package-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .package-cta:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .package-cta--ghost {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+  }
+
+  .package-cta--ghost:hover {
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .packages-footer {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    border-left: 2px solid var(--color-border);
+    padding-left: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ── Why ── */
+  .why {
+    padding-block: 4rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+
+  @media (max-width: 500px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .why-item {}
+
+  .why-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .why-title {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    margin-bottom: 0.375rem;
+  }
+
+  .why-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── Final CTA ── */
+  .final-cta {
+    padding-block: 5rem 4rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+  }
+
+  .cta-sub {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+</style>
