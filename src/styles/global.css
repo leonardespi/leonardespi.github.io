@@ -22,7 +22,7 @@
   --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
   /* Layout */
-  --width-content: 720px;
+  --width-content: 800px;
   --width-wide:    1100px;
 }
 
@@ -179,8 +179,13 @@ code, pre {
 
 .prose ul,
 .prose ol {
+  list-style-type: disc;
   padding-left: 1.5em;
   margin-bottom: 1.25em;
+}
+
+.prose ol {
+  list-style-type: decimal;
 }
 
 .prose li {

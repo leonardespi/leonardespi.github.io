@@ -5,6 +5,8 @@ import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import { remarkPlantuml } from './src/plugins/remark-plantuml.mjs';
 import { remarkMermaid } from './src/plugins/remark-mermaid.mjs';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +29,8 @@ export default defineConfig({
     mdx(),
   ],
   markdown: {
-    remarkPlugins: [remarkPlantuml, remarkMermaid],
+    remarkPlugins: [remarkPlantuml, remarkMermaid, remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
   vite: {
     plugins: [tailwindcss()],
