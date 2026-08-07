@@ -14,7 +14,7 @@ const p = prefix('es');
 const { frontmatter: nowData } = await import('../../content/now/es.md');
 const nowWidget = nowData.widget;
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.lang === 'es');
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
@@ -80,7 +80,7 @@ const recentPosts = allPosts
     </section>
   )}
 
-  {sections.recent_writing && (
+  {sections.recent_writing && recentPosts.length > 0 && (
     <section class="section">
       <div class="container">
         <div class="section-header">
