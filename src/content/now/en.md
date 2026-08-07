@@ -4,7 +4,7 @@ meta:
   description: "What Leonardo Espinosa is working on right now — projects, learning, creating, and recently shipped."
 
 header:
-  last_updated: "Last updated: May 2026"
+  last_updated: "Last updated: August 2026"
   location: "· Mexico City"
   title: "Now"
   about:
@@ -14,11 +14,11 @@ header:
 
 widget:
   badge: "Now"
-  updated: "Updated May 2026 · Mexico City"
+  updated: "Updated August 2026 · Mexico City"
   link: "Full update →"
   rows:
     - label: "Building"
-      value: "Valua (Rust framework) & Clip e-wallet core quality architecture."
+      value: "Valua (Rust framework) & technical risk ownership for Clip's LATAM payments platform."
     - label: "Creating"
       value: "Valu Studio & CDMX street architecture photography series."
     - label: "Learning"
@@ -27,7 +27,7 @@ widget:
 
 ## Currently building
 
-**Leading core quality architecture**, backend automation, and technical governance for the e-wallet ecosystem at [Clip](https://www.miclip.mx). Focusing on high-throughput backend resiliency, transactional integrity, and integration testing pipelines at scale.
+**Owning technical risk as Tech Lead** for Clip's LATAM payments platform — reliability, data integrity, and fund-loss prevention across the funding and financial systems. Partnering with Architecture, Business, and Growth on technical feasibility and ROI, and coordinating release safety across distributed teams in Mexico, China, and Argentina.
 
 Developing **Valua**, an open-source, high-performance Rust framework designed for embedding and interfacing safely with lua 5.5 + with luaJIT scripting runtimes.
 

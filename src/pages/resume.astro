@@ -9,18 +9,20 @@ import type { TimelineItem } from '../components/sections/Timeline.astro';
 const experience: TimelineItem[] = [
   {
     period: 'Jan 2026 – Present',
-    role: 'SDET Lead',
+    role: 'Tech Lead',
     org: 'Clip (PayClip)',
     orgUrl: 'https://clip.mx',
     location: 'Mexico City, MX',
     current: true,
     bullets: [
-      'Partner with Architecture Design, Business, and Growth units to evaluate technical feasibility and profitability of upcoming projects, ensuring high ROI on engineering efforts.',
-      'Lead cross-functional E2E testing initiatives across distributed teams in China and Argentina — streamlining communication and synchronizing release cycles.',
-      'Architect testing frameworks for sharded database environments using SQL and Java-based tooling to ensure data integrity across high-volume fintech transactions.',
-      'Build scalable automation suites with TestNG and iTestNG to reduce time-to-market while maintaining the strict quality margins required for financial product growth.',
+      'Own technical risk across the LATAM payments platform — system reliability, data integrity, fund-loss prevention, and release safety for funding and financial systems.',
+      'Lead architecture decisions on the funding and accountability platforms, validating system behavior under production load, latency spikes, and failure conditions.',
+      'Design and maintain data-integrity frameworks for sharded, high-volume transaction databases using SQL-driven validation layered into Java and TestNG tooling.',
+      'Own backend testing strategy end-to-end as architectural verification, and ship production code — services and features, not only test tooling.',
+      'Coordinate release cycles and change safety across distributed engineering teams in Mexico, China, and Argentina.',
+      'Partner with Architecture, Business, and Growth to evaluate technical feasibility and ROI on upcoming initiatives.',
     ],
-    tags: ['Java', 'TestNG', 'SQL', 'E2E Testing', 'Fintech', 'Sharded DBs', 'Distributed Teams'],
+    tags: ['Java', 'TestNG', 'SQL', 'Technical Risk', 'Payments', 'Sharded DBs', 'Distributed Systems'],
   },
   {
     period: 'Jun 2025 – Jan 2026',
@@ -136,7 +138,7 @@ const languages = [
 
 <BaseLayout
   title="Resume"
-  description="Leonardo Espinosa — IT Architect and SDET Lead at Clip. 5+ years designing resilient systems across fintech, insurance, and enterprise software. Full CV."
+  description="Leonardo Espinosa — Tech Lead at Clip, owning technical risk across a LATAM payments platform. 5+ years designing resilient systems across fintech, insurance, and enterprise software. Full CV."
 >
   <div style="padding-block: 4rem 6rem;">
 
@@ -146,7 +148,7 @@ const languages = [
         <div class="resume-identity">
           <p class="eyebrow">Resume</p>
           <h1>Leonardo Espinosa</h1>
-          <p class="resume-title">IT Architect · SDET Lead at Clip</p>
+          <p class="resume-title">Tech Lead · Technical Risk at Clip</p>
           <p class="resume-location">Mexico City, MX · <a href="mailto:leointhecode@gmail.com">leointhecode@gmail.com</a> · <a href="https://leonardespi.me">leonardespi.me</a></p>
         </div>
         <div class="resume-actions">
@@ -157,13 +159,13 @@ const languages = [
 
       <div class="resume-summary">
         <p>
-          IT Architect and SDET Lead with 5+ years designing and governing quality systems across
-          fintech, insurance, gaming, and enterprise software. At Clip, partners with Architecture Design
-          and Business units to evaluate technical feasibility and ROI on engineering initiatives, leads
-          E2E governance across distributed teams in China and Argentina, and architects data integrity
-          frameworks for high-volume fintech transactions. Known for translating complex system
-          constraints into clear architectural decisions and aligning test strategy with organizational
-          scalability goals.
+          Tech Lead owning technical risk for Clip's LATAM payments platform — reliability, data
+          integrity, and fund-loss prevention across funding and financial systems. Partners with
+          Architecture, Business, and Growth to evaluate technical feasibility and ROI, coordinates
+          release safety across distributed teams in Mexico, China, and Argentina, and architects
+          data-integrity frameworks for high-volume sharded transaction databases. 5+ years designing
+          and governing quality systems across fintech, insurance, gaming, and enterprise software
+          underpin the move into technical risk ownership.
         </p>
       </div>
     </div>

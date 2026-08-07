@@ -1,6 +1,6 @@
 ---
-title: "Why the Best IT Architects Come from Quality Engineering"
-description: "The skills that make you dangerous as a quality engineer are the exact same ones that define great IT architecture. Here's the case — and why that path produces better architects than most."
+title: "Why the Best Technical Risk Leads Come from Quality Engineering"
+description: "The skills that make you dangerous as a quality engineer are the exact same ones that define great technical risk leadership. Here's the case — and why that path produces better risk owners than most."
 date: 2026-03-16
 tags: ["Career & Growth", "Architecture & Systems", "Quality Engineering"]
 draft: false
@@ -9,7 +9,7 @@ image: "https://images.unsplash.com/photo-1773332598451-8a0a59941912?q=80&w=687&
 
 Five years ago, I picked up a test framework and a terminal and started breaking things professionally.
 
-That might sound like an odd origin story for an IT Architect. But the longer I've worked at the intersection of quality engineering and system design, the more convinced I am: the skills that make you exceptional at QA are the *exact same* skills that define great IT architecture.
+That might sound like an odd origin story for someone who now owns technical risk on a payments platform. But the longer I've worked at the intersection of quality engineering and system design, the more convinced I am: the skills that make you exceptional at QA are the *exact same* skills that define great technical risk leadership.
 
 ## What quality engineering actually teaches you
 
@@ -33,16 +33,16 @@ The best architects I've worked with ask the same questions that experienced qua
 - *What are we assuming that we haven't proven yet?*
 - *Where are the implicit contracts between these components?*
 
-The difference between a QA mindset and an architectural one is not the questions — it's when you ask them. IT Architects ask them before the first line of code is written, at the design stage, when the cost of changing course is still low. Quality engineers have always known these questions matter. The natural progression is to move them earlier.
+The difference between a QA mindset and a risk-ownership one is not the questions — it's when you ask them. Technical risk leads ask them before the first line of code is written, at the design stage, when the cost of changing course is still low. Quality engineers have always known these questions matter. The natural progression is to move them earlier.
 
 ## What you'll find here
 
-This blog documents how I think about the intersection of quality, system design, and IT architecture — from the field, not the textbook.
+This blog documents how I think about the intersection of quality, system design, and technical risk — from the field, not the textbook.
 
 You'll find posts on:
 - **Quality Engineering** — automation strategy, AI/LLM governance, adversarial testing, and what it means to build quality in rather than test it in
 - **Architecture & Systems** — cloud design, scalability, decoupling patterns, and the trade-offs that determine whether systems survive at scale
-- **Career & Growth** — the honest account of what it looks like to grow from individual contributor to the architect's chair
+- **Career & Growth** — the honest account of what it looks like to grow technical ownership on the IC track, from engineer to owning risk at Staff scope
 
 I write for senior engineers and technical leaders. If you're a CTO or VP evaluating whether someone can think at the architectural level — this is the record I'm building in public.
 

@@ -27,8 +27,8 @@ links:
 # ─── Global UI (nav, logo, footer) ────────────────────────────────────────────
 global:
   logo_subtitle:
-    en: IT Architect · Photographer · Musician
-    es: Arquitecto TI · Fotógrafo · Músico
+    en: Tech Lead · Photographer · Musician
+    es: Tech Lead · Fotógrafo · Músico
   nav:
     work:     { en: Work,     es: Trabajo   }
     services: { en: Services, es: Servicios }
@@ -47,8 +47,8 @@ pages:
   home:
     meta:
       description:
-        en: IT Architect, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
-        es: Arquitecto TI, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
+        en: Tech Lead owning technical risk for a LATAM payments platform, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Tech Lead a cargo del riesgo técnico de una plataforma de pagos LATAM, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
 
     hero:
       eyebrow:
@@ -58,11 +58,11 @@ pages:
         en: "I design systems<br />that scale."
         es: "Diseño sistemas<br />que escalan."
       subtitle:
-        en: IT Architect, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
-        es: Arquitecto TI, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
+        en: Tech Lead owning technical risk for a LATAM payments platform, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Tech Lead a cargo del riesgo técnico de una plataforma de pagos LATAM, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
       trajectory:
-        en: 'IT Architect · SDET Lead at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
-        es: 'Arquitecto TI · SDET Lead en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+        en: 'Tech Lead, Technical Risk at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+        es: 'Tech Lead, Riesgo Técnico en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
       ctas:
         - label: { en: Read the Blog,  es: Leer el Blog    }
           href: /writing
@@ -75,8 +75,8 @@ pages:
       label: { en: "Available for",  es: "Disponible para" }
       cta:   { en: "Get in touch",   es: "Hablemos"        }
       items:
-        - text: { en: "IT Architecture consulting",                         es: "Consultoría de Arquitectura TI" }
-          detail: { en: "(distributed systems, fintech, cloud)",              es: "(sistemas distribuidos, fintech, cloud)" }
+        - text: { en: "Technical risk & reliability consulting",             es: "Consultoría de riesgo técnico y confiabilidad" }
+          detail: { en: "(distributed systems, fintech, payments)",           es: "(sistemas distribuidos, fintech, pagos)" }
         - text: { en: "Photography · Digital illustration · Music",        es: "Fotografía · Ilustración digital · Música" }
           detail: { en: "(CDMX · monthly retainers available)",               es: "(CDMX · disponible en modelo de suscripción)" }
         - text: { en: "Technical writing & documentation",                  es: "Redacción técnica y documentación" }
@@ -89,8 +89,8 @@ pages:
     dual_identity:
       title: { en: "Beyond the stack",    es: "Más allá del código"      }
       copy:
-        en: "I'm an IT Architect who photographs and makes music. The work crosses over more than people expect. My technical decisions carry artistic references. My photos carry engineering logic. I don't separate the two — I never have."
-        es: "Soy un Arquitecto TI que fotografía y hace música. El trabajo se cruza más de lo que la gente espera. Mis decisiones técnicas llevan referencias artísticas. Mis fotos llevan lógica de ingeniería. No los separo — nunca lo he hecho."
+        en: "I'm a Tech Lead who owns technical risk for a payments platform, and I photograph and make music. The work crosses over more than people expect. My technical decisions carry artistic references. My photos carry engineering logic. I don't separate the two — I never have."
+        es: "Soy Tech Lead a cargo del riesgo técnico de una plataforma de pagos, y también fotografío y hago música. El trabajo se cruza más de lo que la gente espera. Mis decisiones técnicas llevan referencias artísticas. Mis fotos llevan lógica de ingeniería. No los separo — nunca lo he hecho."
       link:   { en: "See all work →",     es: "Ver todo →"               }
       samples:
         - key: photo
@@ -108,11 +108,11 @@ pages:
 
     cta:
       title:
-        en: "Architecture, quality, and the space between."
-        es: "Arquitectura, calidad y lo que pasa entre ambas."
+        en: "Reliability, technical risk, and the space between."
+        es: "Confiabilidad, riesgo técnico y lo que pasa entre ambas."
       body:
-        en: "If you're looking for an IT Architect who can evaluate trade-offs rigorously, align engineering decisions with business outcomes, and build the governance frameworks that make scale sustainable — let's talk."
-        es: "Si buscas un Arquitecto TI que evalúe trade-offs con rigor, que conecte las decisiones técnicas con resultados de negocio y que construya la gobernanza necesaria para sostener la escala — hablemos."
+        en: "If you're looking for someone who can own technical risk, evaluate trade-offs rigorously, and align engineering decisions with business outcomes — let's talk."
+        es: "Si buscas a alguien que asuma el riesgo técnico, evalúe trade-offs con rigor y conecte las decisiones técnicas con resultados de negocio — hablemos."
       resume:  { en: "View Resume",       es: "Ver Currículum"           }
       contact: { en: "Get in Touch",      es: "Contactar"                }
 
@@ -121,8 +121,8 @@ pages:
     meta:
       title:       { en: Services,       es: Servicios                  }
       description:
-        en: "IT Architecture consulting and creative services by Leonardo Espinosa — distributed systems, fintech, cloud, photography, illustration, and music production."
-        es: "Consultoría de Arquitectura TI y servicios creativos de Leonardo Espinosa — sistemas distribuidos, fintech, cloud, fotografía, ilustración y producción musical."
+        en: "Technical risk consulting and creative services by Leonardo Espinosa — distributed systems, fintech, payments, photography, illustration, and music production."
+        es: "Consultoría de riesgo técnico y servicios creativos de Leonardo Espinosa — sistemas distribuidos, fintech, pagos, fotografía, ilustración y producción musical."
     header:
       eyebrow: { en: "What I offer",      es: "Lo que ofrezco"           }
       title:   { en: Services,            es: Servicios                  }
@@ -132,7 +132,7 @@ pages:
 
     technical:
       tag:   { en: Technical,             es: Técnico                    }
-      title: { en: "IT Architecture Consulting", es: "Consultoría de Arquitectura TI" }
+      title: { en: "Technical Risk & Reliability Consulting", es: "Consultoría de Riesgo Técnico y Confiabilidad" }
       intro:
         en: "I design and review the systems that move money, govern AI output, and hold under load. Engagements are trade-off-driven — I tell you what breaks before it does."
         es: "Diseño y reviso los sistemas que mueven dinero, gobiernan outputs de IA y aguantan carga real. Cada proyecto arranca por los trade-offs: te digo qué se va a romper antes de que pase."
@@ -289,8 +289,8 @@ pages:
     meta:
       title: { en: Contact,             es: Contacto                    }
       description:
-        en: "Get in touch with Leonardo Espinosa for IT Architecture consulting, creative services, or open source collaboration."
-        es: "Contacta a Leonardo Espinosa para consultoría de Arquitectura TI, servicios creativos o colaboración en código abierto."
+        en: "Get in touch with Leonardo Espinosa for technical risk consulting, creative services, or open source collaboration."
+        es: "Contacta a Leonardo Espinosa para consultoría de riesgo técnico, servicios creativos o colaboración en código abierto."
     header:
       eyebrow: { en: "Get in touch",    es: "Ponte en contacto"         }
       title:   { en: "Let's talk.",     es: "Hablemos."                 }
@@ -301,7 +301,7 @@ pages:
       label: { en: "What are you looking for?", es: "¿Qué andas buscando?" }
       items:
         - title: { en: Technical,       es: Técnico                     }
-          desc:  { en: "IT Architecture consulting, distributed systems, fintech, cloud, CI/CD, LLM evaluation.", es: "Consultoría de Arquitectura TI, sistemas distribuidos, fintech, cloud, CI/CD, evaluación de LLMs." }
+          desc:  { en: "Technical risk consulting, distributed systems, fintech, payments, CI/CD, LLM evaluation.", es: "Consultoría de riesgo técnico, sistemas distribuidos, fintech, pagos, CI/CD, evaluación de LLMs." }
           subject: { en: "Technical%20Consulting%20Inquiry", es: "Consulta%20T%C3%A9cnica" }
           icon: monitor
         - title: { en: Creative,        es: Creativo                    }
