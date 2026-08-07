@@ -47,8 +47,8 @@ pages:
   home:
     meta:
       description:
-        en: Staff Engineer owning technical risk for a LATAM payments platform, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
-        es: Staff Engineer a cargo del riesgo técnico de una plataforma de pagos LATAM, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
+        en: Staff Engineer, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Staff Engineer, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
 
     hero:
       eyebrow:
@@ -58,11 +58,11 @@ pages:
         en: "I design systems<br />that scale."
         es: "Diseño sistemas<br />que escalan."
       subtitle:
-        en: Staff Engineer owning technical risk for a LATAM payments platform, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
-        es: Staff Engineer a cargo del riesgo técnico de una plataforma de pagos LATAM, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
+        en: Staff Engineer, photographer, and musician based in Mexico City. Deterministic about process, spontaneous about everything else.
+        es: Staff Engineer, fotógrafo y músico en Ciudad de México. Determinista en el proceso, espontáneo en todo lo demás.
       trajectory:
-        en: 'Staff Engineer, System Reliability & Integrity at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
-        es: 'Staff Engineer, Confiabilidad e Integridad de Sistemas en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+        en: 'Staff Engineer at <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
+        es: 'Staff Engineer en <a href="{{work_href}}" target="_blank" rel="noopener noreferrer" class="clip-link">Clip</a>'
       ctas:
         - label: { en: Read the Blog,  es: Leer el Blog    }
           href: /writing
@@ -89,8 +89,8 @@ pages:
     dual_identity:
       title: { en: "Beyond the stack",    es: "Más allá del código"      }
       copy:
-        en: "I'm a Staff Engineer who owns technical risk for a payments platform, and I photograph and make music. The work crosses over more than people expect. My technical decisions carry artistic references. My photos carry engineering logic. I don't separate the two — I never have."
-        es: "Soy Staff Engineer a cargo del riesgo técnico de una plataforma de pagos, y también fotografío y hago música. El trabajo se cruza más de lo que la gente espera. Mis decisiones técnicas llevan referencias artísticas. Mis fotos llevan lógica de ingeniería. No los separo — nunca lo he hecho."
+        en: "I'm a Staff Engineer who photographs and makes music. The work crosses over more than people expect. My technical decisions carry artistic references. My photos carry engineering logic. I don't separate the two — I never have."
+        es: "Soy Staff Engineer, y también fotografío y hago música. El trabajo se cruza más de lo que la gente espera. Mis decisiones técnicas llevan referencias artísticas. Mis fotos llevan lógica de ingeniería. No los separo — nunca lo he hecho."
       link:   { en: "See all work →",     es: "Ver todo →"               }
       samples:
         - key: photo
