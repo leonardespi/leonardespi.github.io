@@ -9,7 +9,7 @@ image: "https://images.unsplash.com/photo-1773332598451-8a0a59941912?q=80&w=687&
 
 Five years ago, I picked up a test framework and a terminal and started breaking things professionally.
 
-That might sound like an odd origin story for someone who now owns technical risk on a payments platform. But the longer I've worked at the intersection of quality engineering and system design, the more convinced I am: the skills that make you exceptional at QA are the *exact same* skills that define great technical risk leadership.
+That might sound like an odd origin story for someone who now owns technical risk on a payments platform. But the longer I've worked at the intersection of quality engineering and system design, the more convinced I am: the skills that make you exceptional at QA are the *exact same* skills that make you good at owning risk before it becomes an incident.
 
 ## What quality engineering actually teaches you
 

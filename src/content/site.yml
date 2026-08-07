@@ -111,8 +111,8 @@ pages:
         en: "Reliability, technical risk, and the space between."
         es: "Confiabilidad, riesgo técnico y lo que pasa entre ambas."
       body:
-        en: "If you're looking for someone who can own technical risk, evaluate trade-offs rigorously, and align engineering decisions with business outcomes — let's talk."
-        es: "Si buscas a alguien que asuma el riesgo técnico, evalúe trade-offs con rigor y conecte las decisiones técnicas con resultados de negocio — hablemos."
+        en: "If you're looking for someone who owns technical risk and ties engineering decisions to business outcomes — let's talk."
+        es: "Si buscas a alguien que asuma el riesgo técnico y conecte las decisiones técnicas con resultados de negocio — hablemos."
       resume:  { en: "View Resume",       es: "Ver Currículum"           }
       contact: { en: "Get in Touch",      es: "Contactar"                }
 
@@ -132,7 +132,7 @@ pages:
 
     technical:
       tag:   { en: Technical,             es: Técnico                    }
-      title: { en: "Technical Risk & Reliability Consulting", es: "Consultoría de Riesgo Técnico y Confiabilidad" }
+      title: { en: "Risk & Reliability Consulting", es: "Consultoría de Riesgo y Confiabilidad" }
       intro:
         en: "I design and review the systems that move money, govern AI output, and hold under load. Engagements are trade-off-driven — I tell you what breaks before it does."
         es: "Diseño y reviso los sistemas que mueven dinero, gobiernan outputs de IA y aguantan carga real. Cada proyecto arranca por los trade-offs: te digo qué se va a romper antes de que pase."
