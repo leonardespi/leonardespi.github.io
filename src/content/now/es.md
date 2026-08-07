@@ -27,7 +27,7 @@ widget:
 
 ## Construyendo actualmente
 
-**A cargo del riesgo técnico como Tech Lead** de la plataforma de pagos LATAM de [Clip](https://www.miclip.mx) — confiabilidad, integridad de datos y prevención de pérdida de fondos en los sistemas de financiamiento. Colaborando con Arquitectura, Negocio y Growth en factibilidad técnica y ROI, y coordinando la seguridad de los releases entre equipos distribuidos en México, China y Argentina.
+**A cargo del riesgo técnico como Staff Engineer** de la plataforma de pagos LATAM de [Clip](https://www.miclip.mx) — confiabilidad, integridad de datos y prevención de pérdida de fondos en los sistemas de financiamiento. Colaborando con Arquitectura, Negocio y Growth en factibilidad técnica y ROI, y coordinando la seguridad de los releases entre equipos distribuidos en México, China y Argentina.
 
 Desarrollando **Valua**, un framework de Rust de código abierto y alto rendimiento diseñado para incrustar e interactuar de forma segura con entornos de ejecución de scripts de Lua 5.5+ con LuaJIT.
 

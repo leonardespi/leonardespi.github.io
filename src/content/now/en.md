@@ -27,7 +27,7 @@ widget:
 
 ## Currently building
 
-**Owning technical risk as Tech Lead** for Clip's LATAM payments platform — reliability, data integrity, and fund-loss prevention across the funding and financial systems. Partnering with Architecture, Business, and Growth on technical feasibility and ROI, and coordinating release safety across distributed teams in Mexico, China, and Argentina.
+**Owning technical risk as Staff Engineer** for Clip's LATAM payments platform — reliability, data integrity, and fund-loss prevention across the funding and financial systems. Partnering with Architecture, Business, and Growth on technical feasibility and ROI, and coordinating release safety across distributed teams in Mexico, China, and Argentina.
 
 Developing **Valua**, an open-source, high-performance Rust framework designed for embedding and interfacing safely with lua 5.5 + with luaJIT scripting runtimes.
 
